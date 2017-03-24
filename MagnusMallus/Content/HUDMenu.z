@@ -1,0 +1,104 @@
+class HUDMenu : ZilchComponent
+{
+    [Property]
+    var OptionsButton : Keys = Keys.Escape;
+    
+    var NumOptions : Integer = 0;
+    var OptionsObjects : Array[Cog] = Array[Cog]();
+    var OptionsObjIndex : Integer = 1;
+    
+    
+    var Buttons : Array[Keys] = Array[Keys]();
+    
+    var Open : Boolean = false;
+    var Opening : Boolean = false;
+    
+    var Distances : Array[Real3] = Array[Real3]();
+    var GroupNumbers : Array[Integer] = Array[Integer]();
+    var Groups : Array[Cog] = Array[Cog]();
+    
+    [Property]
+    var Distance1 : Real3 = Real3(0,-10,0);
+    
+    var Group1 : Array[Cog] = Array[Cog](); //Objects in the group
+    
+    var Timer : Real = 0;
+    
+    [Property]
+    var TransitionTime : Real = 1;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        
+        
+        this.Distances.Add(this.Distance1);
+        
+        
+        
+        
+        var i = 0;
+        var cog = this.Space.FindObjectByName("");
+        var index = 0;
+        var grpNum = 0;
+        
+        
+        
+        while(cog == null)
+        {
+            for(i = index; i < grpNum; ++i)
+            {
+                
+            }
+            cog = this.Space.FindObjectByName("Objects");
+        }
+        for(i = this.OptionsObjIndex; i < 0; ++i)
+        {
+            this.OptionsObjects.Add(this.Space.FindObjectByName("`i`"));
+        }
+        //for(var i = this.OptionsObjName; i < this.NumberOfObjects
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        //Transition
+        if(this.Opening)
+        {
+            this.Timer += event.Dt;
+            if(this.Timer > this.TransitionTime)
+            {
+                this.Timer = 0;
+                this.Opening = false;
+            }
+            else
+            {
+                this.MoveObjects(this.Distance1*Real3(1,event.Dt,1));
+            }
+        }
+        
+        if(!this.Open && !this.Opening && Zero.Keyboard.KeyIsPressed(Keys.I))
+        {
+            this.Open = true;
+            this.Opening = true;
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+        }
+        else if(!this.Opening && Zero.Keyboard.KeyIsPressed(Keys.I))
+        {
+            this.Open = false;
+            this.Opening = true;
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+        }
+        
+    }
+    function MoveObjects(amnt : Real3)
+    {
+        foreach(var o in this.Groups)
+        {
+            //Movement
+            if(this.Open)
+                o.Transform.Translation -= amnt;
+            else
+                o.Transform.Translation += amnt;
+        }
+    }
+}

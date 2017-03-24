@@ -1,0 +1,8 @@
+class HUDReferences : ZilchComponent
+{
+    var MainSpaceRef : Space = null;
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+}

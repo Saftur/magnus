@@ -1,0 +1,30 @@
+class HUDCreator : ZilchComponent
+{
+    [Property]
+    var HUDLevel : Level = null;
+    
+    var SpaceArchetype : Archetype = Archetype.Find("Space");
+    
+    //References
+    
+    [Property]  //Player
+    var PlayerRef : CogPath = null;
+    
+    var HUDSpace : Space = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Create space and load level into it
+        this.HUDSpace = this.GameSession.CreateNamedSpace("HUDSpace", this.SpaceArchetype);
+        this.HUDSpace.LoadLevel(this.HUDLevel);
+        this.HUDSpace.LevelSettings.HUDReferences.MainSpaceRef = this.Space;
+    }
+
+    function Destroyed()
+    {
+        if(this.HUDSpace != null)
+        {
+            this.HUDSpace.Destroy();
+        }
+    }
+}

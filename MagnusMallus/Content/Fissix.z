@@ -1,0 +1,113 @@
+// Authors: Charles duMars
+// Date: 2/2/17
+// All content © 2017 DigiPen (USA) Corporation, all rights reserved.
+class Fissix : ZilchComponent
+{
+    [Dependency]
+    var Trans : Transform = null;
+    [Dependency]
+    var Collider : BoxCollider = null;
+    [Dependency]
+    var RBody : RigidBody = null;
+    
+    [Property]
+    var Acceleration : Real = 4;
+    [Property]
+    var Friction : Real = 5;
+    [Property]
+    var Drag : Real = 3;
+    [Property]
+    var MaxGroundVelocity : Real = 7;
+    [Property]
+    var MaxAirVelocity : Real = 7;
+    
+    [Property]
+    var JumpStrength : Real = 15;
+    
+    function Initialize(init : CogInitializer)
+    {
+    }
+
+    function Update(dir : Real, time : Real) //Change x velocity
+    {
+        var yVel = this.RBody.Velocity.Y;
+        var xVel = this.RBody.Velocity.X;
+        var maxV = 0.0;
+        var friction = 0.0;
+        
+        if(this.Grounded())     //Find out if you are moving on ground or in the air
+        {
+            maxV = this.MaxGroundVelocity;
+            friction = this.Friction;
+        }
+        else
+        {
+            maxV = this.MaxAirVelocity;
+            friction = this.Drag;
+        }
+        
+        if(dir != 0)    //Accelerating
+        {
+            this.RBody.Velocity += Real3((this.Acceleration*dir*time), 0, 0);
+            
+            if(Math.Abs(this.RBody.Velocity.X) >= maxV)   //Cap
+            {
+                this.RBody.Velocity = Real3(maxV*dir,yVel,0);
+            }
+        }
+        else if(xVel != 0)   //Slowing down
+        {
+            this.RBody.Velocity -= Real3(friction*(xVel/Math.Abs(xVel)*time), 0, 0);
+            
+            if(xVel > 0 && this.RBody.Velocity.X < 0)    //Don't go backwards lol
+            {
+                this.RBody.Velocity = Real3(0, yVel, 0);
+            }
+            else if(xVel < 0 && this.RBody.Velocity.X > 0)
+            {
+                this.RBody.Velocity = Real3(0, yVel, 0);
+            }
+        }
+    }
+    
+    function Jump()
+    {
+        var tmp = this.RBody.Velocity;
+        tmp.Y = this.JumpStrength * -this.Space.LevelSettings.GravityEffect.Direction.Y;
+        this.RBody.Velocity = tmp;
+    }
+    
+    function Grounded() : Boolean
+    {
+        var pos = this.Trans.Translation+this.Collider.Offset;
+        var width = this.Collider.Size.X;
+        var dist = this.Collider.Size.Y/2;
+        var ray = Ray();
+        ray.Direction = this.Space.LevelSettings.GravityEffect.Direction;
+        ray.Start = pos;
+        if (this.CastGroundRay(ray, dist)) return true;
+        ray.Start = pos + Real3(width/2-0.05, 0, 0); // -0.1 is wall jump fix, remove when fixing going in walls
+        if (this.CastGroundRay(ray, dist)) return true;
+        ray.Start = pos + Real3(-width/2+0.05, 0, 0);
+        if (this.CastGroundRay(ray, dist)) return true;
+        return false;
+    }
+    
+    function CastGroundRay(ray : Ray, dist : Real) : Boolean
+    {
+        var rayDist = this.CastGroundRay(ray);
+        if (rayDist == -1) return false;
+        else return (rayDist <= dist);
+    }
+    
+    function CastGroundRay(ray : Ray) : Real
+    {
+        var objHit = this.Space.PhysicsSpace.CastRayFirst(ray);
+        if(objHit != null)
+        {
+            //Console.WriteLine("`this.Owner.Name`: `objHit.Distance`");
+            return objHit.Distance;
+        }
+        return -1;
+    }
+}

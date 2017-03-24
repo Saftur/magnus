@@ -1,0 +1,23 @@
+class MinionAI_1 : ZilchComponent
+{
+    [Dependency]
+    var RBody : RigidBody = null;
+    
+    var Timer : Real = 0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.RBody.Velocity.X > 2)
+        {
+            this.RBody.Velocity -= Real3(1,0,0);
+        }
+        else 
+        {
+            this.RBody.Velocity += Real3(1,0,0);
+        }
+    }
+}

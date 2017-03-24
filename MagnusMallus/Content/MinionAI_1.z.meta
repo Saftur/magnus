@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "MinionAI_1",
+		uint64 ResourceId = 58a9e0dce0e3b628,
+	},
+},
