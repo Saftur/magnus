@@ -1,0 +1,29 @@
+class PlayerController : ZilchComponent
+{
+    [Dependency]
+    var Fissix : Fissix = null;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var dir = 0.0;
+        if(Zero.Keyboard.KeyIsDown(Keys.A))
+        {
+            dir = -1;
+        }
+        else if(Zero.Keyboard.KeyIsDown(Keys.S))
+        {
+            dir = 1;
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.W) && this.Fissix.Grounded())
+        {
+            this.Fissix.Jump();
+        }
+        
+        this.Fissix.Update(dir, event.Dt);
+    }
+}
