@@ -3,29 +3,33 @@ class HUDMenu : ZilchComponent
     [Property]
     var OptionsButton : Keys = Keys.Escape;
     
-    var NumOptions : Integer = 0;
+    var OptionsDist : Real3 = Real3(0,10,0);
     var OptionsObjects : Cog = null; //Parent of the object group
+    var OptionsOpen : Boolean = false;
+    
+    var Opening : Boolean = false;
     
     
     var Open : Boolean = false;
-    var Opening : Boolean = false;
     
     [Property]
-    var Distance1 : Real3 = Real3(0,-10,0);
+    var Distance1 : Real3 = Real3(0,10,0);
     
     [Property]
     var Button1 : Keys = Keys.Right;
     
-    var Group1 : Array[Cog] = Array[Cog](); //Objects in the group
+    var Group1 : Cog = null; //Objects in the group
     
     var Timer : Real = 0;
+    var Phases : Integer = 0;
     
     [Property]
-    var TransitionTime : Real = 1;
+    var TransitionTime : Real = 0.5;
     
     
     var ObjectsToMove : Cog = null; //Parent of object group to move
     var DistToMove : Real3 = Real3(0,0,0); //Distance to move objects
+    var MoveBool : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -36,52 +40,78 @@ class HUDMenu : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        Console.WriteLine("`this.Space.FindObjectByName("Camera").Transform.Translation`");
+        //Console.WriteLine("`this.Space.FindObjectByName("Camera").Transform.Translation`");
         //Transition
         if(this.Opening)
         {
             this.Timer += event.Dt;
             if(this.Timer > this.TransitionTime)
             {
-                this.Timer = 0;
-                this.Opening = false;
+                if(this.Phases == 1)
+                {
+                    
+                }
+                
+                if(this.Phases == 0)
+                {
+                    if(!this.OptionsOpen)
+                    {
+                        this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+                    }
+                    
+                    this.Timer = 0;
+                    this.Opening = false;
+                }
+                else
+                {
+                    this.Timer = 0;
+                    this.Phases -= 1;
+                }
             }
             else
             {
-                this.MoveObjects(this.DistToMove*Real3(event.Dt,event.Dt,event.Dt), this.ObjectsToMove);
+                var time = event.Dt/this.TransitionTime;
+                this.MoveObjects(this.DistToMove*Real3(time,time,time), this.ObjectsToMove, this.MoveBool);
             }
         }
         
-        if(!this.Open && !this.Opening && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
+        if(!this.OptionsOpen && !this.Opening && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
         {
-            this.Open = true;
+            this.OptionsOpen = true;
             this.Opening = true;
-            //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            this.Phases = 1;
+            
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
             this.ObjectsToMove = this.OptionsObjects;
-            this.DistToMove = this.Distance1;
+            this.DistToMove = this.OptionsDist;
+            this.MoveBool = this.OptionsOpen;
         }
         else if(!this.Opening && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
         {
-            this.Open = false;
+            this.OptionsOpen = false;
             this.Opening = true;
-            //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            this.Phases = 1;
+            
+            this.ObjectsToMove = this.OptionsObjects;
+            this.DistToMove = this.OptionsDist;
+            this.MoveBool = this.OptionsOpen;
         }
-        
+        if(this.Open && Zero.Keyboard.KeyIsPressed(this.Button1))
+        {
+            this.Open = true;
+            this.Opening = true;
+            this.Phases = 2;
+            this.ObjectsToMove = this.Group1;
+            this.DistToMove = this.Distance1;
+            this.MoveBool = this.Open;
+        }
     }
-    function MoveObjects(amnt : Real3, grp : Cog)
+    function MoveObjects(amnt : Real3, grp : Cog, bool : Boolean)
     {
         var parent = grp;
-        if(this.Open)
+        if(bool)
                 parent.Transform.Translation -= amnt;
             else
                 parent.Transform.Translation += amnt;
-        foreach(var o in parent.Children)
-        {
-            //Movement
-            if(this.Open)
-                o.Transform.Translation -= amnt;
-            else
-                o.Transform.Translation += amnt;
-        }
     }
 }
