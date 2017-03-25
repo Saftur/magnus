@@ -3,20 +3,21 @@ class HUDMenu : ZilchComponent
     [Property]
     var OptionsButton : Keys = Keys.Escape;
     
-    var NumOptions : Integer = 0;
+    [Property]
+    var OptionsDist : Real3 = Real3(0,14.5,0);
     var OptionsObjects : Cog = null; //Parent of the object group
     
     
-    var Open : Boolean = false;
-    var Opening : Boolean = false;
+    var Open : Boolean = false; //Is menu open
+    var Moving : Boolean = false; //Objects are currently moving
     
     [Property]
-    var Distance1 : Real3 = Real3(0,-10,0);
+    var Distance1 : Real3 = Real3(15,0,0);
     
     [Property]
     var Button1 : Keys = Keys.Right;
     
-    var Group1 : Array[Cog] = Array[Cog](); //Objects in the group
+    var Group1 : Cog = null;
     
     var Timer : Real = 0;
     
@@ -26,6 +27,7 @@ class HUDMenu : ZilchComponent
     
     var ObjectsToMove : Cog = null; //Parent of object group to move
     var DistToMove : Real3 = Real3(0,0,0); //Distance to move objects
+    var MoveBool : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -36,52 +38,57 @@ class HUDMenu : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        Console.WriteLine("`this.Space.FindObjectByName("Camera").Transform.Translation`");
+        //Console.WriteLine("`this.OptionsObjects.Transform.Translation`");
         //Transition
-        if(this.Opening)
+        if(this.Moving)
         {
             this.Timer += event.Dt;
             if(this.Timer > this.TransitionTime)
             {
                 this.Timer = 0;
-                this.Opening = false;
+                this.Moving = false;
             }
             else
             {
-                this.MoveObjects(this.DistToMove*Real3(event.Dt,event.Dt,event.Dt), this.ObjectsToMove);
+                //Console.WriteLine("`this.DistToMove*Real3(event.Dt,event.Dt,event.Dt)`");
+                this.MoveObjects(this.DistToMove*Real3(event.Dt*(1/this.TransitionTime),event.Dt*(1/this.TransitionTime),event.Dt*(1/this.TransitionTime)),
+                 this.ObjectsToMove, this.MoveBool);
             }
         }
         
-        if(!this.Open && !this.Opening && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
+        if(!this.Open && !this.Moving && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
         {
             this.Open = true;
-            this.Opening = true;
-            //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            this.Moving = true;
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
             this.ObjectsToMove = this.OptionsObjects;
-            this.DistToMove = this.Distance1;
+            this.DistToMove = this.OptionsDist;
+            this.MoveBool = this.Open;
         }
-        else if(!this.Opening && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
+        else if(!this.Moving && Zero.Keyboard.KeyIsPressed(this.OptionsButton))
         {
             this.Open = false;
-            this.Opening = true;
-            //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            this.Moving = true;
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
         }
-        
+        if(this.Open && !this.Moving && Zero.Keyboard.KeyIsPressed(this.Button1))
+        {
+            this.Moving = true;
+            this.ObjectsToMove = this.Group1;
+            this.DistToMove = this.Distance1;
+        }
     }
-    function MoveObjects(amnt : Real3, grp : Cog)
+    function BeginMove()
+    {
+        this.Moving = true;
+        this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+    }
+    function MoveObjects(amnt : Real3, grp : Cog, bool : Boolean)
     {
         var parent = grp;
-        if(this.Open)
+        if(bool)
                 parent.Transform.Translation -= amnt;
             else
                 parent.Transform.Translation += amnt;
-        foreach(var o in parent.Children)
-        {
-            //Movement
-            if(this.Open)
-                o.Transform.Translation -= amnt;
-            else
-                o.Transform.Translation += amnt;
-        }
     }
 }
