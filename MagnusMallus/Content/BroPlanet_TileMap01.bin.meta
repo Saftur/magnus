@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "BroPlanet_TileMap01",
+		uint64 ResourceId = 58b5b0542dfd73ba,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "58b5a6ad44cd6bf3:BroPlanet",
+	},
+},

@@ -15,7 +15,7 @@ Level =
 			bool Active = true,
 			bool WakeUpOnChange = false,
 			bool LocalSpaceDirection = true,
-			float Strength = 20,
+			float Strength = 10,
 			Vec3 Direction = [0, -1, 0],
 		},
 		DragEffect = 
@@ -104,7 +104,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [109.862778, 43.3515358, 50],
+			Vec3 Translation = [75.9181824, -23.7711468, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [109.862778, 43.3515358, -1.15950215e-07],
+			Vec3 LookTarget = [75.9181824, -23.7711468, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -197,7 +197,7 @@ Level =
 		},
 		TileMap = 
 		{
-			string SourceName = "58b5b0542dfd2a8d:BroPlanet_TileMap00",
+			string SourceName = "58b5b654fdeaaff6:PlanetChameleon_TileMap00",
 			string PaletteName = "",
 			float UnitsPerTile = 1,
 			float MeshThickness = 1.20000005,
@@ -232,7 +232,42 @@ Level =
 		},
 		TileMap = 
 		{
-			string SourceName = "58b5b0542dfd73ba:BroPlanet_TileMap01",
+			string SourceName = "58b5b654fdeae997:PlanetChameleon_TileMap01",
+			string PaletteName = "",
+			float UnitsPerTile = 1,
+			float MeshThickness = 1.20000005,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 6,
+		},
+		Named = 
+		{
+			string Name = "LevelMap3",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		MultiSprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		},
+		TileMap = 
+		{
+			string SourceName = "58b5b654fded262b:PlanetChameleon_TileMap02",
 			string PaletteName = "",
 			float UnitsPerTile = 1,
 			float MeshThickness = 1.20000005,

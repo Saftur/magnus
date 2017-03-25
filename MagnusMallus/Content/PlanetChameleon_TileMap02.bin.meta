@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "PlanetChameleon_TileMap02",
+		uint64 ResourceId = 58b5b654fded262b,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "58b5b0ed1ff76908:PlanetChameleon",
+	},
+},
