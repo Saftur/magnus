@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "PlanetEnter",
+		uint64 ResourceId = 58b5a713e7a14e9f,
+	},
+},
