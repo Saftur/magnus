@@ -1,0 +1,18 @@
+class CrewMembers : ZilchComponent
+{
+    var Cook : Real = 0;
+    
+    var Mechanic : Real = 0;
+    
+    var Gunner : Real = 1;
+    
+    var Doctor : Real = 0;
+    
+    var Merchant : Real = 0;
+    
+    var Navigator : Real = 0;
+    
+    var Translator : Real = 0;
+    
+    var Chemist : Real = 0;
+}
