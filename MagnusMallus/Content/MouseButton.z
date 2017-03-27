@@ -1,0 +1,50 @@
+class MouseButton : ZilchComponent
+{
+    //Options
+    [Property]
+    var Help : Boolean = false;
+    [Property]
+    var Options : Boolean = false;
+    [Property]
+    var Exit : Boolean = false;
+    
+    //Characters
+    [Property]
+    var Character : Boolean = false;
+    
+    [Property]
+    var Feed : Boolean = false;
+    [Property]
+    var GiveItem : Boolean = false;
+    [Property]
+    var Rename : Boolean = false;
+    function Activate()
+    {
+        if(this.Help)
+        {
+            //help stuff
+        }
+        else if(this.Options)
+        {
+            //options stuff
+        }
+        else if(this.Exit)
+        {
+            this.GameSession.Quit();
+        }
+        
+        
+        else if(this.Feed)
+        {
+            Console.WriteLine("nom nom");
+        }
+        else if(this.GiveItem)
+        {
+            Console.WriteLine("thanks bro");
+        }
+        else if(this.Rename)
+        {
+            Console.WriteLine("What's my new name");
+        }
+    }
+}
