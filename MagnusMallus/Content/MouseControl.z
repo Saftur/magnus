@@ -1,0 +1,63 @@
+class MouseControl : ZilchComponent
+{
+    var Active : Boolean = false;
+    
+    var CharButton : Cog = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        var ray = Ray();
+        
+        ray.Start = Real3(0.5, 16.5, 39);
+        ray.Direction = Real3(0, 0, -1);
+        
+        var obj = this.Space.PhysicsSpace.CastRayFirst(ray);
+        
+        //Console.WriteLine("`obj.ObjectHit`");
+        
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        //Zero.Connect(this.Space, Events.MouseMove, this.OnMouseMove);
+        Zero.Connect(this.Space, Events.LeftMouseDown, this.OnMouseClick);
+    }
+    function OnMouseClick(event : ViewportMouseEvent)
+    {
+        if(this.Active)
+        {
+            var ray = Ray();
+        
+            ray.Start = event.RayStart;
+            ray.Direction = event.RayDirection;
+        
+            var results = this.Space.PhysicsSpace.CastRayFirst(ray);
+            var obj = results.ObjectHit;
+            
+        
+            //Console.WriteLine("`obj`");
+            
+            //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
+            
+            
+            if(obj != null)
+            {
+                if(obj.MouseButton != null)
+                {
+                    obj.MouseButton.Activate();
+                }
+                if(obj.MouseButtonWithKids != null)
+                {
+                    if(this.CharButton == null)
+                    {
+                        this.CharButton = obj;
+                        obj.MouseButtonWithKids.Activate();
+                    }
+                    else
+                    {
+                        Console.WriteLine("hi");
+                        obj.MouseButtonWithKids.Deactivate();
+                        this.CharButton = null;
+                    }
+                }
+            }
+        }
+    }
+}

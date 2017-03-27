@@ -1,0 +1,29 @@
+class CrewBuffs : ZilchComponent
+{
+    var Time : Real = 0;
+    
+    [Property]
+    var SicknessInterval : Real = 60;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Time += event.Dt;
+        
+        //var rngSick : Real = (Random().Real % Real(10));
+        
+        // Sickness check
+        if((this.Time == this.SicknessInterval) && (this.Space.CrewMembers.Doctor == 0))
+        {
+            //if(rngSick < 3)
+            //{
+                
+            //}
+            
+        }
+    }
+}

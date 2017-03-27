@@ -1,0 +1,29 @@
+class MouseButtonWithKids : ZilchComponent
+{
+    function Activate()
+    {
+        foreach(var child in this.Owner.Children)
+        {
+            child.Sprite.Visible = true;
+            foreach(var c in child.Children)
+            {
+                c.SpriteText.Visible = true;
+            }
+            if(child.BoxCollider != null)
+                child.BoxCollider.SendsEvents = true;
+        }
+    }
+    function Deactivate()
+    {
+        foreach(var child in this.Owner.Children)
+        {
+            child.Sprite.Visible = false;
+            foreach(var c in child.Children)
+            {
+                c.SpriteText.Visible = false;
+            }
+            if(child.BoxCollider != null)
+                child.BoxCollider.SendsEvents = false;
+        }
+    }
+}
