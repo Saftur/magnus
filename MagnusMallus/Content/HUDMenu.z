@@ -21,6 +21,7 @@ class HUDMenu : ZilchComponent
     var Moving : Boolean = true; //Moving rather than fading
     var ObjectsToMove : Cog = null; //Parent of object group to move
     var FadeAmount : Real = 0; //Amount to fade in
+    var FadeTo : Real = 0;
     var DistToMove : Real3 = Real3(0,0,0); //Distance to move objects
     var Destination : Real3 = Real3(0,0,0); //Where objects need to be, snap them in place at the end
     var MoveBool : Boolean = false; //Opening or closing
@@ -47,8 +48,24 @@ class HUDMenu : ZilchComponent
                     this.Space.LevelSettings.MouseControl.Active = true;
                 }
                 
-                if(this.ObjectsToMove != null && this.Moving)
-                    this.ObjectsToMove.Transform.Translation = this.Destination;
+                if(this.ObjectsToMove != null)
+                {
+                    if(this.Moving)
+                        this.ObjectsToMove.Transform.Translation = this.Destination;
+                    else
+                    {
+                        if(this.ObjectsToMove.Sprite != null)
+                        {
+                            var c = this.ObjectsToMove.Sprite.Color;
+                            this.ObjectsToMove.Sprite.Color = Real4(c.X, c.Y, c.Z, this.FadeTo);
+                        }
+                        else if(this.ObjectsToMove.SpriteText != null)
+                        {
+                            var c = this.ObjectsToMove.SpriteText.Color;
+                            this.ObjectsToMove.SpriteText.Color = Real4(c.X, c.Y, c.Z, this.FadeTo);
+                        }
+                    }
+                }
                     
                 this.Timer = 0;
                 this.Transitioning = false;
@@ -103,6 +120,7 @@ class HUDMenu : ZilchComponent
                 
                 this.ObjectsToMove = this.Group1;
                 this.FadeAmount = 1;
+                this.FadeTo = 1;
                 this.MoveBool = this.Open;
             }
             else if(Zero.Keyboard.KeyIsPressed(this.Button1) && !this.Transitioning)
@@ -116,6 +134,7 @@ class HUDMenu : ZilchComponent
                 
                 this.ObjectsToMove = this.Group1;
                 this.FadeAmount = -1;
+                this.FadeTo = 0;
                 this.MoveBool = this.Open;
                 
                 foreach(var child in this.Group1.Children)
@@ -180,6 +199,10 @@ class HUDMenu : ZilchComponent
         foreach(var child in parent.Children)
         {
             child.Sprite.Color += Real4(0,0,0, fade);
+            if(child.MouseButton != null || child.MouseButtonWithKids != null)
+            {
+                child.FindChildByName("SpriteText").SpriteText.Color += Real4(0,0,0, fade);
+            }
         }
     }
 }

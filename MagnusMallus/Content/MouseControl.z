@@ -2,8 +2,6 @@ class MouseControl : ZilchComponent
 {
     var Active : Boolean = false;
     
-    var CharButton : Cog = null;
-    
     function Initialize(init : CogInitializer)
     {
         var ray = Ray();
@@ -31,13 +29,13 @@ class MouseControl : ZilchComponent
             var results = this.Space.PhysicsSpace.CastRayFirst(ray);
             var obj = results.ObjectHit;
             
-        
-            //Console.WriteLine("`obj`");
+            
+            Console.WriteLine("`obj`");
             
             //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
             
             
-            if(obj != null)
+            if(obj != null && obj.BoxCollider != null && obj.BoxCollider.SendsEvents)
             {
                 if(obj.MouseButton != null)
                 {
@@ -45,16 +43,13 @@ class MouseControl : ZilchComponent
                 }
                 if(obj.MouseButtonWithKids != null)
                 {
-                    if(this.CharButton == null)
+                    if(obj.MouseButtonWithKids.On)
                     {
-                        this.CharButton = obj;
-                        obj.MouseButtonWithKids.Activate();
+                        obj.MouseButtonWithKids.Deactivate();
                     }
                     else
                     {
-                        Console.WriteLine("hi");
-                        obj.MouseButtonWithKids.Deactivate();
-                        this.CharButton = null;
+                        obj.MouseButtonWithKids.Activate();
                     }
                 }
             }

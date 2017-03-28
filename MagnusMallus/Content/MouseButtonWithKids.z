@@ -1,13 +1,27 @@
 class MouseButtonWithKids : ZilchComponent
 {
+    var On : Boolean = false;
+    [Property]
+    var OnColor : Real4 = Real4(0,1,1,1);
+    [Property]
+    var OffColor : Real4 = Real4(1,1,1,1);
+    
     function Activate()
     {
+        this.On = true;
+        this.Owner.Sprite.Color = this.OnColor;
+        
         foreach(var child in this.Owner.Children)
         {
-            child.Sprite.Visible = true;
-            foreach(var c in child.Children)
+            if(child.Sprite != null)
             {
-                c.SpriteText.Visible = true;
+                child.Sprite.Visible = true;
+                
+                foreach(var c in child.Children)
+                {
+                    if(c.SpriteText != null)
+                        c.SpriteText.Visible = true;
+                }
             }
             if(child.BoxCollider != null)
                 child.BoxCollider.SendsEvents = true;
@@ -15,15 +29,27 @@ class MouseButtonWithKids : ZilchComponent
     }
     function Deactivate()
     {
+        this.On = false;
+        this.Owner.Sprite.Color = this.OffColor;
+        
         foreach(var child in this.Owner.Children)
         {
-            child.Sprite.Visible = false;
-            foreach(var c in child.Children)
+            if(child.Sprite != null)
             {
-                c.SpriteText.Visible = false;
+                child.Sprite.Visible = false;
+                foreach(var c in child.Children)
+                {
+                    if(c.SpriteText != null)
+                        c.SpriteText.Visible = false;
+                }
             }
             if(child.BoxCollider != null)
                 child.BoxCollider.SendsEvents = false;
+                
+            if(child.MouseButtonWithKids != null)
+            {
+                child.MouseButtonWithKids.Deactivate();
+            }
         }
     }
 }

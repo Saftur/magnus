@@ -1,0 +1,17 @@
+class Testmoust : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.LeftMouseUp, this.OnLeftMouseUp);
+    }
+
+    function OnLeftMouseUp(event : ViewportMouseEvent)
+    {
+        this.Owner.Sprite.Color = Real4(1,0,0,1);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+}

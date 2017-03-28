@@ -14,17 +14,17 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.91884762, 0.655481994, 0],
-		Vec3 Scale = [0.13333334, 0.200000003, 1],
+		Vec3 Translation = [-0.359973192, -3.33997345, 0],
+		Vec3 Scale = [0.666666687, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 0],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -39,7 +39,7 @@ Cog =
 	BoxCollider = 
 	{
 		bool Ghost = false,
-		bool SendsMessages = true,
+		bool SendsMessages = false,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",

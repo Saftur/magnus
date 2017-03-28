@@ -33,6 +33,8 @@ class MouseButton : ZilchComponent
             this.GameSession.Quit();
         }
         
+        if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
+            return;
         
         else if(this.Feed)
         {
