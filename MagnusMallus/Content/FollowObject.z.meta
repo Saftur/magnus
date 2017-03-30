@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "FollowObject",
+		uint64 ResourceId = 58bd8e94be273277,
+	},
+},

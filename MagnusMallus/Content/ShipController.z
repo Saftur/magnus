@@ -1,0 +1,54 @@
+class ShipController : ZilchComponent
+{
+    //[Property]
+    //var Invincible : Boolean = false;
+    
+    var Accel : Real = 10;
+    
+    
+    var DeathTimer : Real = 1;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.ShipStatus.Dead)
+            return;
+        else
+        {
+            // Have a place to record the total movement we want to make:
+            var movement =  Real3();
+
+            // If I hold down the up arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Up))
+            {
+                // Record desired upward motion along the world y-axis:
+                movement +=  Real3(0.0, 1.0, 0.0);
+            }
+            // If I hold down the down arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Down))
+            {
+                // Record desired downward motion along the world y-axis:
+                movement +=  Real3(0.0, -1.0, 0.0);
+            }
+            // If I hold down the right arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Right))
+            {
+                // Record desired rightward motion along the world x-axis:
+                movement +=  Real3(1.0, 0.0, 0.0);
+            }
+            // If I hold down the left arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Left))
+            {
+                // Record desired leftward motion along the world x-axis:
+                movement +=  Real3(-1.0, 0.0, 0.0);
+            }
+            var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
+            this.Owner.Orientation.LookAtPoint(mousePos);
+            // Apply the recorded movement to our Transform
+            this.Owner.RigidBody.Velocity += Math.Normalize(movement) * this.Accel *event.Dt;
+        }
+   }
+}

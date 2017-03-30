@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "ShipStatus",
+		uint64 ResourceId = 58bd8ae45d76770c,
+	},
+},
