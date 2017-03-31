@@ -1,6 +1,7 @@
 class MouseControl : ZilchComponent
 {
     var Active : Boolean = false;
+    var OptionsOpen : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -45,7 +46,7 @@ class MouseControl : ZilchComponent
                 {
                     if(obj.MouseButtonWithKids.On)
                     {
-                        obj.MouseButtonWithKids.Deactivate();
+                        obj.MouseButtonWithKids.Deactivate(true);
                     }
                     else
                     {
