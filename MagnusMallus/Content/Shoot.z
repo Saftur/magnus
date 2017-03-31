@@ -1,0 +1,42 @@
+class Shoot : ZilchComponent
+{
+    
+   
+    [Property]
+    var Laser : Archetype = Archetype.Laser;
+    
+    [Property]
+    var SpawnTime : Real = 0.3;
+
+    var TimeSinceLastSpawn : Real = 0.0;
+
+    
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+   function OnLogicUpdate(event : UpdateEvent)
+    {
+       
+        this.TimeSinceLastSpawn += event.Dt;
+
+        // If enough time has passed, spawn the ball
+        if (this.TimeSinceLastSpawn > this.SpawnTime)
+        {
+            if(Zero.Mouse.IsButtonDown(MouseButtons.Left))
+            {
+                var spawnPosition = this.Owner.Transform.Translation;
+                var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
+                //this.Space.CreateAtPosition(laser, spawnPosition);
+                laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 1;
+                laser.Transform.Rotation = this.Owner.Transform.Rotation;
+                
+                // Need to reset the value
+                this.TimeSinceLastSpawn = 0.0;
+            }
+        }
+    }
+}
