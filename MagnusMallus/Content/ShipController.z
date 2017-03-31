@@ -3,7 +3,9 @@ class ShipController : ZilchComponent
     //[Property]
     //var Invincible : Boolean = false;
     
+    
     var Accel : Real = 10;
+    var MaxSpeed : Real = 10;
     
     
     var DeathTimer : Real = 1;
@@ -22,25 +24,25 @@ class ShipController : ZilchComponent
             var movement =  Real3();
 
             // If I hold down the up arrow key,
-            if (Zero.Keyboard.KeyIsDown(Keys.Up))
+            if (Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up))
             {
                 // Record desired upward motion along the world y-axis:
                 movement +=  Real3(0.0, 1.0, 0.0);
             }
             // If I hold down the down arrow key,
-            if (Zero.Keyboard.KeyIsDown(Keys.Down))
+            if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
             {
                 // Record desired downward motion along the world y-axis:
                 movement +=  Real3(0.0, -1.0, 0.0);
             }
             // If I hold down the right arrow key,
-            if (Zero.Keyboard.KeyIsDown(Keys.Right))
+            if (Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
             {
                 // Record desired rightward motion along the world x-axis:
                 movement +=  Real3(1.0, 0.0, 0.0);
             }
             // If I hold down the left arrow key,
-            if (Zero.Keyboard.KeyIsDown(Keys.Left))
+            if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
             {
                 // Record desired leftward motion along the world x-axis:
                 movement +=  Real3(-1.0, 0.0, 0.0);
@@ -49,6 +51,12 @@ class ShipController : ZilchComponent
             this.Owner.Orientation.LookAtPoint(mousePos);
             // Apply the recorded movement to our Transform
             this.Owner.RigidBody.Velocity += Math.Normalize(movement) * this.Accel *event.Dt;
+            var newVel = this.Owner.RigidBody.Velocity;
+            if (this.Owner.RigidBody.Velocity.X > this.MaxSpeed) newVel.X = this.MaxSpeed;
+            if (this.Owner.RigidBody.Velocity.X < -this.MaxSpeed) newVel.X = -this.MaxSpeed;
+            if (this.Owner.RigidBody.Velocity.Y > this.MaxSpeed) newVel.Y = this.MaxSpeed;
+            if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;
+            this.Owner.RigidBody.Velocity = newVel; 
         }
    }
 }

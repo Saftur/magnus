@@ -8,6 +8,10 @@ Cog =
 	{
 		string Name = "PlayerShip",
 	},
+	Archetyped = 
+	{
+		string Name = "58bd8c2a0b339f4a:PlayerShip",
+	},
 	Transform = 
 	{
 		Vec3 Translation = [-3.46100855, -0.236314416, 0],
@@ -69,37 +73,5 @@ Cog =
 	},
 	Hierarchy = 
 	{
-		Cog = 
-		{
-			LinkId = 
-			{
-				uint Id = 2,
-			},
-			Named = 
-			{
-				string Name = "Camera",
-			},
-			Transform = 
-			{
-				Vec3 Translation = [3.46100879, 0.236313939, 40],
-				Vec3 Scale = [1, 1, 1],
-				Quat Rotation = [0, 0, 0, 1],
-			},
-			Camera = 
-			{
-				ProjectionMode ProjectionMode = Orthographic,
-				Facing Facing = NegativeZ,
-				CameraTransparentSort TransparentSort = InheritFromSpace,
-				float FieldOfView = 45,
-				float NearPlane = 0.5,
-				float FarPlane = 200,
-				float Size = 20,
-			},
-			SoundListener = 
-			{
-				bool Active = true,
-				float Volume = 1,
-			},
-		},
 	},
 },
