@@ -6,6 +6,9 @@ class MouseButtonWithKids : ZilchComponent
     [Property]
     var OffColor : Real4 = Real4(1,1,1,1);
     
+    [Property]
+    var Tab : Boolean = false;
+    
     function Activate()
     {
         if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
