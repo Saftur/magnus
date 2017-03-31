@@ -1,0 +1,51 @@
+class SpaceSpawns : ZilchComponent
+{
+    var Timer : Real = Real(0);
+    var SpawnChances : Random = Random();
+    var SpawnX : Random = Random();
+    var SpawnY : Random = Random();
+    
+    [Property]
+    var Asteroid : Boolean = false;
+    
+    [Property]
+    var Minion : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var spawnpos = Real3((this.Owner.Transform.Translation.X - Real(25) + this.SpawnX.DieRoll(50)), (this.Owner.Transform.Translation.Y - Real(25) + this.SpawnY.DieRoll(50)), 1);
+        
+        this.Timer += event.Dt;
+        
+        if(this.Timer >= 1)
+        {
+            if(this.Asteroid == true)
+            {
+                var chances = this.SpawnChances.DieRoll(5);
+                
+                if(chances == 1)
+                {
+                    //Spawn asteroid
+                    this.Space.CreateAtPosition(Archetype.Asteroid, spawnpos);
+                }
+            }
+            
+            if(this.Minion == true)
+            {
+                var chances = this.SpawnChances.DieRoll(7);
+                
+                if(chances == 1)
+                {
+                    //Spawn MINIminion
+                    this.Space.CreateAtPosition(Archetype.MiniMinion, spawnpos);
+                }
+            }
+            this.Timer = 0;
+        }
+    }
+}

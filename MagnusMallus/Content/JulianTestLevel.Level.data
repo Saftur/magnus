@@ -116,7 +116,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 20,
+			float Size = 29.836483,
 		},
 		EditorCameraController = 
 		{
@@ -184,6 +184,42 @@ Level =
 		Named = 
 		{
 			string Name = "LoadScreen",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58bd93921db50ba7:Asteroid",
+		LinkId = 
+		{
+			uint Id = 5,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 6.82560635, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Asteroid",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58bd996f1f72f62c:MiniMinion",
+		LinkId = 
+		{
+			uint Id = 6,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [9.2370472, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "MiniMinion",
 		},
 	},
 },
