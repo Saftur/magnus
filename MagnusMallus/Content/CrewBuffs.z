@@ -1,12 +1,8 @@
-enum CrewTypes  {Cook, Mechanic, Gunner, Doctor, Merchant, Navigator, Translator, Chemist}
-
 class CrewBuffs : ZilchComponent
 {
     var Time : Real = 0;
     
     var RngSick : Random = Random();
-    
-    var Crew : Array[Integer] = Array[Integer]();
     
     [Property]
     var SicknessInterval : Real = 60;
@@ -18,25 +14,37 @@ class CrewBuffs : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.Time += event.Dt;
-        
-        this.CrewUpdate(this.Crew);
-        
-        // Sickness check
-        /*foreach(var item in this.Crew)
+        if(this.Space.CrewMembers.Gunner >= 2/* || this.Space.CrewMembers.Doctor == false */)
         {
-            if((this.Time == this.SicknessInterval) && (this.Crew[Doctor] == 0))
-            {
-                if(this.RngSick.DieRoll(10) == 1)
-                {
-                    
-                }
-            }
-        }*/
+            this.Time += event.Dt;
+        }
+        this.Mechanic();
     }
     
-    function CrewUpdate(crew: Array[Integer])
+    function Mechanic()
     {
+        var mechnum = this.Space.CrewMembers.Mechanic;
         
+        this.Space.ShipStatus.Heal(mechnum);
+    }
+    
+    function Doctor()
+    {
+        // Sickness check (Doesn't work hehehe)
+        if((this.Time == this.SicknessInterval) && (this.Space.CrewMembers.Doctor == false))
+        {
+            if(this.RngSick.DieRoll(10) == 1)
+            {
+                
+            }
+        }
+    }
+    
+    function Gunner()
+    {
+        if(this.Space.CrewMembers.Gunner >= 2)
+        {
+            
+        }
     }
 }

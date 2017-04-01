@@ -1,18 +1,18 @@
 class CrewMembers : ZilchComponent
 {
-    var Cook : Integer = 0;
+    var Cook : Boolean = false;
     
     var Mechanic : Integer = 0;
     
     var Gunner : Integer = 1;
     
-    var Doctor : Integer = 0;
+    var Doctor : Boolean = false;
     
-    var Merchant : Integer = 0;
+    var Merchant : Boolean = false;
     
-    var Navigator : Integer = 0;
+    var Navigator : Boolean = false;
     
-    var Translator : Integer = 0;
+    var Translator : Boolean = false;
     
-    var Chemist : Integer = 0;
+    var Chemist :Boolean = false;
 }
