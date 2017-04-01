@@ -10,14 +10,18 @@ class MouseButton : ZilchComponent
     
     //Characters
     [Property]
-    var Character : Boolean = false;
-    
-    [Property]
     var Feed : Boolean = false;
     [Property]
     var GiveItem : Boolean = false;
     [Property]
     var Rename : Boolean = false;
+    
+    //Planet
+    [Property]
+    var PlanetYes : Boolean = false;
+    [Property]
+    var PlanetNo : Boolean = false;
+    
     function Activate()
     {
         if(this.Help)
@@ -47,6 +51,16 @@ class MouseButton : ZilchComponent
         else if(this.Rename)
         {
             Console.WriteLine("What's my new name");
+        }
+        else if(this.PlanetYes)
+        {
+            var hudref = this.Space.LevelSettings.HUDReferences;
+            
+            hudref.CurrentPlanet.PlanetEnter.EnterPlanet(hudref.PlayerPos);
+        }
+        else if(this.PlanetNo)
+        {
+            this.Space.LevelSettings.HUDMenu.EnteringPlanet(false);
         }
     }
 }

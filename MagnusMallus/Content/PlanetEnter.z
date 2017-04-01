@@ -8,51 +8,59 @@ class PlanetEnter : ZilchComponent
     var Timer : Real = 0;
     var Fade : Real = 1;
     
+    var Entering : Boolean = false;
+    
     function Initialize(init : CogInitializer)
     {
-        Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersisted);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
     
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.Timer += event.Dt;
-        this.Fade -= event.Dt;
+        if(this.Entering)
+        {
+            this.Timer += event.Dt;
+            this.Fade -= event.Dt;
+        }
     }
     
     // Detect if player is colliding with planet
-    function OnCollisionPersisted(event : CollisionEvent)
+    function OnCollisionStarted(event : CollisionEvent)
     {
-        var loadScreenSpawnPos = this.Space.FindObjectByName("Player").Transform.Translation;
+        var o = event.OtherObject;
         
-        var loadScreen = Archetype.LoadScreen;
-        
-        if(event.OtherObject.Name == "Player")
+        if(o.Name == "PlayerShip")
         {
+            var hud = this.GameSession.FindSpaceByName("HUDLevel");
+            
+            hud.HUDMenu.EnteringPlanet(true);
+            hud.HUDReferences.CurrentPlanet = this.Owner;
+            hud.HUDReferences.PlayerPos = o.Transform.Translation;
+        }
+    }
+    function EnterPlanet(loadScreenSpawnPos : Real3)
+    {
             // Loads next level and creates a loadscreen on top
-            if(Zero.Keyboard.KeyIsReleased(Keys.Enter))
+        if(Zero.Keyboard.KeyIsReleased(Keys.Enter))
+        {
+            // Create loadscreen
+            this.Space.CreateAtPosition(Archetype.LoadScreen, loadScreenSpawnPos);
+            
+            this.Timer = 0;
+            // Fades into loadscreen (Timer)
+            while(this.Timer < this.LoadTime)
             {
-                // Create loadscreen
-                this.Space.CreateAtPosition(loadScreen, loadScreenSpawnPos);
-                
-                this.Timer = 0;
-                // Fades into loadscreen (Timer)
-                while(this.Timer < this.LoadTime)
-                {
-                    this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Timer);
-                }
-                this.Space.LoadLevel(this.PlanetToLoad);
-                
-                // Create loadscreen
-                this.Space.CreateAtPosition(loadScreen, loadScreenSpawnPos);
-                
-                //this.Timer = 0;
-                this.Fade = this.LoadTime;
-                // Fades out of loadscreen (Fade)
-                while(this.Fade > 0)
-                {
-                    this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Fade);
-                }
+                this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Timer);
+            }
+            this.Space.LoadLevel(this.PlanetToLoad);
+            
+            //this.Timer = 0;
+            this.Fade = this.LoadTime;
+            // Fades out of loadscreen (Fade)
+            while(this.Fade > 0)
+            {
+                this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Fade);
             }
         }
     }

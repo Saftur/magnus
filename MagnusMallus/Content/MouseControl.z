@@ -36,6 +36,10 @@ class MouseControl : ZilchComponent
             
             //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
             
+            if(this.Space.HUDMenu.Entering && obj.MouseButton != null && (obj.MouseButton.PlanetNo || obj.MouseButton.PlanetYes))
+            {
+                obj.MouseButton.Activate();
+            }
             
             if(obj != null && obj.BoxCollider != null && obj.BoxCollider.SendsEvents)
             {

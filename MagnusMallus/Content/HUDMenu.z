@@ -11,6 +11,9 @@ class HUDMenu : ZilchComponent
     var Group1 : Cog = null; //Objects in the group
     var Open : Boolean = false;
     
+    var Group2 : Cog = null;
+    var Entering : Boolean = false;
+    
     var Timer : Real = 0;
     
     [Property]
@@ -231,6 +234,37 @@ class HUDMenu : ZilchComponent
             {
                 this.FadeKids(fade, kid);
             }
+        }
+    }
+    function EnteringPlanet(exit : Boolean)
+    {
+        if(!exit)
+        {
+            this.Entering = true;
+            this.Transitioning = true;
+            
+            this.Moving = false;
+            
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            
+            this.ObjectsToMove = this.Group2;
+            this.FadeAmount = 1;
+            this.FadeTo = 1;
+            this.MoveBool = this.Entering;
+        }
+        else
+        {
+            this.Entering = false;
+            this.Transitioning = true;
+            
+            this.Moving = false;
+            
+            this.Close();
+            
+            this.ObjectsToMove = this.Group2;
+            this.FadeAmount = -1;
+            this.FadeTo = 0;
+            this.MoveBool = this.Entering;
         }
     }
 }
