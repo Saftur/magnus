@@ -1,15 +1,13 @@
 class HUDMenu : ZilchComponent
 {
     //Options variables
-    [Property]
-    var OptionsButton : Keys = Keys.Space; //Menu Button
+    var OptionsButton : Keys = Keys.T; //Menu Button
     var OptionsObjects : Cog = null; //Parent of the object group
     var OptionsOpen : Boolean = false; //Is the menu open
     
     var Transitioning : Boolean = false;//if in middle of transition don't do anything
     
-    [Property]
-    var Button1 : Keys = Keys.I; //Button
+    var Button1 : Keys = Keys.C; //Button
     var Group1 : Cog = null; //Objects in the group
     var Open : Boolean = false;
     
@@ -127,7 +125,7 @@ class HUDMenu : ZilchComponent
                 
                 if(!this.Open)
                 {
-                    //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+                    this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
                 }
                 
                 this.ObjectsToMove = this.OptionsObjects;
@@ -142,7 +140,7 @@ class HUDMenu : ZilchComponent
                 
                 this.Moving = false;
                 
-                //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+                this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
                 
                 this.ObjectsToMove = this.Group1;
                 this.FadeAmount = 1;
@@ -181,7 +179,7 @@ class HUDMenu : ZilchComponent
     {
         if(!this.OptionsOpen && !this.Open) //If no menus are open, turn off mouse control and unpause game
         {
-            //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
+            this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
             this.Space.LevelSettings.MouseControl.Active = false;
         }
     }
