@@ -8,10 +8,14 @@ Cog =
 	{
 		string Name = "PlayerShip",
 	},
+	Archetyped = 
+	{
+		string Name = "58bd8c2a0b339f4a:PlayerShip",
+	},
 	Transform = 
 	{
-		Vec3 Translation = [-3.46100855, -0.236314416, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Translation = [-11.4245758, -1.31935799, 0],
+		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -24,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5275aa4d802dd6dc:Square",
+		string SpriteSource = "58bedcf2cba689b2:PLayer",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -49,10 +53,10 @@ Cog =
 		bool Ghost = false,
 		bool SendsMessages = true,
 		bool Seamless = true,
-		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string MaterialName = "58bd9642beb261db:player",
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 		Vec3 Offset = [0, 0, 0],
-		Vec3 Size = [0.5, 0.5, 0.5],
+		Vec3 Size = [0.25, 0.25, 0.5],
 	},
 	ShipStatus = 
 	{
@@ -62,44 +66,24 @@ Cog =
 	},
 	Orientation = 
 	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 1, 0],
-		Vec3 ForwardVector = [1, 0, 0],
-		OrientationBases DefaultBases = ForwardXUpY,
+		Vec3 GlobalUp = [0, 0, 1],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	Shoot = 
+	{
+		string Laser = "58bee0c51f2dde2f:Laser",
+		float SpawnTime = 0.300000012,
+	},
+	DragEffect = 
+	{
+		bool Active = false,
+		bool WakeUpOnChange = true,
+		float Drag = 4,
+		float AngularDrag = 0.100000001,
 	},
 	Hierarchy = 
 	{
-		Cog = 
-		{
-			LinkId = 
-			{
-				uint Id = 2,
-			},
-			Named = 
-			{
-				string Name = "Camera",
-			},
-			Transform = 
-			{
-				Vec3 Translation = [3.46100879, 0.236313939, 40],
-				Vec3 Scale = [1, 1, 1],
-				Quat Rotation = [0, 0, 0, 1],
-			},
-			Camera = 
-			{
-				ProjectionMode ProjectionMode = Orthographic,
-				Facing Facing = NegativeZ,
-				CameraTransparentSort TransparentSort = InheritFromSpace,
-				float FieldOfView = 45,
-				float NearPlane = 0.5,
-				float FarPlane = 200,
-				float Size = 20,
-			},
-			SoundListener = 
-			{
-				bool Active = true,
-				float Volume = 1,
-			},
-		},
 	},
 },

@@ -1,0 +1,9 @@
+Path = 
+{
+	Array ControlPoints = 
+	[
+	],
+	bool Closed = false,
+	PathType PathType = CatmulRom,
+	float Error = 0.0500000007,
+},

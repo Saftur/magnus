@@ -6,16 +6,12 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "LoadScreen",
-	},
-	Archetyped = 
-	{
-		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
+		string Name = "MiniMinion",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [10, 10, 1],
+		Vec3 Translation = [9.2370472, 0, 0],
+		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -24,7 +20,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0, 0, 0, 0],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",

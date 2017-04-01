@@ -1,6 +1,8 @@
 class MouseControl : ZilchComponent
 {
     var Active : Boolean = false;
+    var OptionsOpen : Boolean = false;
+    var CurrentTab : Cog = null;
     
     function Initialize(init : CogInitializer)
     {
@@ -34,6 +36,10 @@ class MouseControl : ZilchComponent
             
             //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
             
+            if(this.Space.HUDMenu.Entering && obj.MouseButton != null && (obj.MouseButton.PlanetNo || obj.MouseButton.PlanetYes))
+            {
+                obj.MouseButton.Activate();
+            }
             
             if(obj != null && obj.BoxCollider != null && obj.BoxCollider.SendsEvents)
             {
@@ -43,13 +49,28 @@ class MouseControl : ZilchComponent
                 }
                 if(obj.MouseButtonWithKids != null)
                 {
-                    if(obj.MouseButtonWithKids.On)
+                    if(obj.MouseButtonWithKids.Tab)
                     {
-                        obj.MouseButtonWithKids.Deactivate();
+                        obj.MouseButtonWithKids.Activate();
+                        if(this.CurrentTab != null && obj != this.CurrentTab)
+                        {
+                            this.CurrentTab.MouseButtonWithKids.Deactivate(true);
+                        }
+                        else
+                        {
+                            this.CurrentTab = obj;
+                        }
                     }
                     else
                     {
-                        obj.MouseButtonWithKids.Activate();
+                        if(obj.MouseButtonWithKids.On)
+                        {
+                            obj.MouseButtonWithKids.Deactivate(true);
+                        }
+                        else
+                        {
+                            obj.MouseButtonWithKids.Activate();
+                        }
                     }
                 }
             }

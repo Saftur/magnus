@@ -1,4 +1,4 @@
-class ShipStatus : ZilchComponent
+class PlayerStatus : ZilchComponent
 {
     var Dead : Boolean = false;
     
@@ -13,11 +13,5 @@ class ShipStatus : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-    }
-    
-    // Heal in space
-    function Heal(healmult: Integer)
-    {
-        this.Health += (0.25 * healmult);
     }
 }

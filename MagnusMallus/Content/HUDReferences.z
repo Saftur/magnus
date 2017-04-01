@@ -1,6 +1,8 @@
 class HUDReferences : ZilchComponent
 {
     var MainSpaceRef : Space = null;
+    var CurrentPlanet : Cog = null;
+    var PlayerPos : Real3 = Real3();
     function Initialize(init : CogInitializer)
     {
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);

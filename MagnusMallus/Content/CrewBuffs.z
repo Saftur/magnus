@@ -2,6 +2,8 @@ class CrewBuffs : ZilchComponent
 {
     var Time : Real = 0;
     
+    var RngSick : Random = Random();
+    
     [Property]
     var SicknessInterval : Real = 60;
     
@@ -12,17 +14,36 @@ class CrewBuffs : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.Time += event.Dt;
-        
-        //var rngSick : Real = (Random().Real % Real(10));
-        
-        // Sickness check
-        if((this.Time == this.SicknessInterval) && (this.Space.CrewMembers.Doctor == 0))
+        if(this.Space.CrewMembers.Gunner >= 2/* || this.Space.CrewMembers.Doctor == false */)
         {
-            //if(rngSick < 3)
-            //{
+            this.Time += event.Dt;
+        }
+        this.Mechanic();
+    }
+    
+    function Mechanic()
+    {
+        var mechnum = this.Space.CrewMembers.Mechanic;
+        
+        this.Space.ShipStatus.Heal(mechnum);
+    }
+    
+    function Doctor()
+    {
+        // Sickness check (Doesn't work hehehe)
+        if((this.Time == this.SicknessInterval) && (this.Space.CrewMembers.Doctor == false))
+        {
+            if(this.RngSick.DieRoll(10) == 1)
+            {
                 
-            //}
+            }
+        }
+    }
+    
+    function Gunner()
+    {
+        if(this.Space.CrewMembers.Gunner >= 2)
+        {
             
         }
     }
