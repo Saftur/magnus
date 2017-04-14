@@ -18,7 +18,7 @@ class SpaceSpawns : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var spawnpos = Real3((this.Owner.Transform.Translation.X - Real(25) + this.SpawnX.DieRoll(50)), (this.Owner.Transform.Translation.Y - Real(25) + this.SpawnY.DieRoll(50)), 1);
+        var spawnpos = Real3((this.Owner.Transform.Translation.X - Real(20) + this.SpawnX.DieRoll(40)), (this.Owner.Transform.Translation.Y - Real(10) + this.SpawnY.DieRoll(20)), 1);
         
         this.Timer += event.Dt;
         

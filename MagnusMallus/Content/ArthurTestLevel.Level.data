@@ -92,11 +92,29 @@ Level =
 			bool FollowEditorCamera = false,
 		},
 	},
+	ArchetypeInstance = 
+	{
+		string Name = "58bee0c51f2dde2f:Laser",
+		LinkId = 
+		{
+			uint Id = 3,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [0.300000012, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Laser",
+		},
+	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -180,7 +198,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4,
+				uint ResolvedCog = 5,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -195,11 +213,15 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 6,
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "Minion",
+		},
+		Archetyped = 
+		{
+			string Name = "589006c293b23c17:Minion",
 		},
 		Transform = 
 		{
@@ -249,7 +271,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4,
+				uint ResolvedCog = 5,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -293,7 +315,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Named = 
 		{
@@ -351,6 +373,7 @@ Level =
 		},
 		ShipStatus = 
 		{
+			float StartingHealth = 15,
 		},
 		ShipController = 
 		{
