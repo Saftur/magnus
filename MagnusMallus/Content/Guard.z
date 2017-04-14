@@ -1,0 +1,370 @@
+// Authors: Charles duMars
+// Date: 2/2/17
+// All content © 2017 DigiPen (USA) Corporation, all rights reserved.
+class Guard : ZilchComponent
+{
+    [Dependency]
+    var Socks : Fissix = null;
+    
+    [Property]
+    var Active : Boolean = true;
+    
+    //For Patrolling
+    [Property]
+    var LeftPoint : Real3 = Real3(0,0,0);
+    [Property]
+    var RightPoint : Real3 = Real3(1,0,0);
+    
+    var GlanceTime : Real = 0;
+    
+    [Property]
+    var VerticalPoint : Real3 = Real3(2,-1,1); //In case guard falls in pit while chasing player
+                                                //x is where the cliff is on the x axis
+                                                //y is where the cliff starts on the y axis
+                                                //z is what direction guard needs to face to get back onto cliff
+    [Property]
+    var VertDir : Real = -1;                    //direction of cliff 
+    
+    var Up : Boolean = false;
+    var Release : Boolean = false;
+    
+    [Property]
+    var Type : Integer = 1; //Differentiate types of guards here
+    
+    //Stats
+    [Property]
+    var VisionRange : Real = 5;
+    [Property]
+    var ChaseSpeed : Real = 6;
+    [Property]
+    var JumpHeight : Real = 0;
+    
+    var Dir : Real3 = Real3(1,0,0);
+    var RespawnPoint : Real3 = Real3(0,0,0);
+    
+    var OldPos : Real3 = Real3(0,0,0);
+    var Stuck : Real = 0;
+    var Time : Real = 0;
+    
+    var Player : Cog = null;
+    var VisionIndicator : Cog = null;
+    //var AlertSymbol : Cog = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        
+        this.Player = this.Space.FindObjectByName("Player");
+        
+        this.RespawnPoint = this.Owner.Transform.Translation;
+        
+        var visions = this.Space.FindAllObjectsByName("GuardV");
+        foreach (var v in visions)
+        {
+            if (v.Tag != null) {
+                if(v.Tag.Number == this.Owner.Tag.Number)  
+                {
+                    this.VisionIndicator = v;
+                    break;
+                }
+            }
+        }
+        
+        if (this.VisionIndicator != null)
+            this.VisionIndicator.Transform.Scale = Real3(this.VisionRange, this.Owner.BoxCollider.Size.Y /*height*/, 1);
+        //this.AlertSymbol = this.Space.CreateAtPosition(Archetype.AlertSymbol, this.Owner.Transform.Translation);
+        //this.AlertSymbol.FollowObject.ObjectToFollow.Cog = this.Owner;
+        //this.AlertSymbol.FollowObject.Displacement = Real3(-0.25,2.5,0);
+        
+        this.JumpHeight = this.Owner.BoxCollider.Size.Y/2 + 0.5;
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Time += event.Dt;
+        
+        if(!this.Active) return;
+        //Console.WriteLine("`this.RightPoint` `this.LeftPoint` `this.Dir`");
+        
+        var ray = Ray();    //For jumping and getting stuck
+        var pos = this.Owner.Transform.Translation;
+        var h = this.Owner.BoxCollider.Size.Y;
+        
+        var currentG = this.Space.LevelSettings.GravityEffect.Direction.Y;
+        
+        //Console.WriteLine("                         `this.JumpHeight`           `this.GameSession.GameVars.GuardJumpHeight`");
+        //Console.WriteLine("`this.VerticalPoint` `this.Owner.Transform.Translation`");
+        if(this.Look())
+        {
+            /*if(!this.AlertSymbol.SpriteText.Visible)
+            {
+                this.AlertSymbol.SpriteText.Visible = true;
+            }*/
+            
+            this.GlanceTime = 0;
+            
+            this.Chase(event.Dt);
+        }
+        else if(this.Type == 2) //Look back and forth
+        {
+            if(this.Socks.MaxGroundVelocity != 0.5)
+                this.Socks.MaxGroundVelocity = 0.5;
+            /*if(this.AlertSymbol.SpriteText.Visible)
+            {
+                this.AlertSymbol.SpriteText.Visible = false;
+            }*/
+            this.GlanceTime += event.Dt;
+            
+            if(this.GlanceTime > 2.5)
+            {
+                this.GlanceTime = 0;
+                this.Dir *= Real3(-1,1,1);
+                this.Turn();
+                this.Patrol(event.Dt);
+            }
+            return;
+        }
+        //For falling off cliff
+        else if((this.Owner.Transform.Translation.X <= this.VerticalPoint.X + 0.5) && 
+        (this.Owner.Transform.Translation.X >= this.VerticalPoint.X - 0.5) && !this.Release)
+        {
+            /*if(this.AlertSymbol.SpriteText.Visible)
+            {
+                this.AlertSymbol.SpriteText.Visible = false;
+            }*/
+            
+            this.GlanceTime = 0;
+            
+            if(currentG < 0)
+            {
+                if((this.Owner.Transform.Translation.Y <= this.VerticalPoint.Y) &&
+                    (currentG == this.VertDir))
+                {
+                    Console.WriteLine("No");
+                    var dest = Real3(this.VerticalPoint.X, this.VerticalPoint.Y, 0);
+                    //this.Teleport(dest, Real3(0,this.JumpHeight,0));
+                    //final boost
+                    this.Owner.RigidBody.Velocity = Real3(0,2,0);
+                    this.Dir = Real3(this.VerticalPoint.Z,0,0);
+                    this.Turn();
+                    this.Socks.Update(this.Dir.X, event.Dt);
+                    this.Release = true;
+                }
+            }
+            else if(currentG > 0)
+            {
+                if((this.Owner.Transform.Translation.Y >= this.VerticalPoint.Y) &&
+                    (currentG == this.VertDir))
+                {
+                    Console.WriteLine("Noo");
+                    var dest = Real3(this.VerticalPoint.X, this.VerticalPoint.Y, 0);
+                    //this.Teleport(dest, Real3(0,this.JumpHeight,0));
+                    //final boost
+                    this.Owner.RigidBody.Velocity = Real3(0,-20,0);
+                    this.Dir = Real3(this.VerticalPoint.Z,0,0);
+                    this.Turn();
+                    this.Socks.Update(this.Dir.X, event.Dt);
+                    this.Release = true;
+                }
+            }
+        }
+        else if(this.Type == 1)
+        {
+            /*if(this.AlertSymbol.SpriteText.Visible)
+            {
+                this.AlertSymbol.SpriteText.Visible = false;
+            }*/
+            this.Patrol(event.Dt);
+        }
+        
+        //landing
+        if(this.Socks.Grounded())
+            this.Release = false;
+        
+        //Console.WriteLine("`this.OldPos` `this.Owner.Transform.Translation`");
+        
+        
+        ray.Direction = this.Dir;
+        
+        //Getting Stuck
+        if(Math.Abs(this.OldPos.X - this.Owner.Transform.Translation.X) <= 1)
+        {
+            this.Stuck += event.Dt;
+        }
+        if(this.Stuck > 2)      //If going one direction gets you nowhere turn around
+        {
+            this.Dir *= Real3(-1,1,1);
+            this.Turn();
+            this.Stuck = 0;
+        }
+        /*else if(this.Stuck > 4)
+        {
+            //Get OUT of there man
+            this.Teleport(this.RightPoint, Real3(0,this.JumpHeight,0));
+        }*/
+        if(this.Time > 3) //Not stuck
+        {
+            this.OldPos = this.Owner.Transform.Translation;
+            this.Time = 0;
+            this.Stuck = 0;
+        }
+        
+        //Jumping
+        if(this.Socks.Grounded())
+        {
+            ray.Start = pos + Real3(0, this.JumpHeight, 0); //Check if object is jumpable
+            var dist = this.Owner.BoxCollider.Size.X/2 + 1.25;
+            if(this.CastRay(ray, dist, null) && !this.CastRay(ray,dist,this.Player))
+            {
+                this.Dir *= Real3(-1,1,1);
+                this.Owner.RigidBody.Velocity = Real3(this.Owner.RigidBody.Velocity.X, 0, 0);
+                this.Turn();
+            }
+            else
+            {
+                ray.Start = pos;
+                if(this.CastRay(ray, dist, null) && !this.CastRay(ray, dist, this.Player))  //middle
+                {
+                    this.Socks.Jump();
+                }
+                
+                ray.Start = pos + Real3(0, h/3, 0);
+                if(this.CastRay(ray, dist, null) && !this.CastRay(ray, dist, this.Player)) //top
+                {
+                    this.Socks.Jump();
+                }
+                
+                ray.Start = pos + Real3(0, -h/3, 0);
+                if(this.CastRay(ray, dist, null) && !this.CastRay(ray, dist, this.Player)) //bottom
+                {
+                    this.Socks.Jump();
+                }
+            }
+        }
+    }
+    function Chase(time : Real)
+    {
+        var d = this.Player.Transform.Translation.X - this.Owner.Transform.Translation.X;
+        d = this.Normalize(d);
+        this.Dir = Real3(d,0,0);
+        this.Turn();
+        var speed = this.Socks.MaxGroundVelocity;
+        this.Socks.MaxGroundVelocity = this.ChaseSpeed;
+        this.Socks.Update(this.Dir.X, time);
+        this.Socks.MaxGroundVelocity = speed;
+    }
+    function Patrol(time : Real)
+    {
+        //Patrolling
+        var pos = this.Owner.Transform.Translation;
+        
+        if(this.Type == 1)
+        {
+            if(pos.X > this.RightPoint.X)
+            {
+                this.Dir = Real3(-1,0,0);
+                this.Turn();
+            }
+            if(pos.X < this.LeftPoint.X)
+            {
+                this.Dir = Real3(1,0,0);
+                this.Turn();
+            }
+        }
+        /*else if(this.Type == 2)
+        {
+            if(pos.X > this.RightPoint.X + 2 || pos.X < this.RightPoint.X - 2)
+            {
+                //Teleport back to position
+                this.Space.CreateAtPosition(Archetype.Teleport, this.Owner.Transform.Translation);
+                this.Owner.Transform.Translation = this.RightPoint;
+            }
+        }*/
+        this.Socks.Update(this.Dir.X, time);
+    }
+    function Turn() //Face Direction Visually
+    {
+        if(this.Dir.X > 0)
+        {
+            this.Owner.Sprite.FlipX = false;
+            this.VisionIndicator.FollowObject.Displacement = Real3(3,0,0);
+        }
+        else
+        {
+            this.Owner.Sprite.FlipX = true;
+            this.VisionIndicator.FollowObject.Displacement = Real3(-3,0,0);
+        }
+    }
+    function Look() : Boolean
+    {
+        //Console.WriteLine("`this.Player.PlayerStatus.Spotted`");
+        var disFromPlayer = this.Player.Transform.Translation.X - this.Owner.Transform.Translation.X;
+        if(this.Player.PlayerStatus.Spotted && Math.Abs(disFromPlayer) <= 10 && this.Dir.X == this.Normalize(disFromPlayer)) return true;
+        
+        var ray = Ray();
+        var pos = this.Owner.Transform.Translation;
+        var h = this.Owner.BoxCollider.Size.Y;
+        
+        ray.Direction = this.Dir;
+        
+        ray.Start = pos;
+        if(this.CastRay(ray, this.Owner.BoxCollider.Size.X/2 + this.VisionRange, this.Player)) return true; //middle
+            
+        ray.Start = pos + Real3(0, h/2, 0);
+        if(this.CastRay(ray, this.Owner.BoxCollider.Size.X/2 + this.VisionRange, this.Player)) return true; //top
+        
+        ray.Start = pos + Real3(0, -h/2 +0.1, 0);
+        if(this.CastRay(ray, this.Owner.BoxCollider.Size.X/2 + this.VisionRange, this.Player)) return true; //bottom
+        
+        return false;
+    }
+    /*function Teleport(destination : Real3, adjustment : Real3)
+    {
+        var rad = this.Owner.BoxCollider.Size.Y;
+        var num = 1;
+        var filter = CastFilter();
+        
+        var results = this.Space.PhysicsSpace.CastSphereResults(destination, rad, num, filter);
+        
+        while(results.IsNotEmpty)
+        {
+            destination += adjustment;
+            results = this.Space.PhysicsSpace.CastSphereResults(destination, rad, num, filter);
+        }
+                            
+        this.Space.CreateAtPosition(Archetype.Teleport, this.Owner.Transform.Translation);
+        this.Owner.Transform.Translation = destination;
+    }*/
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        var o = event.OtherObject;
+        if(o.Name == "Player")
+        {
+            o.PlayerStatus.Caught = true;
+        }
+    }
+    function CastRay(ray : Ray, dis : Real, cog : Cog) : Boolean
+    {
+        var objHit = this.Space.PhysicsSpace.CastRayFirst(ray);
+        if(objHit != null && objHit.Distance <= dis)
+        {
+            if(cog != null && objHit.ObjectHit == cog)
+            {
+                return true;
+            }
+            else if(cog == null)
+            {
+                //Console.WriteLine("`objHit.ObjectHit` `objHit.Distance`");
+                return true;
+            }
+        }
+        return false;
+    }
+    function Normalize(r : Real) : Real
+    {
+        if(r > 0) r = 1;
+        else r = -1;
+        return r;
+    }
+}
