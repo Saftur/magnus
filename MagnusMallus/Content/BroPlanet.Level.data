@@ -104,7 +104,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [31.6931686, 33.7600136, 50],
+			Vec3 Translation = [0, 0, 90],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [31.6931686, 33.7600136, -1.15950215e-07],
+			Vec3 LookTarget = [0, 0, 40],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -167,12 +167,32 @@ Level =
 			bool Active = true,
 			float Volume = 1,
 		},
+		FollowObject = 
+		{
+			bool Active = true,
+			CogPath ObjectToFollow = 
+			{
+				string Path = ":/Player",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 4,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			Vec3 Displacement = [0, 0, 5],
+		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Named = 
 		{
@@ -207,7 +227,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 6,
 		},
 		Named = 
 		{
@@ -236,6 +256,29 @@ Level =
 			string PaletteName = "",
 			float UnitsPerTile = 1,
 			float MeshThickness = 1.20000005,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589012f93e5dcecb:Player",
+		LinkId = 
+		{
+			uint Id = 4,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-19.8857784, 2.70738029, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Area = 
+		{
+			Vec2 Size = [2, 3],
+			Location Origin = Center,
+		},
+		Named = 
+		{
+			string Name = "Player",
 		},
 	},
 },

@@ -28,7 +28,7 @@ class CrewBuffs : ZilchComponent
         this.Space.ShipStatus.Heal(mechnum);
     }
     
-    function Doctor()
+    /*function Doctor()
     {
         // Sickness check (Doesn't work hehehe)
         if((this.Time == this.SicknessInterval) && (this.Space.CrewMembers.Doctor == false))
@@ -38,13 +38,17 @@ class CrewBuffs : ZilchComponent
                 
             }
         }
-    }
+    }*/
     
     function Gunner()
     {
         if(this.Space.CrewMembers.Gunner >= 2)
         {
-            
+            if(this.Time >= 2)
+            {
+                this.Space.CreateAtPosition(Archetype.Laser2, this.Owner.Transform.Translation);
+                this.Time = 0;
+            }
         }
     }
 }
