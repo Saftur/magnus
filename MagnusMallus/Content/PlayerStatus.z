@@ -5,6 +5,10 @@ class PlayerStatus : ZilchComponent
     [Property]
     var StartingHealth : Real = Real(15);
     
+    var Spotted : Boolean = false;
+    
+    var Caught : Boolean = false;
+    
     var Health : Real = Real(15);
     function Initialize(init : CogInitializer)
     {

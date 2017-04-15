@@ -4,6 +4,7 @@ class AsteroidVel : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
+        Console.WriteLine("Spawn asteriod");
         this.Owner.RigidBody.Velocity.X = Real(this.Variance.DieRoll(8) - Real(4));
         
         this.Owner.RigidBody.Velocity.Y = Real(this.Variance.DieRoll(8) - Real(4));
