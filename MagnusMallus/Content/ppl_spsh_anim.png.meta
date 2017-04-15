@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "ppl_spsh_anim",
+		uint64 ResourceId = 58aeba1abfb6f7f2,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 50,
+		uint FrameSizeY = 256,
+		uint FrameCount = 5,
+		float FrameDelay = 0.0833333358,
+		float OriginX = 25,
+		float OriginY = 128,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},
