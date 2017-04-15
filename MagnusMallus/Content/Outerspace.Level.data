@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-24.1524906, 14.8403759, 50],
+			Vec3 Translation = [-23.9813042, 1.83014143, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 81.8730545,
+			float Size = 36.7879639,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-24.1524906, 14.8403759, 4.92764059e-07],
+			Vec3 LookTarget = [-23.9813042, 1.83014143, 5.0024687e-07],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -249,12 +249,19 @@ Level =
 		{
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "58bd8c2a0b339f4a:PlayerShip",
 		LinkId = 
 		{
 			uint Id = 5,
+		},
+		Named = 
+		{
+			string Name = "PlayerShip",
+		},
+		Archetyped = 
+		{
+			string Name = "58bd8c2a0b339f4a:PlayerShip",
 		},
 		Transform = 
 		{
@@ -262,9 +269,79 @@ Level =
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "PlayerShip",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58bedcf2cba689b2:PLayer",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "58bd9642beb261db:player",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.25, 0.25, 0.5],
+		},
+		ShipStatus = 
+		{
+			float StartingHealth = 15,
+		},
+		ShipController = 
+		{
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 0, 1],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		Shoot = 
+		{
+			string Laser = "58bee0c51f2dde2f:Laser",
+			float SpawnTime = 0.300000012,
+		},
+		DragEffect = 
+		{
+			bool Active = false,
+			bool WakeUpOnChange = true,
+			float Drag = 4,
+			float AngularDrag = 0.100000001,
+		},
+		SpaceSpawns = 
+		{
+			bool Asteroid = true,
+			bool Minion = false,
+		},
+		Hierarchy = 
+		{
 		},
 	},
 	Cog = 

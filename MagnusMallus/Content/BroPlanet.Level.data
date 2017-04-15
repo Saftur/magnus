@@ -104,7 +104,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-3.97912073, 5.0778861, 90],
+			Vec3 Translation = [14.7990236, 20.6296215, 51],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -116,7 +116,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 36.7879982,
+			float Size = 67.0320358,
 		},
 		EditorCameraController = 
 		{
@@ -124,7 +124,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-3.97912073, 5.0778861, 40],
+			Vec3 LookTarget = [14.7990236, 20.6296215, 1.00000143],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -200,7 +200,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, 1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -235,7 +235,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, 1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -267,7 +267,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-19.8857784, 2.70738029, 0],
+			Vec3 Translation = [-19.8857784, 2.70738029, 1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -297,7 +297,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [16.717205, 2.56774139, 1],
+			Vec3 Translation = [23.2792931, 2.56774139, 1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -562,7 +562,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "4",
+			string Name = "Guard4",
 		},
 		Archetyped = 
 		{
@@ -570,7 +570,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [3.31975365, 30.5275574, 1],
+			Vec3 Translation = [3.74311352, 30.5981159, 1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
