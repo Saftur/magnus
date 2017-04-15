@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-24.1524906, 14.8403759, 50],
+			Vec3 Translation = [-61.7086105, 21.7509212, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 81.8730545,
+			float Size = 60.6530685,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-24.1524906, 14.8403759, 4.92764059e-07],
+			Vec3 LookTarget = [-61.7086105, 21.7509212, 4.92764059e-07],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -755,6 +755,24 @@ Level =
 			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 			Vec3 Offset = [0, 0, 0],
 			float Radius = 0.5,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-71.0893021, 17.980711, 0],
+			Vec3 Scale = [50, 50, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "LoadScreen",
 		},
 	},
 },

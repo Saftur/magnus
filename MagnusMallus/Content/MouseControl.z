@@ -32,12 +32,13 @@ class MouseControl : ZilchComponent
             var obj = results.ObjectHit;
             
             
-            Console.WriteLine("`obj`");
+            Console.WriteLine("`obj` `this.Space.LevelSettings.HUDMenu.Entering`");
             
             //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
             
-            if(this.Space.HUDMenu.Entering && obj.MouseButton != null && (obj.MouseButton.PlanetNo || obj.MouseButton.PlanetYes))
+            if(this.Space.LevelSettings.HUDMenu.Entering && obj != null && obj.MouseButton != null && (obj.MouseButton.PlanetNo || obj.MouseButton.PlanetYes))
             {
+                Console.WriteLine("bloop");
                 obj.MouseButton.Activate();
             }
             

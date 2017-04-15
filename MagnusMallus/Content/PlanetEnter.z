@@ -2,29 +2,22 @@ class PlanetEnter : ZilchComponent
 {
     [Property]
     var PlanetToLoad : Level = null;
+    [Property]
+    var PlanetName : String = "BroPlanet";
     
     [Property]
     var LoadTime : Real = 1;
     var Timer : Real = 0;
     var Fade : Real = 1;
     
-    var Entering : Boolean = false;
-    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
-        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
-    
-    function OnLogicUpdate(event : UpdateEvent)
+    function EnterPlanet()
     {
-        if(this.Entering)
-        {
-            this.Timer += event.Dt;
-            this.Fade -= event.Dt;
-        }
+        this.Space.LoadLevel(this.PlanetToLoad);
     }
-    
     // Detect if player is colliding with planet
     function OnCollisionStarted(event : CollisionEvent)
     {
@@ -32,36 +25,11 @@ class PlanetEnter : ZilchComponent
         
         if(o.Name == "PlayerShip")
         {
-            var hud = this.GameSession.FindSpaceByName("HUDLevel");
+            var hud = this.GameSession.FindSpaceByName("HUDSpace");
             
-            hud.HUDMenu.EnteringPlanet(true);
-            hud.HUDReferences.CurrentPlanet = this.Owner;
-            hud.HUDReferences.PlayerPos = o.Transform.Translation;
-        }
-    }
-    function EnterPlanet(loadScreenSpawnPos : Real3)
-    {
-            // Loads next level and creates a loadscreen on top
-        if(Zero.Keyboard.KeyIsReleased(Keys.Enter))
-        {
-            // Create loadscreen
-            this.Space.CreateAtPosition(Archetype.LoadScreen, loadScreenSpawnPos);
-            
-            this.Timer = 0;
-            // Fades into loadscreen (Timer)
-            while(this.Timer < this.LoadTime)
-            {
-                this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Timer);
-            }
-            this.Space.LoadLevel(this.PlanetToLoad);
-            
-            //this.Timer = 0;
-            this.Fade = this.LoadTime;
-            // Fades out of loadscreen (Fade)
-            while(this.Fade > 0)
-            {
-                this.Space.FindObjectByName("LoadScreen").Sprite.Color = Real4(0, 0, 0, this.Fade);
-            }
+            hud.LevelSettings.HUDMenu.EnteringPlanet(true);
+            hud.LevelSettings.HUDReferences.CurrentPlanet = this.Owner;
+            hud.LevelSettings.HUDReferences.PlayerPos = o.Transform.Translation;
         }
     }
 }

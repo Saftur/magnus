@@ -54,9 +54,7 @@ class MouseButton : ZilchComponent
         }
         else if(this.PlanetYes)
         {
-            var hudref = this.Space.LevelSettings.HUDReferences;
-            
-            hudref.CurrentPlanet.PlanetEnter.EnterPlanet(hudref.PlayerPos);
+            this.Space.LevelSettings.HUDMenu.EnterPlanet();
         }
         else if(this.PlanetNo)
         {
