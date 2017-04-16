@@ -126,8 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-
-			Vec3 Translation = [-4.46432781, 3.26293683, 50],
+			Vec3 Translation = [-6.12796736, 2.2330687, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -139,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 36.7879639,
+			float Size = 100,
 		},
 		EditorCameraController = 
 		{
@@ -147,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-4.46432781, 3.26293683, 1.35336097e-06],
+			Vec3 LookTarget = [-6.12796736, 2.2330687, 1.2806405e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -322,7 +321,7 @@ Level =
 			Vec3 GlobalUp = [0, 0, 1],
 			Vec3 UpVector = [0, 0, 1],
 			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
+			OrientationBases DefaultBases = Custom,
 		},
 		Shoot = 
 		{
@@ -797,7 +796,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-29.9272785, 18.1957321, -0.100000001],
+			Vec3 Translation = [-28.3317928, 17.5878162, -0.100000001],
 			Vec3 Scale = [25, 25, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -822,6 +821,7 @@ Level =
 		PlanetEnter = 
 		{
 			string PlanetToLoad = "58b5a6ad44cd6bf3:BroPlanet",
+			string PlanetName = "BroPlanet",
 			float LoadTime = 1,
 		},
 		SphereCollider = 
