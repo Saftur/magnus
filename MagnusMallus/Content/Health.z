@@ -1,0 +1,53 @@
+class Health : ZilchComponent
+{
+    [Property]
+    var MaxHP : Integer = 5;
+    [Property]
+    var Respawns : Boolean = false;
+    [Property]
+    var DeathParticle : Archetype = Archetype.Explosion;
+    
+    var CurrHP : Integer = 0;
+    var Dead : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.CurrHP = this.MaxHP;
+    }
+    function Decrease(amnt : Integer)
+    {
+        if(this.CurrHP - amnt > 0)
+        {
+            this.CurrHP -= amnt;
+        }
+        else if(this.Respawns)
+        {
+            this.Dead = true;
+            this.Space.CreateAtPosition(this.DeathParticle, this.Owner.Transform.Translation);
+        }
+        else
+        {
+            this.Destroy();
+        }
+    }
+    function Increase(amnt : Integer)
+    {
+        if(this.CurrHP + amnt > this.MaxHP)
+        {
+            this.CurrHP += amnt;
+        }
+        else
+        {
+            this.CurrHP = this.MaxHP;
+        }
+    }
+    function Respawn(spawnPos : Real3)
+    {
+        this.Owner.Transform.Translation = spawnPos;
+    }
+    function Destroy()
+    {
+        this.Space.CreateAtPosition(this.DeathParticle, this.Owner.Transform.Translation);
+        this.Owner.Destroy();
+    }
+}

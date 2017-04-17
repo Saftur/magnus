@@ -28,6 +28,7 @@ class MinionAI_1 : ZilchComponent
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         if (this.TargetPath != null)
             this.Target = this.TargetPath.Cog;
     }
@@ -46,8 +47,8 @@ class MinionAI_1 : ZilchComponent
         if (this.Target != null) {
             var dist = this.DistanceToTarget();
             if (dist.Z < this.DetectDist) {
-                Console.WriteLine("Detected");
-                Console.WriteLine("`dist`");
+                //Console.WriteLine("Detected");
+                //Console.WriteLine("`dist`");
                 this.Orient.LookAtPoint(this.Target.Transform.Translation);
                 
                 if (this.FollowPlayer) {
@@ -55,7 +56,7 @@ class MinionAI_1 : ZilchComponent
                     var accel = Real3(0, 0, 0);
                     
                     if (dist.Z > this.FollowDist+this.FollowMargin) {
-                        Console.WriteLine("Moving forward");
+                        //Console.WriteLine("Moving forward");
                         accel = dist;
                         accel /= dist.Z;
                         /*if (dist.Z-this.FollowDist+this.FollowMargin < this.MaxSpeed*event.Dt) {
@@ -64,7 +65,7 @@ class MinionAI_1 : ZilchComponent
                         }*/
                         accel *= dir;
                     } else if (dist.Z < this.FollowDist-this.FollowMargin) {
-                        Console.WriteLine("Moving backwards");
+                        //Console.WriteLine("Moving backwards");
                         accel = dist;
                         accel /= dist.Z;
                         accel *= dir*-1;
@@ -76,7 +77,7 @@ class MinionAI_1 : ZilchComponent
                     if (dist.Z-this.FollowDist < this.MaxSpeed && dist.Z > this.FollowDist+this.FollowMargin) {
                         var maxVel = (dist.Z-this.FollowDist)*2;
                         var curVel = this.Diag(vel);
-                        Console.WriteLine("Within max speed `curVel` `maxVel`");
+                        //Console.WriteLine("Within max speed `curVel` `maxVel`");
                         if (curVel > maxVel)
                             vel *= maxVel/curVel;
                         /*if (curVel > maxVel)
@@ -85,7 +86,7 @@ class MinionAI_1 : ZilchComponent
                     if (dist.Z-this.FollowDist > -this.MaxSpeed && dist.Z < this.FollowDist-this.FollowMargin) {
                         var maxVel = -(dist.Z-this.FollowDist)*2;
                         var curVel = this.Diag(vel);
-                        Console.WriteLine("Within max speed `curVel` `maxVel`");
+                        //Console.WriteLine("Within max speed `curVel` `maxVel`");
                         if (curVel > maxVel)
                             vel *= maxVel/curVel;
                         /*if (curVel > maxVel)
@@ -134,5 +135,15 @@ class MinionAI_1 : ZilchComponent
     
     function Diag(vec : Real3) : Real {
         return Math.Sqrt(vec.X*vec.X + vec.Y*vec.Y);
+    }
+    
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        Console.WriteLine("hi");
+        var o = event.OtherObject;
+        if(o.DealDamage != null)
+        {
+            this.Owner.Health.Decrease(o.DealDamage.Damage);
+        }
     }
 }

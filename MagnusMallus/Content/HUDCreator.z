@@ -11,6 +11,7 @@ class HUDCreator : ZilchComponent
     var PlayerRef : CogPath = null;
     
     var HUDSpace : Space = null;
+    var SpaceshipHealthUI : Cog = null;
     
     function Initialize(init : CogInitializer)
     {
@@ -18,6 +19,7 @@ class HUDCreator : ZilchComponent
         this.HUDSpace = this.GameSession.CreateNamedSpace("HUDSpace", this.SpaceArchetype);
         this.HUDSpace.LoadLevel(this.HUDLevel);
         this.HUDSpace.LevelSettings.HUDReferences.MainSpaceRef = this.Space;
+        this.SpaceshipHealthUI = this.HUDSpace.FindObjectByName("HealthBar");
     }
 
     function Destroyed()

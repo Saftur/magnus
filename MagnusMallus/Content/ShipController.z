@@ -16,10 +16,10 @@ class ShipController : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(this.Owner.ShipStatus.Dead)
+        if(this.Owner.Health.Dead)
             return;
         // Have a place to record the total movement we want to make:
-        var movement =  Real3();
+        var movement =  Real3(0,0,0);
         
         //breaks
         if(Zero.Keyboard.KeyIsPressed(Keys.F))
@@ -39,7 +39,7 @@ class ShipController : ZilchComponent
             movement +=  Real3(0.0, 1.0, 0.0);
         }
         // If I hold down the down arrow key,
-        if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
+        else if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
         {
             // Record desired downward motion along the world y-axis:
             movement +=  Real3(0.0, -1.0, 0.0);
@@ -51,10 +51,24 @@ class ShipController : ZilchComponent
             movement +=  Real3(1.0, 0.0, 0.0);
         }
         // If I hold down the left arrow key,
-        if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
+        else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
         {
             // Record desired leftward motion along the world x-axis:
             movement +=  Real3(-1.0, 0.0, 0.0);
+        }
+        if(movement == Real3(0,0,0))
+        {
+            foreach(var child in this.Owner.Children)
+            {
+                child.SpriteParticleSystem.Visible = false;
+            }
+        }
+        else
+        {
+            foreach(var child in this.Owner.Children)
+            {
+                child.SpriteParticleSystem.Visible = true;
+            }
         }
         var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
         this.Owner.Orientation.LookAtPoint(mousePos);

@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "PlayerShip",
+		uint64 ResourceId = 582d7f17bbec8508,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 232,
+		uint FrameSizeY = 317,
+		uint FrameCount = 3,
+		float FrameDelay = 0.166666672,
+		float OriginX = 116,
+		float OriginY = 158.5,
+		float PixelsPerUnit = 512,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

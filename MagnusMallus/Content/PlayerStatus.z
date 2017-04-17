@@ -1,21 +1,22 @@
 class PlayerStatus : ZilchComponent
 {
     var Dead : Boolean = false;
-    
-    [Property]
-    var StartingHealth : Real = Real(15);
-    
-    var Spotted : Boolean = false;
-    
-    var Caught : Boolean = false;
-    
-    var Health : Real = Real(15);
     function Initialize(init : CogInitializer)
     {
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+    }
+    
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        var o = event.OtherObject;
+        if(o.DealDamage != null)
+        {
+            this.Owner.Health.Decrease(o.DealDamage.Damage);
+        }
     }
 }

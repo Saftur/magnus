@@ -9,11 +9,14 @@ class MouseButtonWithKids : ZilchComponent
     [Property]
     var Tab : Boolean = false;
     
+    var Active : Boolean = true;
+    
     function Activate()
     {
         if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
             return;
-        
+        if(!this.Active)
+            return;
         
         this.On = true;
         this.Owner.Sprite.Color = this.OnColor;
@@ -30,6 +33,10 @@ class MouseButtonWithKids : ZilchComponent
                         c.SpriteText.Visible = true;
                 }
             }
+            if(!this.Tab && child.SpriteText != null)
+            {
+                //child.SpriteText.Visible = true;
+            }
             if(child.BoxCollider != null)
                 child.BoxCollider.SendsEvents = true;
         }
@@ -38,13 +45,18 @@ class MouseButtonWithKids : ZilchComponent
     {
         if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
             return;
+        if(!this.Active)
+            return;
         
         
         this.On = false;
         if(color)
             this.Owner.Sprite.Color = this.OffColor;
         else
-            this.Owner.Sprite.Color = Real4(this.OffColor.X, this.OffColor.Y, this.OffColor.Z, 0);
+        {
+            this.Owner.Sprite.Color = this.OffColor;
+            this.Owner.Sprite.Visible = false;
+        }
         
         foreach(var child in this.Owner.Children)
         {
@@ -56,6 +68,10 @@ class MouseButtonWithKids : ZilchComponent
                     if(c.SpriteText != null)
                         c.SpriteText.Visible = false;
                 }
+            }
+            if(!this.Tab && child.SpriteText != null)
+            {
+                //child.SpriteText.Visible = false;
             }
             if(child.BoxCollider != null)
                 child.BoxCollider.SendsEvents = false;

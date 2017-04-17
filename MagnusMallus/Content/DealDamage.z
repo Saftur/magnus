@@ -1,0 +1,21 @@
+class DealDamage : ZilchComponent
+{
+    [Property]
+    var Damage : Integer = 1;
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        var o = event.OtherObject;
+        if(o.ShipController == null && o.Health != null)
+        {
+            this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation);
+            this.Owner.Destroy();
+        }
+        Console.WriteLine("wat");
+    }
+}

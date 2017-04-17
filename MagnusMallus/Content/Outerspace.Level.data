@@ -126,8 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-
-			Vec3 Translation = [-4.46432781, 3.26293683, 50],
+			Vec3 Translation = [-11.9165668, -1.15186095, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -139,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 36.7879639,
+			float Size = 5.50233698,
 		},
 		EditorCameraController = 
 		{
@@ -147,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-4.46432781, 3.26293683, 1.35336097e-06],
+			Vec3 LookTarget = [-11.9165668, -1.15186095, 1.35336097e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -266,7 +265,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-11.4245758, -1.31935799, 0],
+			Vec3 Translation = [-11.5, -1, 0],
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -280,7 +279,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58bedcf2cba689b2:PLayer",
+			string SpriteSource = "582d60eaee2f8504:PlayerShipIdle",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -336,13 +335,44 @@ Level =
 			float Drag = 4,
 			float AngularDrag = 0.100000001,
 		},
-		SpaceSpawns = 
-		{
-			bool Asteroid = true,
-			bool Minion = false,
-		},
 		Hierarchy = 
 		{
+			ArchetypeInstance = 
+			{
+				string Name = "582f65db8f364ed6:Exhuast",
+				LinkId = 
+				{
+					uint Id = 6,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.175631285, -0.0497157574, -1],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "582f65db8f364ed6:Exhuast",
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.169715643, -0.0497157574, -1],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+			},
 		},
 	},
 	Cog = 
@@ -404,7 +434,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 8,
 		},
 		Named = 
 		{
@@ -439,7 +469,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -474,7 +504,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 10,
 		},
 		Named = 
 		{
@@ -509,7 +539,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 11,
 		},
 		Named = 
 		{
@@ -544,7 +574,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 12,
 		},
 		Named = 
 		{
@@ -579,7 +609,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 13,
 		},
 		Named = 
 		{
@@ -614,7 +644,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -649,7 +679,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 15,
 		},
 		Named = 
 		{
@@ -684,7 +714,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 16,
 		},
 		Named = 
 		{
@@ -719,7 +749,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 17,
 		},
 		Named = 
 		{
@@ -754,7 +784,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 18,
 		},
 		Named = 
 		{
@@ -789,7 +819,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 17,
+			uint Id = 19,
 		},
 		Named = 
 		{
@@ -797,7 +827,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-29.9272785, 18.1957321, -0.100000001],
+			Vec3 Translation = [45, 27, 0],
 			Vec3 Scale = [25, 25, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -822,6 +852,7 @@ Level =
 		PlanetEnter = 
 		{
 			string PlanetToLoad = "58b5a6ad44cd6bf3:BroPlanet",
+			string PlanetName = "BroPlanet",
 			float LoadTime = 1,
 		},
 		SphereCollider = 
@@ -840,7 +871,7 @@ Level =
 		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
 		LinkId = 
 		{
-			uint Id = 18,
+			uint Id = 20,
 		},
 		Transform = 
 		{
@@ -851,6 +882,41 @@ Level =
 		Named = 
 		{
 			string Name = "LoadScreen",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 21,
+		},
+		Named = 
+		{
+			string Name = "TileMap",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		MultiSprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		},
+		TileMap = 
+		{
+			string SourceName = "582d1d50d8a12b66:Outerspace_TileMap01",
+			string PaletteName = "",
+			float UnitsPerTile = 1,
+			float MeshThickness = 1.20000005,
 		},
 	},
 },

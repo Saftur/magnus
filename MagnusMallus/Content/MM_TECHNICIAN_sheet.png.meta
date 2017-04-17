@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "MM_TECHNICIAN_sheet",
+		uint64 ResourceId = 582f7f00d40054b8,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 65,
+		uint FrameSizeY = 125,
+		uint FrameCount = 4,
+		float FrameDelay = 0.25,
+		float OriginX = 32.5,
+		float OriginY = 62.5,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

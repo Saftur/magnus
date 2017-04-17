@@ -1,0 +1,32 @@
+class Character : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(Zero.Keyboard.KeyIsPressed(Keys.J))
+            Console.WriteLine("`this.Owner.Sprite.Visible` `this.Owner.Transform.Translation.Z` `this.Owner.Sprite.Color`");
+            
+        if(Zero.Keyboard.KeyIsReleased(Keys.K))
+        {
+            this.Owner.Transform.Translation += Real3(0,0,0.1);
+        }
+    }
+    function Set(pic : SpriteSource, name : String)
+    {
+        this.Owner.Sprite.SpriteSource = pic;
+        var n = this.Owner.FindChildByName("Name");
+        n.SpriteText.Text = name;
+        this.Owner.MouseButtonWithKids.Active = true;
+    }
+    function Clear()
+    {
+        this.Owner.Sprite.SpriteSource = SpriteSource.Square;
+        var name = this.Owner.FindChildByName("Name");
+        name.SpriteText.Text = "";
+        this.Owner.MouseButtonWithKids.Deactivate(true);
+        this.Owner.MouseButtonWithKids.Active = false;
+    }
+}

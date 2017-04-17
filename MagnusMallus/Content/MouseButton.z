@@ -12,9 +12,7 @@ class MouseButton : ZilchComponent
     [Property]
     var Feed : Boolean = false;
     [Property]
-    var GiveItem : Boolean = false;
-    [Property]
-    var Rename : Boolean = false;
+    var Kick : Boolean = false;
     
     //Planet
     [Property]
@@ -44,13 +42,9 @@ class MouseButton : ZilchComponent
         {
             Console.WriteLine("nom nom");
         }
-        else if(this.GiveItem)
+        else if(this.Kick)
         {
-            Console.WriteLine("thanks bro");
-        }
-        else if(this.Rename)
-        {
-            Console.WriteLine("What's my new name");
+            this.Owner.Parent.Character.Clear();
         }
         else if(this.PlanetYes)
         {
