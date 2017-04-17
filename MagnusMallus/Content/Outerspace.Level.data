@@ -321,7 +321,7 @@ Level =
 			Vec3 GlobalUp = [0, 0, 1],
 			Vec3 UpVector = [0, 0, 1],
 			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
+			OrientationBases DefaultBases = Custom,
 		},
 		Shoot = 
 		{
