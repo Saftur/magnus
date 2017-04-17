@@ -171,6 +171,7 @@ Level =
 		DealDamage = 
 		{
 			int Damage = 1,
+			bool Projectile = true,
 		},
 		Hierarchy = 
 		{
@@ -264,7 +265,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.165011346, 1.23529148, 50],
+			Vec3 Translation = [-1.95613074, 3.01236677, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -276,7 +277,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.8163548,
+			float Size = 13.406394,
 		},
 		EditorCameraController = 
 		{
@@ -284,7 +285,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.165011346, 1.23529148, 0],
+			Vec3 LookTarget = [-1.95613074, 3.01236677, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -432,7 +433,7 @@ Level =
 		Health = 
 		{
 			int MaxHP = 5,
-			bool Respawns = false,
+			bool Respawns = true,
 			string DeathParticle = "582f37283debad28:Explosion",
 		},
 		ShipController = 
@@ -513,6 +514,60 @@ Level =
 		Named = 
 		{
 			string Name = "Explosion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5829e094eacd0077:Explosion3",
+		LinkId = 
+		{
+			uint Id = 11,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0.81387043, 6.44521952, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Explosion3",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "582f3fae15740aef:Explosion2",
+		LinkId = 
+		{
+			uint Id = 12,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.97640705, 3.06969762, 0],
+			Vec3 Scale = [3.33333302, 0.666666627, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Explosion2",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5829e3465cc85e38:Bomb",
+		LinkId = 
+		{
+			uint Id = 13,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-2.83181334, 6.40387726, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Bomb",
 		},
 	},
 },

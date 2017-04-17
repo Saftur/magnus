@@ -2,6 +2,8 @@ class DealDamage : ZilchComponent
 {
     [Property]
     var Damage : Integer = 1;
+    [Property]
+    var Projectile : Boolean = true;
     
     function Initialize(init : CogInitializer)
     {
@@ -10,12 +12,13 @@ class DealDamage : ZilchComponent
     }
     function OnCollisionStarted(event : CollisionEvent)
     {
+        if(!this.Projectile)
+            return;
         var o = event.OtherObject;
         if(o.ShipController == null && o.Health != null)
         {
             this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation);
             this.Owner.Destroy();
         }
-        Console.WriteLine("wat");
     }
 }

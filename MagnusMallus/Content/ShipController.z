@@ -6,16 +6,12 @@ class ShipController : ZilchComponent
     
     var Accel : Real = 10;
     var MaxSpeed : Real = 10;
- 
-
- 
-  
-    
     
     var DeathTimer : Real = 1;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -95,5 +91,16 @@ class ShipController : ZilchComponent
         if (this.Owner.RigidBody.Velocity.Y > this.MaxSpeed) newVel.Y = this.MaxSpeed;
         if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;
         this.Owner.RigidBody.Velocity = newVel; 
+   }
+   
+   function OnCollisionStarted(event : CollisionEvent)
+   {
+       Console.WriteLine("hello");
+       var o = event.OtherObject;
+       if(o.DealDamage != null)
+       {
+           Console.WriteLine("hello");
+           this.Owner.Health.Decrease(o.DealDamage.Damage);
+       }
    }
 }

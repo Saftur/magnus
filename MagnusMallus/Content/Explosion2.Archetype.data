@@ -8,9 +8,13 @@ Cog =
 	{
 		string Name = "Explosion2",
 	},
+	Archetyped = 
+	{
+		string Name = "582f3fae15740aef:Explosion2",
+	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, -1],
+		Vec3 Translation = [-6.87651205, 6.25572443, 0],
 		Vec3 Scale = [3.33333302, 0.666666627, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -38,13 +42,13 @@ Cog =
 	SphericalParticleEmitter = 
 	{
 		bool Active = true,
-		uint EmitCount = 25,
+		uint EmitCount = 30,
 		float EmitRate = 500,
 		float EmitVariance = 0,
 		float Size = 0.5,
 		float SizeVariance = 0.00499999989,
-		float Lifetime = 0.5,
-		float LifetimeVariance = 0.200000003,
+		float Lifetime = 0.300000012,
+		float LifetimeVariance = 0.100000001,
 		float Spin = 0,
 		float SpinVariance = 50,
 		bool RandomSpin = true,
@@ -72,5 +76,9 @@ Cog =
 		Vec4 Color2 = [0.927999973, 1, 0.100000024, 1],
 		Vec4 Color3 = [1, 0, 0, 1],
 		Vec4 Color4 = [1, 0.386950016, 0.0849999785, 0],
+	},
+	TimedDeath = 
+	{
+		float Lifespan = 1,
 	},
 },

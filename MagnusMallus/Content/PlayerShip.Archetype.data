@@ -61,7 +61,7 @@ Cog =
 	Health = 
 	{
 		int MaxHP = 5,
-		bool Respawns = false,
+		bool Respawns = true,
 		string DeathParticle = "582f37283debad28:Explosion",
 	},
 	ShipController = 
