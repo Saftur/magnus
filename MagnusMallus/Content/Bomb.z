@@ -1,8 +1,19 @@
 class Bomb : ZilchComponent
 {
+    [Property]
+    var TimeTillBoom : Real = 2;
+    [Property]
+    var BlinkTimer : Real = 0.5;
+    var BlinkTime : Real;
+    var Shade : Real = -1;
+    var Tick : Real;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate , this.OnLogicUpdate);
+        this.BlinkTimer /= 2;
+        this.BlinkTime = this.BlinkTimer;
+        this.Tick = Math.Round(this.TimeTillBoom);
+        this.TimeTillBoom = 0;
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -11,10 +22,50 @@ class Bomb : ZilchComponent
         {
             this.GoBoom();
         }
+        this.TimeTillBoom += event.Dt;
+        this.BlinkTimer -= event.Dt;
+        if(this.TimeTillBoom > this.Tick) 
+        {
+            this.BlinkTime -= this.BlinkTime/4;
+            //Console.WriteLine("`this.BlinkTime`");
+            this.Tick -= 1;
+            this.Owner.Sprite.Color -= Real4(0,0.75,0.75,0);
+            
+            this.TimeTillBoom = 0;
+            if(this.Tick == 0)
+            {
+                this.GoBoom();
+            }
+        }
+        
+        var time = event.Dt/(this.BlinkTime);
+        if(this.BlinkTimer < 0)
+        {
+            /*
+            if(this.Shade == 1)
+            {
+                this.Owner.Sprite.Color = Real4(this.Owner.Sprite.Color.X, this.Owner.Sprite.Color.Y, this.Owner.Sprite.Color.Z, 1);
+            }
+            else
+            {
+                this.Owner.Sprite.Color = Real4(this.Owner.Sprite.Color.X, this.Owner.Sprite.Color.Y, this.Owner.Sprite.Color.Z, 0);
+            }
+            */
+            this.BlinkTimer = this.BlinkTime;
+            this.Shade *= -1;
+        }
+        else
+        {
+            this.Fade(this.Shade*time);
+        }
     }
     function GoBoom()
     {
         this.Space.CreateAtPosition(Archetype.Explosion3, this.Owner.Transform.Translation);
-        //this.Owner.Destroy();
+        this.Owner.Destroy();
+    }
+    function Fade(amnt : Real)
+    {
+        this.Owner.Sprite.Color += Real4(0,0,0, amnt);
     }
 }

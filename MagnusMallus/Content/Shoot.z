@@ -18,8 +18,10 @@ class Shoot : ZilchComponent
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
-   function OnLogicUpdate(event : UpdateEvent)
+    function OnLogicUpdate(event : UpdateEvent)
     {
+        if(this.Owner.Health.Dead)
+            return;
        
         this.TimeSinceLastSpawn += event.Dt;
 
@@ -30,6 +32,7 @@ class Shoot : ZilchComponent
             {
                 var spawnPosition = this.Owner.Transform.Translation;
                 var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
+                laser.DealDamage.Friendly = true;
                 //this.Space.CreateAtPosition(laser, spawnPosition);
                 laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 10;
                 laser.Transform.Rotation = this.Owner.Transform.Rotation;

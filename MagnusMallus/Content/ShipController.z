@@ -8,6 +8,7 @@ class ShipController : ZilchComponent
     var MaxSpeed : Real = 10;
     
     var DeathTimer : Real = 1;
+    var RespawnPoint : Real3 = Real3(0,0,0);
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -17,7 +18,15 @@ class ShipController : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         if(this.Owner.Health.Dead)
+        {
+            this.DeathTimer -= event.Dt;
+            if(this.DeathTimer < 0)
+            {
+                this.DeathTimer = 1;
+                this.Owner.Health.Respawn(this.RespawnPoint);
+            }
             return;
+        }
         // Have a place to record the total movement we want to make:
         var movement =  Real3(0,0,0);
         
@@ -95,9 +104,11 @@ class ShipController : ZilchComponent
    
    function OnCollisionStarted(event : CollisionEvent)
    {
-       Console.WriteLine("hello");
+       if(this.Owner.Health.Dead)
+            return;
+        
        var o = event.OtherObject;
-       if(o.DealDamage != null)
+       if(o.DealDamage != null && !o.DealDamage.Friendly)
        {
            Console.WriteLine("hello");
            this.Owner.Health.Decrease(o.DealDamage.Damage);

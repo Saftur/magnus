@@ -20,7 +20,7 @@ Cog =
 	},
 	Sprite = 
 	{
-		bool Visible = false,
+		bool Visible = true,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -38,5 +38,7 @@ Cog =
 	},
 	Bomb = 
 	{
+		float TimeTillBoom = 1.5,
+		float BlinkTimer = 0.5,
 	},
 },

@@ -23,6 +23,7 @@ class Health : ZilchComponent
         else if(this.Respawns)
         {
             this.Dead = true;
+            this.Owner.Sprite.Visible = false;
             this.Space.CreateAtPosition(this.DeathParticle, this.Owner.Transform.Translation);
         }
         else
@@ -43,7 +44,10 @@ class Health : ZilchComponent
     }
     function Respawn(spawnPos : Real3)
     {
+        this.Dead = false;
+        this.Owner.Sprite.Visible = true;
         this.Owner.Transform.Translation = spawnPos;
+        this.CurrHP = this.MaxHP;
     }
     function Destroy()
     {

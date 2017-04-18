@@ -92,19 +92,12 @@ Level =
 			bool FollowEditorCamera = false,
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "58bee0c51f2dde2f:Laser",
 		LinkId = 
 		{
 			uint Id = 3,
-		},
-		Named = 
-		{
-			string Name = "Laser",
-		},
-		Archetyped = 
-		{
-			string Name = "58bee0c51f2dde2f:Laser",
 		},
 		Transform = 
 		{
@@ -112,152 +105,16 @@ Level =
 			Vec3 Scale = [0.100000001, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 0, 0, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = false,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-		IgnoreSpaceEffects = 
-		{
-			bool Drag = true,
-			bool Flow = false,
-			bool Force = false,
-			bool Gravity = true,
-			bool Thrust = false,
-			bool Vortex = false,
-			bool Wind = false,
-			bool Invalid = false,
-			bool Torque = false,
-			bool PointGravity = false,
-			bool PointForce = false,
-			bool Buoyancy = false,
-			bool Custom = false,
-		},
-		DealDamage = 
-		{
-			int Damage = 1,
-			bool Projectile = true,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 4,
-				},
-				Named = 
-				{
-					string Name = "LaserTrail",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0.400000006, -1],
-					Vec3 Scale = [3.33333302, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteParticleSystem = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					SystemChildMode ChildMode = Independent,
-					SystemSpace SystemSpace = WorldSpace,
-					uint DrawOrder = 0,
-					Vec4 Tint = [1, 1, 1, 1],
-					float WarmUpTime = 0,
-					ParticleGeometry GeometryMode = Billboarded,
-					ParticleRenderMode RenderMode = Additive,
-					ParticleSortMode SortMode = Youngest,
-					ParticleAnimation ParticleAnimation = Single,
-					string Texture = "5310e87a46f22c48:FireParticle02",
-					float VelocityScale = 1,
-					float LengthScale = 1,
-					float MaxParticleSize = 100,
-					Vec3 SystemSize = [1, 1, 1],
-				},
-				SphericalParticleEmitter = 
-				{
-					bool Active = true,
-					uint EmitCount = 0,
-					float EmitRate = 500,
-					float EmitVariance = 0,
-					float Size = 0.300000012,
-					float SizeVariance = 0.00499999989,
-					float Lifetime = 0.200000003,
-					float LifetimeVariance = 0,
-					float Spin = 0,
-					float SpinVariance = 50,
-					bool RandomSpin = true,
-					float Fill = 1,
-					float EmitterVelocityPercent = 0,
-					Vec3 StartVelocity = [0, -1, 0],
-					Vec3 RandomVelocity = [0, 0, 0],
-					Vec3 TangentVelocity = [0, 0, 0],
-					Vec3 EmitterSize = [0, 0, 0],
-					bool FastMovingEmitter = false,
-				},
-				LinearParticleAnimator = 
-				{
-					Vec3 Force = [0, 0, 0],
-					Vec3 RandomForce = [0, 0, 0],
-					float Torque = 0,
-					float Growth = 0,
-					float Dampening = 0,
-					Vec3 Twist = [0, 0, 0],
-				},
-				ParticleColorAnimator = 
-				{
-					Vec4 Color0 = [1, 0, 0, 0],
-					Vec4 Color1 = [1, 0, 0, 1],
-					Vec4 Color2 = [0.927999973, 1, 0.100000024, 1],
-					Vec4 Color3 = [1, 0, 0, 1],
-					Vec4 Color4 = [1, 0.386950016, 0.0849999785, 0],
-				},
-			},
+			string Name = "Laser",
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -341,7 +198,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 6,
+				uint ResolvedCog = 5,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -357,7 +214,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 6,
 		},
 		Transform = 
 		{
@@ -370,19 +227,12 @@ Level =
 			string Name = "Minion",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "58bd8c2a0b339f4a:PlayerShip",
 		LinkId = 
 		{
-			uint Id = 6,
-		},
-		Named = 
-		{
-			string Name = "PlayerShip",
-		},
-		Archetyped = 
-		{
-			string Name = "58bd8c2a0b339f4a:PlayerShip",
+			uint Id = 5,
 		},
 		Transform = 
 		{
@@ -390,112 +240,9 @@ Level =
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582d60eaee2f8504:PlayerShipIdle",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = false,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "58bd9642beb261db:player",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.25, 0.25, 0.5],
-		},
-		Health = 
-		{
-			int MaxHP = 5,
-			bool Respawns = true,
-			string DeathParticle = "582f37283debad28:Explosion",
-		},
-		ShipController = 
-		{
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 0, 1],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		Shoot = 
-		{
-			string Laser = "58bee0c51f2dde2f:Laser",
-			float SpawnTime = 0.300000012,
-		},
-		DragEffect = 
-		{
-			bool Active = false,
-			bool WakeUpOnChange = true,
-			float Drag = 4,
-			float AngularDrag = 0.100000001,
-		},
-		Hierarchy = 
-		{
-			ArchetypeInstance = 
-			{
-				string Name = "582f65db8f364ed6:Exhuast",
-				LinkId = 
-				{
-					uint Id = 8,
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-0.175631285, -0.0497157574, -1],
-					Vec3 Scale = [0.333333343, 0.333333343, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Named = 
-				{
-					string Name = "Exhuast",
-				},
-			},
-			ArchetypeInstance = 
-			{
-				string Name = "582f65db8f364ed6:Exhuast",
-				LinkId = 
-				{
-					uint Id = 9,
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0.169715643, -0.0497157574, -1],
-					Vec3 Scale = [0.333333343, 0.333333343, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Named = 
-				{
-					string Name = "Exhuast",
-				},
-			},
+			string Name = "PlayerShip",
 		},
 	},
 	ArchetypeInstance = 
@@ -503,7 +250,7 @@ Level =
 		string Name = "582f37283debad28:Explosion",
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 7,
 		},
 		Transform = 
 		{
@@ -521,7 +268,7 @@ Level =
 		string Name = "5829e094eacd0077:Explosion3",
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 8,
 		},
 		Transform = 
 		{
@@ -539,7 +286,7 @@ Level =
 		string Name = "582f3fae15740aef:Explosion2",
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 9,
 		},
 		Transform = 
 		{
@@ -552,12 +299,19 @@ Level =
 			string Name = "Explosion2",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "5829e3465cc85e38:Bomb",
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 10,
+		},
+		Named = 
+		{
+			string Name = "Bomb",
+		},
+		Archetyped = 
+		{
+			string Name = "5829e3465cc85e38:Bomb",
 		},
 		Transform = 
 		{
@@ -565,9 +319,28 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Bomb",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Bomb = 
+		{
+			float TimeTillBoom = 1.5,
+			float BlinkTimer = 0.5,
 		},
 	},
 },
