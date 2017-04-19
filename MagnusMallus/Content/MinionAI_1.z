@@ -6,8 +6,11 @@ class MinionAI_1 : ZilchComponent
     var Orient : Orientation = null;
     
     [Property]
-    var TargetPath : CogPath = null;
-    var Target : Cog = null;
+    var OrbitTargetPath : CogPath = null;
+    var OrbitTarget : Cog = null;
+    [Property]
+    var ShootTargetPath : CogPath = null;
+    var ShootTarget : Cog = null;
     
     [Property]
     var FollowPlayer : Boolean = true;
@@ -23,14 +26,18 @@ class MinionAI_1 : ZilchComponent
     var FollowDist : Real = 4;
     [Property]
     var FollowMargin : Real = 0.1;
+    [Property]
+    var ShootDist : Real = 5;
     
     var Timer : Real = 0;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
-        if (this.TargetPath != null)
-            this.Target = this.TargetPath.Cog;
+        if (this.OrbitTargetPath != null)
+            this.OrbitTarget = this.OrbitTargetPath.Cog;
+        if (this.ShootTargetPath != null)
+            this.ShootTarget = this.ShootTargetPath.Cog;
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -44,12 +51,12 @@ class MinionAI_1 : ZilchComponent
         {
             this.RBody.Velocity += Real3(1,0,0);
         }*/
-        if (this.Target != null) {
-            var dist = this.DistanceToTarget();
+        if (this.OrbitTarget != null) {
+            var dist = this.DistanceToTarget(this.OrbitTarget);
             if (dist.Z < this.DetectDist) {
                 //Console.WriteLine("Detected");
                 //Console.WriteLine("`dist`");
-                this.Orient.LookAtPoint(this.Target.Transform.Translation);
+                //this.Orient.LookAtPoint(this.OrbitTarget.Transform.Translation);
                 
                 if (this.FollowPlayer) {
                     var dir = this.DirToTarget();
@@ -106,6 +113,15 @@ class MinionAI_1 : ZilchComponent
                 }
             }
         }
+            
+        if (this.ShootTarget != null) {
+            var dist = this.DistanceToTarget(this.ShootTarget);
+            
+            if (dist.Z < this.ShootDist)
+                this.Owner.Shoot.Shoot(false);
+            
+            this.Orient.LookAtPoint(this.ShootTarget.Transform.Translation);
+        }
         
         //vel = Real3(this.MaxSpeed, this.MaxSpeed, 0);
         
@@ -117,8 +133,8 @@ class MinionAI_1 : ZilchComponent
         this.RBody.Velocity = vel;
     }
     
-    function DistanceToTarget() : Real3 {
-        var dist = this.Target.Transform.Translation - this.Owner.Transform.Translation;
+    function DistanceToTarget(target : Cog) : Real3 {
+        var dist = target.Transform.Translation - this.Owner.Transform.Translation;
         if (dist.X < 0) dist.X *= -1;
         if (dist.Y < 0) dist.Y *= -1;
         dist.Z = Math.Sqrt(dist.X*dist.X + dist.Y*dist.Y);
@@ -127,7 +143,7 @@ class MinionAI_1 : ZilchComponent
     
     function DirToTarget() : Real3 {
         var dir = Real3(1, 1, 0);
-        var dist = this.Target.Transform.Translation - this.Owner.Transform.Translation;
+        var dist = this.OrbitTarget.Transform.Translation - this.Owner.Transform.Translation;
         if (dist.X < 0) dir.X *= -1;
         if (dist.Y < 0) dir.Y *= -1;
         return dir;
@@ -141,7 +157,7 @@ class MinionAI_1 : ZilchComponent
     {
         Console.WriteLine("hi");
         var o = event.OtherObject;
-        if(o.DealDamage != null)
+        if(o.DealDamage != null && o.DealDamage.Friendly)
         {
             this.Owner.Health.Decrease(o.DealDamage.Damage);
         }

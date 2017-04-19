@@ -17,7 +17,7 @@ class DealDamage : ZilchComponent
         if(!this.Projectile)
             return;
         var o = event.OtherObject;
-        if(o.ShipController == null && o.Health != null)
+        if(o.Health != null && ((o.ShipController == null && this.Friendly) || (o.ShipController != null && !this.Friendly)))
         {
             this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation);
             this.Owner.Destroy();

@@ -20,26 +20,22 @@ class Shoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(this.Owner.Health.Dead)
-            return;
-       
         this.TimeSinceLastSpawn += event.Dt;
-
-        // If enough time has passed, spawn the ball
+    }
+    
+    function Shoot(friendly : Boolean)
+    {
         if (this.TimeSinceLastSpawn > this.SpawnTime)
         {
-            if(Zero.Mouse.IsButtonDown(MouseButtons.Left))
-            {
-                var spawnPosition = this.Owner.Transform.Translation;
-                var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
-                laser.DealDamage.Friendly = true;
-                //this.Space.CreateAtPosition(laser, spawnPosition);
-                laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 20;
-                laser.Transform.Rotation = this.Owner.Transform.Rotation;
-                
-                // Need to reset the value
-                this.TimeSinceLastSpawn = 0.0;
-            }
+            var spawnPosition = this.Owner.Transform.Translation;
+            var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
+            laser.DealDamage.Friendly = friendly;
+            //this.Space.CreateAtPosition(laser, spawnPosition);
+            laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 10;
+            laser.Transform.Rotation = this.Owner.Transform.Rotation;
+            
+            // Need to reset the value
+            this.TimeSinceLastSpawn = 0.0;
         }
     }
 }

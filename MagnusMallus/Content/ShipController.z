@@ -105,6 +105,9 @@ class ShipController : ZilchComponent
         if (this.Owner.RigidBody.Velocity.Y > this.MaxSpeed) newVel.Y = this.MaxSpeed;
         if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;
         this.Owner.RigidBody.Velocity = newVel; 
+        
+        if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
+            this.Owner.Shoot.Shoot(true);
    }
    
    function OnCollisionStarted(event : CollisionEvent)
