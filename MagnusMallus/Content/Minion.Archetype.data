@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.557194233, 1.5945493, 0],
+		Vec3 Translation = [6.89393759, 9.27147388, 0],
 		Vec3 Scale = [0.100000001, 0.100000001, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -60,7 +60,22 @@ Cog =
 	},
 	MinionAI_1 = 
 	{
-		CogPath TargetPath = 
+		CogPath OrbitTargetPath = 
+		{
+			string Path = ":/PlayerShip",
+			bool ErrorOnResolveToNull = false,
+			bool ErrorOnPathCantCompute = false,
+			bool ErrorOnDirectLinkFail = false,
+			bool UpdateCogOnPathChange = true,
+			bool UpdatePathOnCogChange = true,
+			bool UpdateCogOnInitialize = true,
+			bool ResolvedNullErrorOccurred = false,
+			uint ResolvedCog = 2,
+			CogPathPreference PathPreference0 = CogRelative,
+			CogPathPreference PathPreference1 = SpaceRelative,
+			CogPathPreference PathPreference2 = Absolute,
+		},
+		CogPath ShootTargetPath = 
 		{
 			string Path = ":/PlayerShip",
 			bool ErrorOnResolveToNull = false,
@@ -82,6 +97,7 @@ Cog =
 		float DetectDist = 10,
 		float FollowDist = 4,
 		float FollowMargin = 0.100000001,
+		float ShootDist = 5,
 	},
 	IgnoreSpaceEffects = 
 	{
@@ -101,16 +117,21 @@ Cog =
 	},
 	Orientation = 
 	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 1, 0],
-		Vec3 ForwardVector = [1, 0, 0],
-		OrientationBases DefaultBases = ForwardXUpY,
+		Vec3 GlobalUp = [0, 0, 1],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
 	},
 	Health = 
 	{
 		int MaxHP = 5,
 		bool Respawns = false,
 		string DeathParticle = "582f37283debad28:Explosion",
+	},
+	Shoot = 
+	{
+		string Laser = "58bee0c51f2dde2f:Laser",
+		float SpawnTime = 0.300000012,
 	},
 	Hierarchy = 
 	{

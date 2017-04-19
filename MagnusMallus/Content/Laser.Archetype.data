@@ -15,12 +15,12 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [0.100000001, 1, 1],
+		Vec3 Scale = [0.0799999982, 0.400000006, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -93,7 +93,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0.00985872746, 1.26278305, -1],
+				Vec3 Translation = [0, 0.5, -0.100000001],
 				Vec3 Scale = [0.5, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
@@ -122,18 +122,18 @@ Cog =
 			{
 				bool Active = true,
 				uint EmitCount = 0,
-				float EmitRate = 500,
+				float EmitRate = 400,
 				float EmitVariance = 0,
-				float Size = 0.100000001,
+				float Size = 0.300000012,
 				float SizeVariance = 0.00499999989,
-				float Lifetime = 0.200000003,
-				float LifetimeVariance = 0,
+				float Lifetime = 0.100000001,
+				float LifetimeVariance = 0.100000001,
 				float Spin = 0,
 				float SpinVariance = 50,
 				bool RandomSpin = true,
 				float Fill = 1,
 				float EmitterVelocityPercent = 0,
-				Vec3 StartVelocity = [0, -1, 0],
+				Vec3 StartVelocity = [0, 0, 0],
 				Vec3 RandomVelocity = [0, 0, 0],
 				Vec3 TangentVelocity = [0, 0, 0],
 				Vec3 EmitterSize = [0, 0, 0],
@@ -151,10 +151,10 @@ Cog =
 			ParticleColorAnimator = 
 			{
 				Vec4 Color0 = [1, 0, 0, 0],
-				Vec4 Color1 = [1, 0, 0, 1],
-				Vec4 Color2 = [0.927999973, 1, 0.100000024, 1],
+				Vec4 Color1 = [0, 0.160000086, 1, 1],
+				Vec4 Color2 = [0.172000051, 1, 0.100000024, 1],
 				Vec4 Color3 = [1, 0, 0, 1],
-				Vec4 Color4 = [1, 0.386950016, 0.0849999785, 0],
+				Vec4 Color4 = [1, 0, 0.000599861145, 0],
 			},
 		},
 	},
