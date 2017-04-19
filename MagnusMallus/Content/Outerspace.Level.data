@@ -869,9 +869,6 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
-			uint Id = 18,
-=======
 			uint Id = 21,
 		},
 		Named = 
@@ -881,7 +878,6 @@ Level =
 		Archetyped = 
 		{
 			string Name = "5896b03ffd135781:AsteroidWall",
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -951,11 +947,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
-			uint Id = 19,
-=======
 			uint Id = 23,
->>>>>>> origin/master
 		},
 		Named = 
 		{
