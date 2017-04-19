@@ -41,7 +41,9 @@ class ShipController : ZilchComponent
         {
             this.Owner.DragEffect.Active = true;
            
-            this.Owner.RigidBody.Velocity = mousePos - this.Owner.Transform.Translation;
+           var vel = (mousePos - this.Owner.Transform.Translation);
+           
+            this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
             Console.WriteLine(this.Owner.Orientation.LocalForward);
             Console.WriteLine("Gets here"); 
         }
