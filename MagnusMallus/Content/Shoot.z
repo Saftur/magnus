@@ -34,7 +34,7 @@ class Shoot : ZilchComponent
                 var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
                 laser.DealDamage.Friendly = true;
                 //this.Space.CreateAtPosition(laser, spawnPosition);
-                laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 10;
+                laser.RigidBody.Velocity = this.Owner.Orientation.WorldForward * 20;
                 laser.Transform.Rotation = this.Owner.Transform.Rotation;
                 
                 // Need to reset the value

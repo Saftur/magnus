@@ -45,8 +45,23 @@ class ShipController : ZilchComponent
            
             this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
             Console.WriteLine(this.Owner.Orientation.LocalForward);
-            Console.WriteLine("Gets here"); 
+            Console.WriteLine("Gets here");
         }
+        /*
+        if(Zero.Keyboard.KeyIsPressed(Keys.W))
+        {
+            foreach(var child in this.Owner.Children)
+            {
+                child.SpriteParticleSystem.Visible = true;
+            }
+        }
+        else if(Zero.Keyboard.KeyIsReleased(Keys.W))
+        {
+            foreach(var child in this.Owner.Children)
+            {
+                child.SpriteParticleSystem.Visible = false;
+            }
+        }*/
         //else if(Zero.Keyboard.KeyIsReleased(Keys.F))
         //{
         //    this.Owner.DragEffect.Active = false;
@@ -71,25 +86,13 @@ class ShipController : ZilchComponent
          //   movement +=  Real3(1.0, 0.0, 0.0);
         //}
         // If I hold down the left arrow key,
-        else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
-        {
+       // else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
+        //{
             // Record desired leftward motion along the world x-axis:
-            movement +=  Real3(-1.0, 0.0, 0.0);
-        }
-        if(movement == Real3(0,0,0))
-        {
-            foreach(var child in this.Owner.Children)
-            {
-                child.SpriteParticleSystem.Visible = false;
-            }
-        }
-        else
-        {
-            foreach(var child in this.Owner.Children)
-            {
-                child.SpriteParticleSystem.Visible = true;
-            }
-        }
+          //  movement +=  Real3(-1.0, 0.0, 0.0);
+        //}
+       // if(movement == Real3(0,0,0))
+       // {
         mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
         
         

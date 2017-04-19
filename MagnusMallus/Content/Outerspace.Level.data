@@ -249,19 +249,12 @@ Level =
 		{
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "58bd8c2a0b339f4a:PlayerShip",
 		LinkId = 
 		{
 			uint Id = 5,
-		},
-		Named = 
-		{
-			string Name = "PlayerShip",
-		},
-		Archetyped = 
-		{
-			string Name = "58bd8c2a0b339f4a:PlayerShip",
 		},
 		Transform = 
 		{
@@ -269,116 +262,9 @@ Level =
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582d60eaee2f8504:PlayerShipIdle",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = false,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "58bd9642beb261db:player",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.25, 0.25, 0.5],
-		},
-		ShipStatus = 
-		{
-			float StartingHealth = 15,
-		},
-		ShipController = 
-		{
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 0, 1],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = Custom,
-		},
-		Shoot = 
-		{
-			string Laser = "58bee0c51f2dde2f:Laser",
-			float SpawnTime = 0.300000012,
-		},
-		DragEffect = 
-		{
-			bool Active = false,
-			bool WakeUpOnChange = true,
-			float Drag = 4,
-			float AngularDrag = 0.100000001,
-		},
-		Health = 
-		{
-			int MaxHP = 5,
-			bool Respawns = false,
-			string DeathParticle = "582f37283debad28:Explosion",
-		},
-		Hierarchy = 
-		{
-			ArchetypeInstance = 
-			{
-				string Name = "582f65db8f364ed6:Exhuast",
-				LinkId = 
-				{
-					uint Id = 6,
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-0.175631285, -0.0497157574, -1],
-					Vec3 Scale = [0.333333343, 0.333333343, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Named = 
-				{
-					string Name = "Exhuast",
-				},
-			},
-			ArchetypeInstance = 
-			{
-				string Name = "582f65db8f364ed6:Exhuast",
-				LinkId = 
-				{
-					uint Id = 7,
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0.169715643, -0.0497157574, -1],
-					Vec3 Scale = [0.333333343, 0.333333343, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Named = 
-				{
-					string Name = "Exhuast",
-				},
-			},
+			string Name = "PlayerShip",
 		},
 	},
 	Cog = 
@@ -440,7 +326,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 6,
 		},
 		Named = 
 		{
@@ -475,7 +361,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 7,
 		},
 		Named = 
 		{
@@ -510,7 +396,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 8,
 		},
 		Named = 
 		{
@@ -545,7 +431,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -580,7 +466,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 10,
 		},
 		Named = 
 		{
@@ -615,7 +501,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 11,
 		},
 		Named = 
 		{
@@ -650,7 +536,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 12,
 		},
 		Named = 
 		{
@@ -685,7 +571,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 13,
 		},
 		Named = 
 		{
@@ -720,7 +606,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -755,7 +641,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 17,
+			uint Id = 15,
 		},
 		Named = 
 		{
@@ -790,7 +676,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 18,
+			uint Id = 16,
 		},
 		Named = 
 		{
@@ -825,7 +711,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 19,
+			uint Id = 17,
 		},
 		Named = 
 		{
@@ -877,7 +763,7 @@ Level =
 		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
 		LinkId = 
 		{
-			uint Id = 20,
+			uint Id = 18,
 		},
 		Transform = 
 		{
@@ -894,7 +780,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 21,
+			uint Id = 19,
 		},
 		Named = 
 		{

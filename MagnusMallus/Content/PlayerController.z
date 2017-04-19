@@ -14,9 +14,9 @@ class PlayerController : ZilchComponent
         {
             dir = -1;
         }
-        else if(Zero.Keyboard.KeyIsDown(Keys.D))
-        {
-            dir = 1;
+       else if(Zero.Keyboard.KeyIsDown(Keys.D))
+       {
+           dir = 1;
         }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.W) && this.Fissix.Grounded())

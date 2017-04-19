@@ -14,8 +14,8 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-9.19692421, 4.64467716, 0],
-		Vec3 Scale = [0.100000001, 1, 1],
+		Vec3 Translation = [0.034405455, -0.499120653, 0],
+		Vec3 Scale = [0.0900000036, 0.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -93,8 +93,8 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0, 0.400000006, -1],
-				Vec3 Scale = [3.33333302, 1, 1],
+				Vec3 Translation = [0.00985872746, 1.26278305, -1],
+				Vec3 Scale = [0.5, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			SpriteParticleSystem = 
@@ -114,7 +114,7 @@ Cog =
 				ParticleAnimation ParticleAnimation = Single,
 				string Texture = "5310e87a46f22c48:FireParticle02",
 				float VelocityScale = 1,
-				float LengthScale = 1,
+				float LengthScale = 0.5,
 				float MaxParticleSize = 100,
 				Vec3 SystemSize = [1, 1, 1],
 			},
@@ -124,7 +124,7 @@ Cog =
 				uint EmitCount = 0,
 				float EmitRate = 500,
 				float EmitVariance = 0,
-				float Size = 0.300000012,
+				float Size = 0.100000001,
 				float SizeVariance = 0.00499999989,
 				float Lifetime = 0.200000003,
 				float LifetimeVariance = 0,
