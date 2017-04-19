@@ -335,6 +335,12 @@ Level =
 			float Drag = 4,
 			float AngularDrag = 0.100000001,
 		},
+		Health = 
+		{
+			int MaxHP = 5,
+			bool Respawns = false,
+			string DeathParticle = "582f37283debad28:Explosion",
+		},
 		Hierarchy = 
 		{
 			ArchetypeInstance = 
