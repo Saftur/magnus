@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [25.7755165, 37.2173767, 49.9999962],
+			Vec3 Translation = [16.2396698, -21.2781029, 49.9999962],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 100,
+			float Size = 16.5299187,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [25.7755165, 37.2173767, -4.61203354e-06],
+			Vec3 LookTarget = [16.2396698, -21.2781029, -2.54019392e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -5874,6 +5874,7 @@ Level =
 			string Name = "Sprite",
 		},
 	},
+<<<<<<< HEAD
 	Cog = 
 	{
 		LinkId = 
@@ -6079,4 +6080,6 @@ Level =
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
 	},
+=======
+>>>>>>> origin/master
 },
