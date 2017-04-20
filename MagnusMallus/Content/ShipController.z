@@ -30,7 +30,6 @@ class ShipController : ZilchComponent
         }
         
         var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
-        this.Space.FindObjectByName("Thing").Transform.Translation = mousePos;
         
         this.Owner.Orientation.LookAtPoint(mousePos);
        

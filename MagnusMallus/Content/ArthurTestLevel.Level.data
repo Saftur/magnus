@@ -218,7 +218,79 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [6.89393759, 9.27147388, 0],
+			Vec3 Translation = [7.94934893, 2.97959518, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 7,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [7.94934654, 1.3152914, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.99426651, 7.4447999, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 9,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.09961319, 0.52373457, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 10,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [6.65037823, 1.59944296, 0],
 			Vec3 Scale = [0.100000001, 0.100000001, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -322,7 +394,7 @@ Level =
 				string Name = "582f65db8f364ed6:Exhuast",
 				LinkId = 
 				{
-					uint Id = 7,
+					uint Id = 11,
 				},
 				Transform = 
 				{
@@ -340,7 +412,7 @@ Level =
 				string Name = "582f65db8f364ed6:Exhuast",
 				LinkId = 
 				{
-					uint Id = 8,
+					uint Id = 12,
 				},
 				Transform = 
 				{
@@ -360,7 +432,7 @@ Level =
 		string Name = "582f37283debad28:Explosion",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 13,
 		},
 		Transform = 
 		{
@@ -378,7 +450,7 @@ Level =
 		string Name = "5829e094eacd0077:Explosion3",
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 14,
 		},
 		Transform = 
 		{
@@ -396,7 +468,7 @@ Level =
 		string Name = "582f3fae15740aef:Explosion2",
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 15,
 		},
 		Transform = 
 		{
@@ -413,7 +485,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 16,
 		},
 		Named = 
 		{
@@ -453,39 +525,166 @@ Level =
 			float BlinkTimer = 0.5,
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 13,
-		},
-		Named = 
-		{
-			string Name = "Thing",
+			uint Id = 17,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.95613074, 3.01236677, 0],
-			Vec3 Scale = [1, 1, 1],
+			Vec3 Translation = [6.14297152, -0.551975489, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [6.14296913, -2.21627927, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [4.84400082, -1.93212771, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 20,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.76829481, 1.66033006, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 21,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.76829243, -0.00397372246, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.46932411, 0.280177832, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.67228937, 5.57753181, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 24,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.67228699, 3.91322827, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 25,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [1.37331867, 4.19738007, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
 		},
 	},
 },
