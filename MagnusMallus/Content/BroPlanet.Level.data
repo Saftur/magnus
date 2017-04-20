@@ -290,7 +290,7 @@ Level =
 		Transform = 
 		{
 			Vec3 Translation = [-21.9243946, 2.44601989, 1],
-			Vec3 Scale = [1, 1, 1],
+			Vec3 Scale = [0.800000012, 0.600000024, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Area = 
@@ -355,7 +355,7 @@ Level =
 				CogPathPreference PathPreference2 = Absolute,
 			},
 			float DetectDis = 100,
-			float ChaseSpeed = 2,
+			float ChaseSpeed = 1,
 		},
 		RigidBody = 
 		{

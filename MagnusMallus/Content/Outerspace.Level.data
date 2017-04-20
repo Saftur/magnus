@@ -20,9 +20,9 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = false,
+			bool Active = true,
 			bool WakeUpOnChange = false,
-			float Drag = 3.11373258,
+			float Drag = 0.200000003,
 			float AngularDrag = 0.100000001,
 		},
 		CameraViewport = 
@@ -126,7 +126,11 @@ Level =
 		},
 		Transform = 
 		{
+<<<<<<< HEAD
 			Vec3 Translation = [15.126605, 48.3425407, 50.9990005],
+=======
+			Vec3 Translation = [25.4812412, -15.0390186, 49.9999962],
+>>>>>>> origin/master
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -146,7 +150,11 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
+<<<<<<< HEAD
 			Vec3 LookTarget = [15.126605, 48.3425407, 0.998999],
+=======
+			Vec3 LookTarget = [25.4812412, -15.0390186, -2.13638509e-06],
+>>>>>>> origin/master
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -158,12 +166,129 @@ Level =
 			bool Wireframe = false,
 		},
 	},
+<<<<<<< HEAD
 	ArchetypeInstance = 
+=======
+	Cog = 
 	{
-		string Name = "58bd8c2a0b339f4a:PlayerShip",
 		LinkId = 
 		{
 			uint Id = 4,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0.119877577, -9.30014896, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		MinionAI_1 = 
+		{
+			CogPath OrbitTargetPath = 
+			{
+				string Path = "",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 4294967293,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			CogPath ShootTargetPath = 
+			{
+				string Path = "",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 4294967293,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			float OrbitSpeed = 0,
+			float MaxSpeed = 7,
+			float Accel = 7,
+			float DetectDist = 10,
+			float FollowDist = 4,
+			float FollowMargin = 0.100000001,
+			float ShootDist = 5,
+		},
+		IgnoreSpaceEffects = 
+		{
+			bool Drag = false,
+			bool Flow = false,
+			bool Force = false,
+			bool Gravity = true,
+			bool Thrust = false,
+			bool Vortex = false,
+			bool Wind = false,
+			bool Invalid = false,
+			bool Torque = false,
+			bool PointGravity = false,
+			bool PointForce = false,
+			bool Buoyancy = false,
+			bool Custom = false,
+		},
+		Hierarchy = 
+		{
+		},
+	},
+	Cog = 
+>>>>>>> origin/master
+	{
+		LinkId = 
+		{
+			uint Id = 4,
+		},
+		Named = 
+		{
+			string Name = "PlayerShip",
+		},
+		Archetyped = 
+		{
+			string Name = "58bd8c2a0b339f4a:PlayerShip",
 		},
 		Transform = 
 		{
@@ -171,9 +296,116 @@ Level =
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "PlayerShip",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582d60eaee2f8504:PlayerShipIdle",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "58bd9642beb261db:player",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.25, 0.25, 0.5],
+		},
+		ShipStatus = 
+		{
+			float StartingHealth = 15,
+		},
+		ShipController = 
+		{
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 0, 1],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = Custom,
+		},
+		Shoot = 
+		{
+			string Laser = "58bee0c51f2dde2f:Laser",
+			float SpawnTime = 0.699999988,
+		},
+		DragEffect = 
+		{
+			bool Active = false,
+			bool WakeUpOnChange = true,
+			float Drag = 6,
+			float AngularDrag = 0.100000001,
+		},
+		Health = 
+		{
+			int MaxHP = 5,
+			bool Respawns = false,
+			string DeathParticle = "582f37283debad28:Explosion",
+		},
+		Hierarchy = 
+		{
+			ArchetypeInstance = 
+			{
+				string Name = "582f65db8f364ed6:Exhuast",
+				LinkId = 
+				{
+					uint Id = 6,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.175631285, -0.0497157574, -1],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "582f65db8f364ed6:Exhuast",
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.169715643, -0.0497157574, -1],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+			},
 		},
 	},
 	Cog = 
@@ -235,7 +467,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 5,
+=======
+			uint Id = 8,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -274,7 +510,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 6,
+=======
+			uint Id = 9,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -314,7 +554,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 7,
+=======
+			uint Id = 10,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -332,7 +576,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 8,
+=======
+			uint Id = 11,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -350,7 +598,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 9,
+=======
+			uint Id = 12,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -368,7 +620,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 10,
+=======
+			uint Id = 13,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -381,11 +637,36 @@ Level =
 			string Name = "AsteroidWall",
 		},
 	},
+<<<<<<< HEAD
+=======
+	ArchetypeInstance = 
+	{
+		string Name = "5896b03ffd135781:AsteroidWall",
+		LinkId = 
+		{
+			uint Id = 14,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.74914551, -51.493988, 0],
+			Vec3 Scale = [5, 5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+	},
+>>>>>>> origin/master
 	Cog = 
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 11,
+=======
+			uint Id = 15,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -436,7 +717,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 12,
+=======
+			uint Id = 16,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -487,7 +772,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 13,
+=======
+			uint Id = 17,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -526,7 +815,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 14,
+=======
+			uint Id = 18,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -565,7 +858,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 15,
+=======
+			uint Id = 19,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -605,7 +902,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 16,
+=======
+			uint Id = 20,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -622,7 +923,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 17,
+=======
+			uint Id = 21,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -661,7 +966,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 18,
+=======
+			uint Id = 22,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -700,7 +1009,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 19,
+=======
+			uint Id = 23,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -739,7 +1052,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 20,
+=======
+			uint Id = 24,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -778,7 +1095,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 21,
+=======
+			uint Id = 25,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -817,7 +1138,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 22,
+=======
+			uint Id = 26,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -856,7 +1181,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 23,
+=======
+			uint Id = 27,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -895,7 +1224,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 24,
+=======
+			uint Id = 28,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -934,7 +1267,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 25,
+=======
+			uint Id = 29,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -973,7 +1310,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 26,
+=======
+			uint Id = 30,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1012,7 +1353,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 27,
+=======
+			uint Id = 31,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1051,7 +1396,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 28,
+=======
+			uint Id = 32,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1090,7 +1439,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 29,
+=======
+			uint Id = 33,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1129,7 +1482,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 30,
+=======
+			uint Id = 34,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1168,7 +1525,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 31,
+=======
+			uint Id = 35,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1207,7 +1568,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 32,
+=======
+			uint Id = 36,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1246,7 +1611,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 33,
+=======
+			uint Id = 37,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1285,7 +1654,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 34,
+=======
+			uint Id = 38,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1324,7 +1697,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 35,
+=======
+			uint Id = 39,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1363,7 +1740,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 36,
+=======
+			uint Id = 40,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1402,7 +1783,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 37,
+=======
+			uint Id = 41,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1441,7 +1826,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 38,
+=======
+			uint Id = 42,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1480,7 +1869,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 39,
+=======
+			uint Id = 43,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1519,7 +1912,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 40,
+=======
+			uint Id = 44,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1558,7 +1955,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 41,
+=======
+			uint Id = 45,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1597,7 +1998,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 42,
+=======
+			uint Id = 46,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1636,7 +2041,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 43,
+=======
+			uint Id = 47,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1675,7 +2084,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 44,
+=======
+			uint Id = 48,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1714,10 +2127,134 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 45,
 		},
 		Named = 
 		{
+=======
+			uint Id = 49,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-57.0257721, -45.8128204, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 50,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-91.0257721, -30.8654537, 1.14440918e-05],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 51,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-69.3225555, -39.8305969, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 52,
+		},
+		Named = 
+		{
+>>>>>>> origin/master
 			string Name = "Sprite",
 		},
 		Transform = 
@@ -1765,7 +2302,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 46,
+=======
+			uint Id = 53,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1823,7 +2364,11 @@ Level =
 		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 47,
+=======
+			uint Id = 54,
+>>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -1840,7 +2385,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 48,
+=======
+			uint Id = 55,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1879,7 +2428,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 49,
+=======
+			uint Id = 56,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1914,7 +2467,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 50,
+=======
+			uint Id = 57,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1953,7 +2510,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 51,
+=======
+			uint Id = 58,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -1992,7 +2553,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 52,
+=======
+			uint Id = 59,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2031,7 +2596,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 53,
+=======
+			uint Id = 60,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2070,7 +2639,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 54,
+=======
+			uint Id = 61,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2109,7 +2682,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 55,
+=======
+			uint Id = 62,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2148,7 +2725,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 56,
+=======
+			uint Id = 63,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2187,7 +2768,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 57,
+=======
+			uint Id = 64,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2226,7 +2811,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 58,
+=======
+			uint Id = 65,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2265,7 +2854,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 59,
+=======
+			uint Id = 66,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2304,7 +2897,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 60,
+=======
+			uint Id = 67,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2343,7 +2940,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 61,
+=======
+			uint Id = 68,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2382,7 +2983,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 62,
+=======
+			uint Id = 69,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2421,7 +3026,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 63,
+=======
+			uint Id = 70,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2460,7 +3069,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 64,
+=======
+			uint Id = 71,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2499,7 +3112,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 65,
+=======
+			uint Id = 72,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2538,7 +3155,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 66,
+=======
+			uint Id = 73,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2577,7 +3198,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 67,
+=======
+			uint Id = 74,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2616,7 +3241,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 68,
+=======
+			uint Id = 75,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2655,7 +3284,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 69,
+=======
+			uint Id = 76,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2694,7 +3327,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 70,
+=======
+			uint Id = 77,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2733,7 +3370,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 71,
+=======
+			uint Id = 78,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2772,7 +3413,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 72,
+=======
+			uint Id = 79,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2811,7 +3456,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 73,
+=======
+			uint Id = 80,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2850,7 +3499,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 74,
+=======
+			uint Id = 81,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -2889,7 +3542,10 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 75,
+=======
+			uint Id = 82,
 		},
 		Named = 
 		{
@@ -2928,7 +3584,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 76,
+			uint Id = 83,
 		},
 		Named = 
 		{
@@ -2967,7 +3623,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 77,
+			uint Id = 84,
 		},
 		Named = 
 		{
@@ -3006,7 +3662,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 78,
+			uint Id = 85,
 		},
 		Named = 
 		{
@@ -3045,7 +3701,180 @@ Level =
 	{
 		LinkId = 
 		{
+			uint Id = 86,
+>>>>>>> origin/master
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [71.7786179, 52.3176384, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+<<<<<<< HEAD
+			uint Id = 76,
+=======
+			uint Id = 87,
+>>>>>>> origin/master
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69.6920166, 14.3052149, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+<<<<<<< HEAD
+			uint Id = 77,
+=======
+			uint Id = 88,
+>>>>>>> origin/master
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [46.6762238, -38.0124359, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+<<<<<<< HEAD
+			uint Id = 78,
+=======
+			uint Id = 89,
+>>>>>>> origin/master
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [43.1388969, -41.9579124, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+<<<<<<< HEAD
 			uint Id = 79,
+=======
+			uint Id = 90,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3084,7 +3913,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 80,
+=======
+			uint Id = 91,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3123,7 +3956,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 81,
+=======
+			uint Id = 92,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3162,7 +3999,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 82,
+=======
+			uint Id = 93,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3201,7 +4042,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 83,
+=======
+			uint Id = 94,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3240,7 +4085,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 84,
+=======
+			uint Id = 95,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3279,7 +4128,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 85,
+=======
+			uint Id = 96,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3318,7 +4171,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 86,
+=======
+			uint Id = 97,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3357,7 +4214,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 87,
+=======
+			uint Id = 98,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3396,7 +4257,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 88,
+=======
+			uint Id = 99,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3435,7 +4300,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 89,
+=======
+			uint Id = 100,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3474,7 +4343,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 90,
+=======
+			uint Id = 101,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3513,7 +4386,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 91,
+=======
+			uint Id = 102,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3552,7 +4429,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 92,
+=======
+			uint Id = 103,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3591,7 +4472,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 93,
+=======
+			uint Id = 104,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3630,7 +4515,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 94,
+=======
+			uint Id = 105,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3669,7 +4558,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 95,
+=======
+			uint Id = 106,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3708,7 +4601,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 96,
+=======
+			uint Id = 107,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3747,7 +4644,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 97,
+=======
+			uint Id = 108,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3786,7 +4687,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 98,
+=======
+			uint Id = 109,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3825,7 +4730,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 99,
+=======
+			uint Id = 110,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3864,7 +4773,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 100,
+=======
+			uint Id = 111,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3903,7 +4816,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 101,
+=======
+			uint Id = 112,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3942,7 +4859,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 102,
+=======
+			uint Id = 113,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -3981,7 +4902,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 103,
+=======
+			uint Id = 114,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4020,7 +4945,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 104,
+=======
+			uint Id = 115,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4059,7 +4988,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 105,
+=======
+			uint Id = 116,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4098,7 +5031,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 106,
+=======
+			uint Id = 117,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4137,7 +5074,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 107,
+=======
+			uint Id = 118,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4176,7 +5117,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 108,
+=======
+			uint Id = 119,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4215,7 +5160,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 109,
+=======
+			uint Id = 120,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4254,7 +5203,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 110,
+=======
+			uint Id = 121,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4293,7 +5246,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 111,
+=======
+			uint Id = 122,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4332,7 +5289,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 112,
+=======
+			uint Id = 123,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4371,7 +5332,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 113,
+=======
+			uint Id = 124,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4410,7 +5375,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 114,
+=======
+			uint Id = 125,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4449,7 +5418,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 115,
+=======
+			uint Id = 126,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4488,7 +5461,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 116,
+=======
+			uint Id = 127,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4527,7 +5504,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 117,
+=======
+			uint Id = 128,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4566,7 +5547,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 118,
+=======
+			uint Id = 129,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4605,7 +5590,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 119,
+=======
+			uint Id = 130,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4644,7 +5633,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 120,
+=======
+			uint Id = 131,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4683,7 +5676,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 121,
+=======
+			uint Id = 132,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4722,7 +5719,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 122,
+=======
+			uint Id = 133,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4761,7 +5762,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 123,
+=======
+			uint Id = 134,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4800,7 +5805,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 124,
+=======
+			uint Id = 135,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4839,7 +5848,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 125,
+=======
+			uint Id = 136,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4878,7 +5891,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 126,
+=======
+			uint Id = 137,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4917,7 +5934,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 127,
+=======
+			uint Id = 138,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4956,7 +5977,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 128,
+=======
+			uint Id = 139,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -4995,7 +6020,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 129,
+=======
+			uint Id = 140,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5034,7 +6063,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 130,
+=======
+			uint Id = 141,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5073,7 +6106,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 131,
+=======
+			uint Id = 142,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5112,7 +6149,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 132,
+=======
+			uint Id = 143,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5151,7 +6192,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 133,
+=======
+			uint Id = 144,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5190,7 +6235,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 134,
+=======
+			uint Id = 145,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5229,7 +6278,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 135,
+=======
+			uint Id = 146,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5268,7 +6321,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 136,
+=======
+			uint Id = 147,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5307,7 +6364,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 137,
+=======
+			uint Id = 148,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5346,7 +6407,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 138,
+=======
+			uint Id = 149,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5385,7 +6450,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 139,
+=======
+			uint Id = 150,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5424,7 +6493,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 140,
+=======
+			uint Id = 151,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5463,7 +6536,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 141,
+=======
+			uint Id = 152,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5502,7 +6579,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 142,
+=======
+			uint Id = 153,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5541,7 +6622,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 143,
+=======
+			uint Id = 154,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5580,7 +6665,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 144,
+=======
+			uint Id = 155,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5619,7 +6708,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 145,
+=======
+			uint Id = 156,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5659,6 +6752,7 @@ Level =
 		string Name = "5896b3315aecea99:Invisibru",
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 146,
 		},
 		Transform = 
@@ -5666,6 +6760,9 @@ Level =
 			Vec3 Translation = [64.4002609, -14.2395344, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
+=======
+			uint Id = 157,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5694,7 +6791,11 @@ Level =
 	{
 		LinkId = 
 		{
+<<<<<<< HEAD
 			uint Id = 148,
+=======
+			uint Id = 158,
+>>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -5724,6 +6825,7 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
+<<<<<<< HEAD
 		BoxCollider = 
 		{
 			bool Ghost = false,
@@ -5733,6 +6835,40 @@ Level =
 			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
+=======
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5896b3315aecea99:Invisibru",
+		LinkId = 
+		{
+			uint Id = 159,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64.4002609, -14.2395344, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 160,
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+		Archetyped = 
+		{
+			string Name = "589006c293b23c17:Minion",
+>>>>>>> origin/master
 		},
 		RigidBody = 
 		{
@@ -5746,7 +6882,132 @@ Level =
 			Vec3 Velocity = [0, 0, 0],
 			Vec3 AngularVelocity = [0, 0, 0],
 		},
+<<<<<<< HEAD
 		SpaceGate = 
+=======
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5898079c14b4a322:labia_spaceship",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [3.5, 4, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = false,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		MinionAI_1 = 
+		{
+			CogPath OrbitTargetPath = 
+			{
+				string Path = ":/PlayerShip",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 5,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			CogPath ShootTargetPath = 
+			{
+				string Path = ":/PlayerShip",
+				bool ErrorOnResolveToNull = false,
+				bool ErrorOnPathCantCompute = false,
+				bool ErrorOnDirectLinkFail = false,
+				bool UpdateCogOnPathChange = true,
+				bool UpdatePathOnCogChange = true,
+				bool UpdateCogOnInitialize = true,
+				bool ResolvedNullErrorOccurred = false,
+				uint ResolvedCog = 5,
+				CogPathPreference PathPreference0 = CogRelative,
+				CogPathPreference PathPreference1 = SpaceRelative,
+				CogPathPreference PathPreference2 = Absolute,
+			},
+			float OrbitSpeed = 1,
+			float MaxSpeed = 7,
+			float Accel = 7,
+			float DetectDist = 10,
+			float FollowDist = 4,
+			float FollowMargin = 0.100000001,
+			float ShootDist = 7.5,
+		},
+		IgnoreSpaceEffects = 
+		{
+			bool Drag = false,
+			bool Flow = false,
+			bool Force = false,
+			bool Gravity = true,
+			bool Thrust = false,
+			bool Vortex = false,
+			bool Wind = false,
+			bool Invalid = false,
+			bool Torque = false,
+			bool PointGravity = false,
+			bool PointForce = false,
+			bool Buoyancy = false,
+			bool Custom = false,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 0, 1],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		Health = 
+		{
+			int MaxHP = 5,
+			bool Respawns = false,
+			string DeathParticle = "582f37283debad28:Explosion",
+		},
+		Shoot = 
+		{
+			string Laser = "58bee0c51f2dde2f:Laser",
+			float SpawnTime = 0.300000012,
+		},
+		DragEffect = 
+		{
+			bool Active = false,
+			bool WakeUpOnChange = true,
+			float Drag = 6,
+			float AngularDrag = 0.100000001,
+		},
+		Hierarchy = 
+>>>>>>> origin/master
 		{
 		},
 	},

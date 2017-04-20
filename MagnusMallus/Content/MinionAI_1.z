@@ -26,7 +26,7 @@ class MinionAI_1 : ZilchComponent
     [Property]
     var FollowMargin : Real = 0.1;
     [Property]
-    var ShootDist : Real = 5;
+    var ShootDist : Real = 7.5;
     
     var Timer : Real = 0;
     function Initialize(init : CogInitializer)
@@ -53,6 +53,7 @@ class MinionAI_1 : ZilchComponent
         if (this.OrbitTarget != null && !this.OrbitTarget.Health.Dead) {
             var dist = this.DistanceToTarget(this.OrbitTarget);
             if (dist.Z < this.DetectDist) {
+                this.Owner.DragEffect.Active = false;
                 //Console.WriteLine("Detected");
                 //Console.WriteLine("`dist`");
                 //this.Orient.LookAtPoint(this.OrbitTarget.Transform.Translation);
@@ -108,6 +109,8 @@ class MinionAI_1 : ZilchComponent
                 }
                 
                 vel += accel*event.Dt*this.Accel;
+            } else {
+                this.Owner.DragEffect.Active = true;
             }
         }
             
