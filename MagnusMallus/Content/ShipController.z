@@ -25,8 +25,11 @@ class ShipController : ZilchComponent
         {
             //Console.WriteLine("");
             this.Owner.Health.Decrease(o.DealDamage.Damage);
-            var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
-            hud.LevelSettings.HUDReferences.HealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+            if(this.Space.LevelSettings.HUDCreator != null)
+            {
+                var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
+                hud.LevelSettings.HUDReferences.HealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+            }
         }
     }
     function OnLogicUpdate(event : UpdateEvent)
