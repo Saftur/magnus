@@ -34,20 +34,7 @@ class MenuLevelStart : ZilchComponent
       //Zero.Connect(this.Owner, Events.MouseEnter, this.OnMouseEnter);
       //Zero.Connect(this.Owner, Events.MouseExit, this.OnMouseExit);
       Zero.Connect(this.Owner, Events.MouseUp, this.OnMouseUp);
-      //Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
-    }
-
-    // Responds to the mouse entering the boundaries of the button
-    function OnMouseEnter(event : ViewportMouseEvent)
-    {
-      // Calls the function for the Hovered state
-      //this.HoveredState();
-    }
-    // Responds to the mouse exiting the boundaries of the button
-    function OnMouseExit(event : ViewportMouseEvent)
-    {
-      // Calls the function for the Default state
-      //this.DefaultState();
+      Zero.Connect(this.Owner, Events.MouseDown, this.OnMouseDown);
     }
 
     // Responds to the mouse releasing a button
@@ -64,6 +51,11 @@ class MenuLevelStart : ZilchComponent
     function OnMouseDown(event : ViewportMouseEvent)
     {
       // Calls the function for the clicked state
-      //this.ClickedState();
+      this.ClickedState();
+    }
+    
+    function ClickedState()
+    {
+        this.Owner.Sprite.SpriteSource = SpriteSource.Button2;
     }
 }

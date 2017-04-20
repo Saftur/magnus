@@ -4,8 +4,9 @@ class ShipController : ZilchComponent
     //var Invincible : Boolean = false;
     
     
-    var Accel : Real = 10;
-    var MaxSpeed : Real = 10;
+    var Accel : Real = 20;
+    var MaxSpeed : Real = 7;
+    var SideThrustSpeed : Real = 0.2;
     
     var DeathTimer : Real = 1;
     var RespawnPoint : Real3 = Real3(0,0,0);
@@ -27,26 +28,37 @@ class ShipController : ZilchComponent
             }
             return;
         }
-        // Have a place to record the total movement we want to make:
-        var movement =  Real3(0,0,0);
         
-        var mousePos : Real3 = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
-        
+        var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
         
         this.Owner.Orientation.LookAtPoint(mousePos);
        
+        // Have a place to record the total movement we want to make:
+        var movement =  Real3(0,0,0);
         
         //breaks
         if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
         {
-            this.Owner.DragEffect.Active = true;
+            //this.Owner.DragEffect.Active = true;
            
            var vel = (mousePos - this.Owner.Transform.Translation);
-           
-            this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
+           var dist = Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+           //Console.WriteLine(vel);
+           if (dist > 0.2) {
+                movement = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+            }
+            if (dist < 1) {
+                movement *= dist*2;
+            }
+            //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
             Console.WriteLine(this.Owner.Orientation.LocalForward);
             Console.WriteLine("Gets here");
         }
+        /*if(Zero.Keyboard.KeyIsPressed(Keys.F))
+        {
+            movement = Real3();
+            this.Owner.RigidBody.Velocity = Real3();
+        }*/
         /*
         if(Zero.Keyboard.KeyIsPressed(Keys.W))
         {
@@ -61,50 +73,69 @@ class ShipController : ZilchComponent
             {
                 child.SpriteParticleSystem.Visible = false;
             }
+        }
+        else if(Zero.Keyboard.KeyIsReleased(Keys.F))
+        {
+            this.Owner.DragEffect.Active = false;
         }*/
-        //else if(Zero.Keyboard.KeyIsReleased(Keys.F))
-        //{
-        //    this.Owner.DragEffect.Active = false;
-        //}
         
-        
-        //// If I hold down the up arrow key,
-        //if (Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up))
-        //{
+        /*
+        // If I hold down the up arrow key,
+        if (Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up))
+        {
             // Record desired upward motion along the world y-axis:
-         //   movement +=  Real3(0.0, 1.0, 0.0);
-       // }
+            movement +=  Real3(0.0, 1.0, 0.0);
+        }
         // If I hold down the down arrow key,
-       // if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
+        if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
             // Record desired downward motion along the world y-axis:
-         //   movement +=  Real3(0.0, -1.0, 0.0);
+            movement +=  Real3(0.0, -1.0, 0.0);
         
         // If I hold down the right arrow key,
-        //if (Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
-       // {
+        if (Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
+        {
             // Record desired rightward motion along the world x-axis:
-         //   movement +=  Real3(1.0, 0.0, 0.0);
-        //}
+            movement +=  Real3(1.0, 0.0, 0.0);
+        }
         // If I hold down the left arrow key,
-       // else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
-        //{
+        else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
+        {
             // Record desired leftward motion along the world x-axis:
-          //  movement +=  Real3(-1.0, 0.0, 0.0);
-        //}
-       // if(movement == Real3(0,0,0))
-       // {
-        mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
+            movement +=  Real3(-1.0, 0.0, 0.0);
+        }*/
+        
+        this.Owner.RigidBody.Velocity += movement*event.Dt*this.Accel;
         
         
         //this.Owner.Orientation.LocalForward = this.Owner.Orientation.LookAtPoint;
-        // Apply the recorded movement to our Transform
-        //this.Owner.RigidBody.Velocity += Math.Normalize(facingMovement); //* this.Accel *event.Dt;
+        // Apply the recorded movement to our Transform //* this.Accel *event.Dt;
         var newVel = this.Owner.RigidBody.Velocity;
-        if (this.Owner.RigidBody.Velocity.X > this.MaxSpeed) newVel.X = this.MaxSpeed;
+        /*if (this.Owner.RigidBody.Velocity.X > this.MaxSpeed) newVel.X = this.MaxSpeed;
         if (this.Owner.RigidBody.Velocity.X < -this.MaxSpeed) newVel.X = -this.MaxSpeed;
         if (this.Owner.RigidBody.Velocity.Y > this.MaxSpeed) newVel.Y = this.MaxSpeed;
-        if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;
+        if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;*/
+        var spd = Math.Sqrt(newVel.X*newVel.X+newVel.Y*newVel.Y);
+        if (spd > this.MaxSpeed) {
+            newVel /= (spd/this.MaxSpeed);
+        }
+        
+        if(Zero.Keyboard.KeyIsDown(Keys.A)) {
+            var thrust = (mousePos - this.Owner.Transform.Translation);
+            thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+            //newVel += thrust;
+            thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed;
+            newVel += thrust;
+        }
+        if(Zero.Keyboard.KeyIsDown(Keys.D)) {
+            var thrust = (mousePos - this.Owner.Transform.Translation);
+            thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+            //newVel += thrust;
+            thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-1;
+            newVel += thrust;
+        }
+        
         this.Owner.RigidBody.Velocity = newVel; 
+        
         
         if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
             this.Owner.Shoot.Shoot(true);

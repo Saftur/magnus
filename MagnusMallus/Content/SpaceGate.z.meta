@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SpaceGate",
+		uint64 ResourceId = 5898076df5ea76b7,
+	},
+},
