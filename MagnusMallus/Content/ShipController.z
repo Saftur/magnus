@@ -71,6 +71,16 @@ class ShipController : ZilchComponent
             Console.WriteLine(this.Owner.Orientation.LocalForward);
             Console.WriteLine("Gets here");
         }
+        if(Zero.Keyboard.KeyIsDown(Keys.F))
+        {
+            Console.WriteLine("brake");
+            this.Owner.DragEffect.Active = true;
+        }
+        else
+        {
+            this.Owner.DragEffect.Active = false;
+        }
+        
         /*if(Zero.Keyboard.KeyIsPressed(Keys.F))
         {
             movement = Real3();
