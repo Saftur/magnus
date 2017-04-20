@@ -123,7 +123,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-3.22322321, 22.4559288, 50],
+			Vec3 Translation = [-1.5565002, 22.6528606, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 36.7880325,
+			float Size = 100,
 		},
 		EditorCameraController = 
 		{
@@ -143,7 +143,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-3.22322321, 22.4559288, 0],
+			Vec3 LookTarget = [-1.5565002, 22.6528606, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -484,48 +484,22 @@ Level =
 			string Name = "GiantLaser",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "5829e3465cc85e38:Bomb",
 		LinkId = 
 		{
 			uint Id = 10,
 		},
-		Named = 
-		{
-			string Name = "Bomb",
-		},
-		Archetyped = 
-		{
-			string Name = "5829e3465cc85e38:Bomb",
-		},
 		Transform = 
 		{
-			Vec3 Translation = [-2.83181334, 6.40387726, 0],
+			Vec3 Translation = [7.4028964, 9.31792545, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		Bomb = 
-		{
-			float TimeTillBoom = 1.5,
-			float BlinkTimer = 0.5,
+			string Name = "Bomb",
 		},
 	},
 	ArchetypeInstance = 
@@ -719,7 +693,7 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = false,
+			bool Active = true,
 			bool WakeUpOnChange = true,
 			float Drag = 4,
 			float AngularDrag = 0.100000001,

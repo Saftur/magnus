@@ -10,18 +10,27 @@ class Bomb : ZilchComponent
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate , this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         this.BlinkTimer /= 2;
         this.BlinkTime = this.BlinkTimer;
         this.Tick = Math.Round(this.TimeTillBoom);
         this.TimeTillBoom = 0;
     }
-
-    function OnLogicUpdate(event : UpdateEvent)
+    function OnCollisionStarted(event : CollisionEvent)
     {
-        if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+        var o = event.OtherObject;
+        if(o.DealDamage != null)
         {
             this.GoBoom();
         }
+    }
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        /*
+        if(Zero.Keyboard.KeyIsPressed(Keys.Space))
+        {
+            this.GoBoom();
+        }*/
         this.TimeTillBoom += event.Dt;
         this.BlinkTimer -= event.Dt;
         if(this.TimeTillBoom > this.Tick) 

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0.81387043, 6.44521952, 0],
+		Vec3 Translation = [0.414584994, 6.46870661, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -90,7 +90,7 @@ Cog =
 	DealDamage = 
 	{
 		int Damage = 3,
-		bool Projectile = false,
+		bool DiesOnContact = false,
 	},
 	TimedDeath = 
 	{

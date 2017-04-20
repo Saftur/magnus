@@ -9,8 +9,8 @@ class BossControl : ZilchComponent
     var MaxVel : Real = 4;
     var Dir : Integer = 1;
     
+    /*Super Laser, some reused for death and other lasers*/
     var SuperLaser : Boolean = false;
-    
     var ChargeTimer : Real = 5;
     var ChargeClick : Real = 0.5;
     var ChargePhase : Real = 0;
@@ -19,6 +19,10 @@ class BossControl : ZilchComponent
     var Fire : Boolean = false;
     var LaserLength : Real = 3;
     var LaserInterval : Real = 0.2;
+    
+    /*Attack patterns, difficulty based on health*/
+    var Diffuculty : Integer = 1;
+    /*Laser that is aimed at the player*/
     
     function Initialize(init : CogInitializer)
     {
@@ -74,6 +78,7 @@ class BossControl : ZilchComponent
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
             this.SuperLaser = true;
+            this.LaunchBombs(this.Diffuculty);
             //this.DeployMinions();
             
         }
@@ -120,6 +125,31 @@ class BossControl : ZilchComponent
         else
         {
             this.Owner.RigidBody.Velocity = Real3(this.MaxVel*this.Dir,0,0);
+        }
+    }
+    function LaunchBombs(difficulty : Integer)
+    {
+        var rand : Random = Random();
+        var x = this.Owner.Transform.Scale.X * 3;
+        var y = this.Owner.Transform.Scale.Y;
+        var vel = Real3(this.Owner.Transform.Scale.X*0.7,this.Owner.Transform.Scale.Y*-1, 0);
+        vel *= Real3(rand.Range(25,45), rand.Range(25,45), 0);
+        
+        var bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
+        bomb.RigidBody.Velocity = vel;
+        bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
+        bomb.RigidBody.Velocity = vel * Real3(-1,1,1);
+        
+        if(difficulty > 2)
+        {
+            x = this.Owner.Transform.Scale.X * 2.3;
+            vel = Real3(this.Owner.Transform.Scale.X*0.2, this.Owner.Transform.Scale.Y*-1, 0);
+            vel *= Real3(rand.Range(40,60), rand.Range(40,60), 0);
+            
+            bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
+            bomb.RigidBody.Velocity = vel;
+            bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
+            bomb.RigidBody.Velocity = vel * Real3(-1,1,1);
         }
     }
     function ChargeLaser(time : Real)

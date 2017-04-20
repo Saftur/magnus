@@ -38,6 +38,7 @@ class ShipController : ZilchComponent
             {
                 this.DeathTimer = 1;
                 this.Owner.Health.Respawn(this.RespawnPoint);
+                this.Space.LevelSettings.HUDCreator.HUDSpace.LevelSettings.HUDReferences.HealthBar.Healthbar.Increase(1);
             }
             return;
         }
