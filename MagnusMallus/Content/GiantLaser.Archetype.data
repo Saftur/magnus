@@ -1,0 +1,114 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "GiantLaser",
+	},
+	Archetyped = 
+	{
+		string Name = "5897f3037b32f7b9:GiantLaser",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [12.3424683, 28.7985611, 1],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	SpriteParticleSystem = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		bool VisibilityEvents = true,
+		bool CastShadows = false,
+		SystemChildMode ChildMode = Independent,
+		SystemSpace SystemSpace = WorldSpace,
+		uint DrawOrder = 0,
+		Vec4 Tint = [1, 1, 1, 1],
+		float WarmUpTime = 0,
+		ParticleGeometry GeometryMode = Billboarded,
+		ParticleRenderMode RenderMode = Additive,
+		ParticleSortMode SortMode = Youngest,
+		ParticleAnimation ParticleAnimation = Single,
+		string Texture = "5310e87a46fb0d8e:Laser",
+		float VelocityScale = 1,
+		float LengthScale = 1,
+		float MaxParticleSize = 100,
+		Vec3 SystemSize = [1, 1, 1],
+	},
+	SphericalParticleEmitter = 
+	{
+		bool Active = true,
+		uint EmitCount = 0,
+		float EmitRate = 100,
+		float EmitVariance = 0,
+		float Size = 5,
+		float SizeVariance = 0.300000012,
+		float Lifetime = 0.300000012,
+		float LifetimeVariance = 0,
+		float Spin = 0,
+		float SpinVariance = 50,
+		bool RandomSpin = true,
+		float Fill = 1,
+		float EmitterVelocityPercent = 0,
+		Vec3 StartVelocity = [0, 0, 0],
+		Vec3 RandomVelocity = [0, 0, 0],
+		Vec3 TangentVelocity = [0, 0, 0],
+		Vec3 EmitterSize = [0, 0, 0],
+		bool FastMovingEmitter = false,
+	},
+	LinearParticleAnimator = 
+	{
+		Vec3 Force = [0, 0, 0],
+		Vec3 RandomForce = [0, 0, 0],
+		float Torque = 0,
+		float Growth = 0,
+		float Dampening = 0,
+		Vec3 Twist = [0, 0, 0],
+	},
+	ParticleColorAnimator = 
+	{
+		Vec4 Color0 = [1, 0, 0, 0.5],
+		Vec4 Color1 = [0.740000248, 0, 1, 1],
+		Vec4 Color2 = [0.0113999844, 0.243465945, 0.75999999, 1],
+		Vec4 Color3 = [0.808499992, 0, 0.824999988, 1],
+		Vec4 Color4 = [1, 0.209999979, 0.873600125, 0.5],
+	},
+	RigidBody = 
+	{
+		bool Static = false,
+		bool Asleep = false,
+		bool Kinematic = false,
+		bool RotationLocked = false,
+		bool Mode2D = true,
+		bool AllowSleep = true,
+		bool Inherit2DMode = true,
+		Vec3 Velocity = [0, -50, 0],
+		Vec3 AngularVelocity = [0, 0, 0],
+	},
+	CapsuleCollider = 
+	{
+		bool Ghost = true,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+		Vec3 Offset = [0, 2, 0],
+		float Radius = 2,
+		float Height = 5,
+		AxisDirection Direction = Y,
+		CapsuleScalingMode ScalingMode = PreserveScale,
+	},
+	DealDamage = 
+	{
+		int Damage = 100,
+		bool Projectile = false,
+	},
+	TimedDeath = 
+	{
+		float Lifespan = 3,
+	},
+},

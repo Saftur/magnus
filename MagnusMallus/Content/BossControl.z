@@ -1,0 +1,93 @@
+class BossControl : ZilchComponent
+{
+    var SuperLaser : Boolean = false;
+    
+    var ChargeTimer : Real = 5;
+    var ChargeClick : Real = 0.5;
+    var ChargePhase : Real = 0;
+    var Charge : Boolean = true;
+    
+    var Fire : Boolean = false;
+    var LaserLength : Real = 3;
+    var LaserInterval : Real = 0.2;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.Health.Dead)
+            return;
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.P))
+        {
+            this.SuperLaser = true;
+            this.DeployMinions();
+        }
+        
+        if(this.SuperLaser)
+        {
+            this.ChargeLaser(event.Dt);
+        }
+    }
+    function ChargeLaser(time : Real)
+    {
+        if(this.Charge)
+        {
+            this.ChargeTimer -= time;
+            this.ChargeClick -= time;
+            if(this.ChargeTimer < 0)
+            {
+                this.Fire = true;
+                this.Charge = false;
+                this.ChargeTimer = 5;
+                this.ChargeClick = 0.5;
+                this.ChargePhase = 0;
+            }
+            else
+            {
+                if((this.ChargeTimer < 1) && this.ChargePhase == 0.2)
+                {
+                    this.ChargePhase += 0.2;
+                }
+                else if((this.ChargeTimer < 2) && this.ChargePhase == 0)
+                {
+                    this.ChargePhase += 0.2;
+                }
+                
+                if(this.ChargeClick < this.ChargePhase)
+                {
+                    this.Space.CreateAtPosition(Archetype.LaserCharge, this.Owner.Transform.Translation + Real3(0, -4, 0));
+                    this.ChargeClick = 0.5;
+                }
+            }
+            
+        }
+        else
+        {
+            this.LaserLength -= time;
+            this.LaserInterval -= time;
+            if(this.LaserLength < 0)
+            {
+                this.SuperLaser = false;
+                this.Charge = true;
+                this.LaserLength = 3;
+            }
+            else
+            {
+                if(this.LaserInterval < 0)
+                {
+                    this.Space.CreateAtPosition(Archetype.GiantLaser, this.Owner.Transform.Translation + Real3(0, -4, 0));
+                    this.LaserInterval = 0.1;
+                }
+            }
+        }
+    }
+    function DeployMinions()
+    {
+        this.Space.CreateAtPosition(Archetype.Minion, this.Owner.Transform.Translation + Real3(2.5, 0, 0));
+        this.Space.CreateAtPosition(Archetype.Minion, this.Owner.Transform.Translation + Real3(-2.5, 0, 0));
+    }
+}
