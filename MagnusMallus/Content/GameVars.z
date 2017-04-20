@@ -1,0 +1,4 @@
+class GameVars : ZilchComponent
+{
+    var Planet1Clear : Boolean = false;
+}
