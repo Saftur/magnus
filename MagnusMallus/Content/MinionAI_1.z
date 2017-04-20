@@ -13,8 +13,6 @@ class MinionAI_1 : ZilchComponent
     var ShootTarget : Cog = null;
     
     [Property]
-    var FollowPlayer : Boolean = true;
-    [Property]
     var OrbitSpeed : Real = 0;
     [Property]
     var MaxSpeed : Real = 7;
@@ -58,59 +56,57 @@ class MinionAI_1 : ZilchComponent
                 //Console.WriteLine("`dist`");
                 //this.Orient.LookAtPoint(this.OrbitTarget.Transform.Translation);
                 
-                if (this.FollowPlayer) {
-                    var dir = this.DirToTarget();
-                    var accel = Real3(0, 0, 0);
-                    
-                    if (dist.Z > this.FollowDist+this.FollowMargin) {
-                        //Console.WriteLine("Moving forward");
-                        accel = dist;
-                        accel /= dist.Z;
-                        /*if (dist.Z-this.FollowDist+this.FollowMargin < this.MaxSpeed*event.Dt) {
-                            Console.WriteLine("Too close, stopping `dist.Z-this.FollowDist+this.FollowMargin` < `this.MaxSpeed`");
-                            accel = Real3(0, 0, 0);
-                        }*/
-                        accel *= dir;
-                    } else if (dist.Z < this.FollowDist-this.FollowMargin) {
-                        //Console.WriteLine("Moving backwards");
-                        accel = dist;
-                        accel /= dist.Z;
-                        accel *= dir*-1;
-                    }
-                    /*if (dist.Z-this.FollowDist+this.FollowMargin < this.MaxSpeed*event.Dt && dist.Z-this.FollowDist-this.FollowMargin > -this.MaxSpeed*event.Dt) {
-                        Console.WriteLine("in follow margin");
+                var dir = this.DirToTarget();
+                var accel = Real3(0, 0, 0);
+                
+                if (dist.Z > this.FollowDist+this.FollowMargin) {
+                    //Console.WriteLine("Moving forward");
+                    accel = dist;
+                    accel /= dist.Z;
+                    /*if (dist.Z-this.FollowDist+this.FollowMargin < this.MaxSpeed*event.Dt) {
+                        Console.WriteLine("Too close, stopping `dist.Z-this.FollowDist+this.FollowMargin` < `this.MaxSpeed`");
                         accel = Real3(0, 0, 0);
                     }*/
-                    if (dist.Z-this.FollowDist < this.MaxSpeed && dist.Z > this.FollowDist+this.FollowMargin) {
-                        var maxVel = (dist.Z-this.FollowDist)*2;
-                        var curVel = this.Diag(vel);
-                        //Console.WriteLine("Within max speed `curVel` `maxVel`");
-                        if (curVel > maxVel)
-                            vel *= maxVel/curVel;
-                        /*if (curVel > maxVel)
-                            accel *= maxVel/curVel;*/
-                    }
-                    if (dist.Z-this.FollowDist > -this.MaxSpeed && dist.Z < this.FollowDist-this.FollowMargin) {
-                        var maxVel = -(dist.Z-this.FollowDist)*2;
-                        var curVel = this.Diag(vel);
-                        //Console.WriteLine("Within max speed `curVel` `maxVel`");
-                        if (curVel > maxVel)
-                            vel *= maxVel/curVel;
-                        /*if (curVel > maxVel)
-                            accel *= maxVel/curVel;*/
-                    }
-                    
-                    if (this.OrbitSpeed != 0 && dist.Z < this.FollowDist+this.FollowMargin && dist.Z > this.FollowDist-this.FollowMargin) {
-                        //use this to accelerate to orbit speed
-                        //accel = dist/dist.Z*dir;
-                        //accel = Real3(-accel.Y, accel.X, 0)*this.OrbitSpeed;
-                        //or this to orbit full speed
-                        vel = dist/dist.Z*dir;
-                        vel = Real3(-vel.Y, vel.X, 0)*this.OrbitSpeed;
-                    }
-                    
-                    vel += accel*event.Dt*this.Accel;
+                    accel *= dir;
+                } else if (dist.Z < this.FollowDist-this.FollowMargin) {
+                    //Console.WriteLine("Moving backwards");
+                    accel = dist;
+                    accel /= dist.Z;
+                    accel *= dir*-1;
                 }
+                /*if (dist.Z-this.FollowDist+this.FollowMargin < this.MaxSpeed*event.Dt && dist.Z-this.FollowDist-this.FollowMargin > -this.MaxSpeed*event.Dt) {
+                    Console.WriteLine("in follow margin");
+                    accel = Real3(0, 0, 0);
+                }*/
+                if (dist.Z-this.FollowDist < this.MaxSpeed && dist.Z > this.FollowDist+this.FollowMargin) {
+                    var maxVel = (dist.Z-this.FollowDist)*2;
+                    var curVel = this.Diag(vel);
+                    //Console.WriteLine("Within max speed `curVel` `maxVel`");
+                    if (curVel > maxVel)
+                        vel *= maxVel/curVel;
+                    /*if (curVel > maxVel)
+                        accel *= maxVel/curVel;*/
+                }
+                if (dist.Z-this.FollowDist > -this.MaxSpeed && dist.Z < this.FollowDist-this.FollowMargin) {
+                    var maxVel = -(dist.Z-this.FollowDist)*2;
+                    var curVel = this.Diag(vel);
+                    //Console.WriteLine("Within max speed `curVel` `maxVel`");
+                    if (curVel > maxVel)
+                        vel *= maxVel/curVel;
+                    /*if (curVel > maxVel)
+                        accel *= maxVel/curVel;*/
+                }
+                
+                if (this.OrbitSpeed != 0 && dist.Z < this.FollowDist+this.FollowMargin && dist.Z > this.FollowDist-this.FollowMargin) {
+                    //use this to accelerate to orbit speed
+                    //accel = dist/dist.Z*dir;
+                    //accel = Real3(-accel.Y, accel.X, 0)*this.OrbitSpeed;
+                    //or this to orbit full speed
+                    vel = dist/dist.Z*dir;
+                    vel = Real3(-vel.Y, vel.X, 0)*this.OrbitSpeed;
+                }
+                
+                vel += accel*event.Dt*this.Accel;
             }
         }
             
