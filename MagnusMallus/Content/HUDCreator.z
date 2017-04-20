@@ -10,7 +10,7 @@ class HUDCreator : ZilchComponent
     [Property]  //Player
     var PlayerRef : CogPath = null;
     
-    var HUDSpace : Space = null;
+    var HUDSpace : Space = null;        //reference the hud space to access its objects
     var SpaceshipHealthUI : Cog = null;
     
     function Initialize(init : CogInitializer)

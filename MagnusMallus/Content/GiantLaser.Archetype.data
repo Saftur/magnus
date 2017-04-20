@@ -105,7 +105,7 @@ Cog =
 	DealDamage = 
 	{
 		int Damage = 100,
-		bool Projectile = false,
+		bool DiesOnContact = false,
 	},
 	TimedDeath = 
 	{

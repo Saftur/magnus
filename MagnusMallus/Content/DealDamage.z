@@ -3,7 +3,7 @@ class DealDamage : ZilchComponent
     [Property]
     var Damage : Integer = 1;
     [Property]
-    var Projectile : Boolean = true;
+    var DiesOnContact : Boolean = true;
     
     var Friendly : Boolean = false;
     
@@ -14,7 +14,7 @@ class DealDamage : ZilchComponent
     }
     function OnCollisionStarted(event : CollisionEvent)
     {
-        if(!this.Projectile)
+        if(!this.DiesOnContact)
             return;
         var o = event.OtherObject;
         if(o.Health != null && ((o.ShipController == null && this.Friendly) || (o.ShipController != null && !this.Friendly)))

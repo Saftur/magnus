@@ -20,6 +20,7 @@ class MinionAI_1 : ZilchComponent
     var Accel : Real = 7;
     [Property]
     var DetectDist : Real = 10;
+    var Detected : Boolean = false;
     [Property]
     var FollowDist : Real = 4;
     [Property]
@@ -49,7 +50,7 @@ class MinionAI_1 : ZilchComponent
         {
             this.RBody.Velocity += Real3(1,0,0);
         }*/
-        if (this.OrbitTarget != null) {
+        if (this.OrbitTarget != null && !this.OrbitTarget.Health.Dead) {
             var dist = this.DistanceToTarget(this.OrbitTarget);
             if (dist.Z < this.DetectDist) {
                 //Console.WriteLine("Detected");

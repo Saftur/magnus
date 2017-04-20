@@ -24,7 +24,8 @@ class BossControl : ZilchComponent
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
             this.SuperLaser = true;
-            this.DeployMinions();
+            //this.DeployMinions();
+            
         }
         
         if(this.SuperLaser)
