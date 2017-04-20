@@ -1,0 +1,36 @@
+class AI2 : ZilchComponent
+{
+    [Property]
+    var TargetPath : CogPath;
+    var Target : Cog = null;
+    
+    [Property] 
+    var DetectDis : Real;
+    
+    [Property]
+    var ChaseSpeed : Real;
+    
+    var Dis : Real;
+    var Vel : Real3;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        if(this.TargetPath != null)
+        {
+            this.Target = this.TargetPath.Cog;
+        }
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+        this.Dis = (this.Target.Transform.Translation.X - this.Owner.Transform.Translation.X)^2 + (this.Target.Transform.Translation.Y - this.Owner.Transform.Translation.Y)^2;
+        
+        if(this.Dis <= this.DetectDis)
+        {
+            this.Vel =  this.Target.Transform.Translation -this.Owner.Transform.Translation;
+            this.Owner.RigidBody.Velocity = this.Vel * this.ChaseSpeed;
+        }
+        
+    }
+}

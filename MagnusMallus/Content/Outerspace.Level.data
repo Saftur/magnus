@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [51.7792358, -26.7753067, 50],
+			Vec3 Translation = [34.5259819, -25.8167877, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 44.9329338,
+			float Size = 54.8811989,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [51.7792358, -26.7753067, -9.86862688e-07],
+			Vec3 LookTarget = [34.5259819, -25.8167877, -1.74102627e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -236,7 +236,6 @@ Level =
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
 			},
-			bool FollowPlayer = true,
 			float OrbitSpeed = 0,
 			float MaxSpeed = 7,
 			float Accel = 7,
@@ -6140,6 +6139,24 @@ Level =
 		Named = 
 		{
 			string Name = "Sprite",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 158,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [6.2520113, -23.3883476, 0],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
 		},
 	},
 },
