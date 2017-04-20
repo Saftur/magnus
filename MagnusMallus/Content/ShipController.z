@@ -15,7 +15,20 @@ class ShipController : ZilchComponent
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
-
+       
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(this.Owner.Health.Dead)
+            return;
+        var o = event.OtherObject;
+        if(o.DealDamage != null && !o.DealDamage.Friendly)
+        {
+            //Console.WriteLine("");
+            this.Owner.Health.Decrease(o.DealDamage.Damage);
+            var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
+            hud.LevelSettings.HUDReferences.HealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+        }
+    }
     function OnLogicUpdate(event : UpdateEvent)
     {
         if(this.Owner.Health.Dead)
@@ -139,19 +152,5 @@ class ShipController : ZilchComponent
         
         if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
             this.Owner.Shoot.Shoot(true);
-   }
-   
-   function OnCollisionStarted(event : CollisionEvent)
-   {
-       if(this.Owner.Health.Dead)
-            return;
-       var o = event.OtherObject;
-       if(o.DealDamage != null && !o.DealDamage.Friendly)
-       {
-           //Console.WriteLine("");
-           this.Owner.Health.Decrease(o.DealDamage.Damage);
-           var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
-           hud.LevelSettings.HUDReferences.HealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
-       }
    }
 }

@@ -93,6 +93,13 @@ class Health : ZilchComponent
     }
     function Destroy()
     {
+        if(this.Owner.BossControl != null) //Special case enemy
+        {
+            this.Dead = true;
+            this.Owner.BossControl.LaserInterval = 0.1;
+            this.Owner.BossControl.LaserLength = 2;
+            return;
+        }
         this.Space.CreateAtPosition(this.DeathParticle, this.Owner.Transform.Translation);
         this.Owner.Destroy();
     }

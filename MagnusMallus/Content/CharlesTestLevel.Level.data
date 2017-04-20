@@ -20,7 +20,7 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = true,
+			bool Active = false,
 			bool WakeUpOnChange = false,
 			float Drag = 2,
 			float AngularDrag = 0.100000001,
@@ -123,7 +123,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 50],
+			Vec3 Translation = [-3.22322321, 22.4559288, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 54.8812523,
+			float Size = 36.7880325,
 		},
 		EditorCameraController = 
 		{
@@ -143,7 +143,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0, 0, 0],
+			Vec3 LookTarget = [-3.22322321, 22.4559288, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -221,6 +221,8 @@ Level =
 		},
 		BossControl = 
 		{
+			float LeftPoint = -5,
+			float RightPoint = 5,
 		},
 		DragEffect = 
 		{
@@ -421,7 +423,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-3.344836, 20.4811325, 40],
+			Vec3 Translation = [0, 20.4811325, 40],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -600,10 +602,28 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "582f3fae15740aef:Explosion2",
+		string Name = "5824b2d69e8fc1fb:Explosion4",
 		LinkId = 
 		{
 			uint Id = 15,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-11.6618853, 16.7735023, 1],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Explosion4",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "582f3fae15740aef:Explosion2",
+		LinkId = 
+		{
+			uint Id = 16,
 		},
 		Transform = 
 		{
@@ -711,7 +731,7 @@ Level =
 				string Name = "582f65db8f364ed6:Exhuast",
 				LinkId = 
 				{
-					uint Id = 16,
+					uint Id = 17,
 				},
 				Transform = 
 				{
@@ -729,7 +749,7 @@ Level =
 				string Name = "582f65db8f364ed6:Exhuast",
 				LinkId = 
 				{
-					uint Id = 17,
+					uint Id = 18,
 				},
 				Transform = 
 				{
@@ -742,6 +762,46 @@ Level =
 					string Name = "Exhuast",
 				},
 			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-20.8016243, 14.0362282, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Test = 
+		{
+			string Particle = "5824b2d69e8fc1fb:Explosion4",
+			Enum KeyToPress = K,
 		},
 	},
 },

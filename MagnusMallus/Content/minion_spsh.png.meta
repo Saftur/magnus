@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "minion_spsh",
+		uint64 ResourceId = 58248dc8fe280d48,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 148,
+		uint FrameSizeY = 86,
+		uint FrameCount = 4,
+		float FrameDelay = 0.166666672,
+		float OriginX = 74,
+		float OriginY = 43,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},
