@@ -1,5 +1,14 @@
 class BossControl : ZilchComponent
 {
+    /*Ship moves back and forth slowly in the x this.Direction only, the boss isn't nimble but tanky*/
+    [Property]
+    var LeftPoint : Real = -5;
+    [Property]
+    var RightPoint : Real = 5;
+    var Accel : Real = 2;
+    var MaxVel : Real = 4;
+    var Dir : Integer = 1;
+    
     var SuperLaser : Boolean = false;
     
     var ChargeTimer : Real = 5;
@@ -14,12 +23,53 @@ class BossControl : ZilchComponent
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if(Zero.Keyboard.KeyIsPressed(Keys.B))
+        {
+            this.Owner.Health.Dead = true;
+            this.Owner.BossControl.LaserLength = 2;
+        }
         if(this.Owner.Health.Dead)
+        {
+            var rand = Random();
+            var x = rand.Range(3,-3);
+            var y = rand.Range(-3,3);
+            var size = rand.Range(0.5, 2);
+            if((x > 2) || (x < -2) && y < -1)
+            {
+                if(rand.CoinFlip())
+                {
+                    if(x < -2)
+                        ++x;
+                    else
+                        --x;
+                }
+                else
+                {
+                    ++y;
+                }
+            }
+            this.LaserInterval -= event.Dt;
+            this.LaserLength -= event.Dt;
+            if(this.LaserLength < 0)
+            {
+                this.Space.CreateAtPosition(Archetype.Explosion4, this.Owner.Transform.Translation);
+                this.Owner.Destroy();
+            }
+            else if(this.LaserInterval < 0)
+            {
+                this.LaserInterval = 0.1;
+                var boom = this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation + Real3(x,y,2));
+                this.Owner.Transform.Translation += Real3(Real(this.Dir)/2,0,0);
+                this.Dir *= -1;
+                boom.SphericalParticleEmitter.Size = size;
+            }
             return;
+        }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
@@ -31,6 +81,45 @@ class BossControl : ZilchComponent
         if(this.SuperLaser)
         {
             this.ChargeLaser(event.Dt);
+        }
+        else
+        {
+            /*Patrolling*/
+            this.Patrol();
+        }
+    }
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(this.Owner.Health.Dead)
+            return;
+            
+        var o = event.OtherObject;
+        if(o.DealDamage != null && o.DealDamage.Friendly)
+        {
+            this.Owner.Health.Decrease(o.DealDamage.Damage);
+            var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
+            hud.LevelSettings.HUDReferences.BossHealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+        }
+    }
+    function Patrol()
+    {
+        /*determind direction*/
+        if(this.Owner.Transform.Translation.X < this.LeftPoint)
+        {
+            this.Dir = 1;
+        }
+        else if(this.Owner.Transform.Translation.X > this.RightPoint)
+        {
+            this.Dir = -1;
+        }
+        /*determind speed*/
+        if(this.Owner.RigidBody.Velocity.X < this.MaxVel*this.Dir)
+        {
+            this.Owner.RigidBody.Velocity += Real3(this.Accel*this.Dir, 0,0);
+        }
+        else
+        {
+            this.Owner.RigidBody.Velocity = Real3(this.MaxVel*this.Dir,0,0);
         }
     }
     function ChargeLaser(time : Real)

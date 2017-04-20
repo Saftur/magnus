@@ -19,7 +19,7 @@ class DealDamage : ZilchComponent
         var o = event.OtherObject;
         if(o.Health != null && ((o.ShipController == null && this.Friendly) || (o.ShipController != null && !this.Friendly)))
         {
-            this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation);
+            var explew = this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation + Real3(0,0,2));
             this.Owner.Destroy();
         }
     }
