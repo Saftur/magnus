@@ -6,6 +6,7 @@ class ShipController : ZilchComponent
     
     var Accel : Real = 20;
     var MaxSpeed : Real = 7;
+    var BoostSpeed : Real = 12;
     var SideThrustSpeed : Real = 0.2;
     
     var DeathTimer : Real = 1;
@@ -35,6 +36,8 @@ class ShipController : ZilchComponent
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
+        var maxspd = this.MaxSpeed;
+        
         if(this.Owner.Health.Dead)
         {
             this.DeathTimer -= event.Dt;
@@ -80,6 +83,10 @@ class ShipController : ZilchComponent
         else
         {
             this.Owner.DragEffect.Active = false;
+        }
+        if(Zero.Keyboard.KeyIsDown(Keys.Space))
+        {
+            maxspd = this.BoostSpeed;
         }
         
         /*if(Zero.Keyboard.KeyIsPressed(Keys.F))
@@ -143,8 +150,8 @@ class ShipController : ZilchComponent
         if (this.Owner.RigidBody.Velocity.Y > this.MaxSpeed) newVel.Y = this.MaxSpeed;
         if (this.Owner.RigidBody.Velocity.Y < -this.MaxSpeed) newVel.Y = -this.MaxSpeed;*/
         var spd = Math.Sqrt(newVel.X*newVel.X+newVel.Y*newVel.Y);
-        if (spd > this.MaxSpeed) {
-            newVel /= (spd/this.MaxSpeed);
+        if (spd > maxspd) {
+            newVel /= (spd/maxspd);
         }
         
         if(Zero.Keyboard.KeyIsDown(Keys.A)) {
