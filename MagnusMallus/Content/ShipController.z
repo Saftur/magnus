@@ -18,6 +18,8 @@ class ShipController : ZilchComponent
     var StickDeadzone : Real = 0.05;
     var TriggerDeadzone : Real = 0.05;
     
+    var OldMousePos : Real3 = Real3();
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -130,8 +132,12 @@ class ShipController : ZilchComponent
             
         } else {
             var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
-            this.Owner.Orientation.LookAtPoint(mousePos);
-            // Have a place to record the total movement we want to make:
+            if (mousePos != this.OldMousePos) {
+                this.Owner.Orientation.LookAtPoint(mousePos);
+            } else {
+                //if (Zero.Keyboard
+            }
+            this.OldMousePos = mousePos;
             
             //breaks
             if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
