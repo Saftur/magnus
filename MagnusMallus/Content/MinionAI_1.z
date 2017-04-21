@@ -50,7 +50,7 @@ class MinionAI_1 : ZilchComponent
         {
             this.RBody.Velocity += Real3(1,0,0);
         }*/
-        if (this.OrbitTarget != null && !this.OrbitTarget.Health.Dead) {
+        if (this.OrbitTarget != null && ((this.OrbitTarget.Health != null && !this.OrbitTarget.Health.Dead) || this.OrbitTarget.Health == null)) {
             var dist = this.DistanceToTarget(this.OrbitTarget);
             if (dist.Z < this.DetectDist) {
                 this.Owner.DragEffect.Active = false;
@@ -115,6 +115,9 @@ class MinionAI_1 : ZilchComponent
         }
             
         if (this.ShootTarget != null) {
+            if (!((this.ShootTarget.Health != null && !this.ShootTarget.Health.Dead) || this.ShootTarget.Health == null))
+                return;
+            
             var dist = this.DistanceToTarget(this.ShootTarget);
             
             if (dist.Z < this.ShootDist)

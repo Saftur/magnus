@@ -86,6 +86,24 @@ class BossControl : ZilchComponent
             this.Owner.BossControl.LaserLength = 2;
             this.Owner.BossControl.LaserInterval = 0.1;
         }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.P))
+        {
+            this.DeployMinions();
+            
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.L))
+        {
+            this.SuperLaser = true;
+            
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.O))
+        {
+            this.LaunchBombs(this.Difficulty);
+            
+        }
         if(this.Owner.Health.Dead)
         {
             var rand = Random();
@@ -131,6 +149,12 @@ class BossControl : ZilchComponent
             
             if (this.FightStarted)
             {
+                if (this.Player.Health.Dead) {
+                    this.Turret.BossTurret.Active = false;
+                    this.RightTurret.BossTurret.Active = false;
+                    this.LeftTurret.BossTurret.Active = false;
+                    return;
+                }
                 this.BehaviorTimer += event.Dt;
                 if (this.BehaviorTimer > 4) {
                     if(!this.SuperLaser && this.BehaviorTimer >= this.LastLaser+(9 - this.Difficulty))
@@ -154,12 +178,12 @@ class BossControl : ZilchComponent
                 if(this.SuperLaser)
                 {
                     //Shut off turrets for giant laser
-                    if(this.Turret.BossTurret.Active)
-                    {
+                    //if(this.Turret.BossTurret.Active)
+                    //{
                         this.Turret.BossTurret.Active = false;
                         this.RightTurret.BossTurret.Active = false;
                         this.LeftTurret.BossTurret.Active = false;
-                    }
+                    //}
                     this.ChargeLaser(event.Dt);
                 }
                 if (this.Difficulty > 2 || !this.SuperLaser)
@@ -190,24 +214,6 @@ class BossControl : ZilchComponent
                 }
                 
             }
-            
-        }
-        
-        if(Zero.Keyboard.KeyIsPressed(Keys.P))
-        {
-            this.DeployMinions();
-            
-        }
-        
-        if(Zero.Keyboard.KeyIsPressed(Keys.L))
-        {
-            this.SuperLaser = true;
-            
-        }
-        
-        if(Zero.Keyboard.KeyIsPressed(Keys.O))
-        {
-            this.LaunchBombs(this.Difficulty);
             
         }
         

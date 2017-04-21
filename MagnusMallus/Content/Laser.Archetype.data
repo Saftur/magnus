@@ -78,10 +78,11 @@ Cog =
 	{
 		int Damage = 1,
 		bool DiesOnContact = true,
+		bool PlanetLaser = false,
 	},
 	TimedDeath = 
 	{
-		float Lifespan = 1.5,
+		float Lifespan = 1.39999998,
 	},
 	Hierarchy = 
 	{

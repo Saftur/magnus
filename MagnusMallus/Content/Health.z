@@ -16,9 +16,9 @@ class Health : ZilchComponent
     }
     function Decrease(amnt : Integer)
     {
+        this.CurrHP -= amnt;
         if(this.CurrHP - amnt > 0)
         {
-            this.CurrHP -= amnt;
         }
         else if(this.Respawns)
         {
