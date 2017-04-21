@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-6.19825745, -16.5609016, 49.9999924],
+			Vec3 Translation = [-15.627717, 30.7145329, 49.9999924],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-6.19825745, -16.5609016, -7.7858158e-06],
+			Vec3 LookTarget = [-15.627717, 30.7145329, -8.19795059e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -1875,8 +1875,8 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [48.8947372, 12.7894764, 0],
-			Vec3 Scale = [25, 25, 1],
+			Vec3 Translation = [48.2098045, 11.4196129, 0],
+			Vec3 Scale = [5, 5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -1885,11 +1885,11 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [0.0149999857, 0.438549817, 1, 1],
+			Vec4 Color = [1, 1, 1, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5274db4c2e7c11f9:Circle",
+			string SpriteSource = "589951d64c53a318:alien_planet",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -1910,8 +1910,8 @@ Level =
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			float Radius = 0.5,
+			Vec3 Offset = [-0.0900000036, 0.170000002, 0],
+			float Radius = 3.4000001,
 		},
 	},
 	Cog = 
@@ -5522,29 +5522,11 @@ Level =
 			uint StartFrame = 0,
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "5896b3315aecea99:Invisibru",
-		LinkId = 
-		{
-			uint Id = 144,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [64.4002609, -14.2395344, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Sprite",
-		},
-	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 145,
+			uint Id = 144,
 		},
 		Named = 
 		{
@@ -5689,7 +5671,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 146,
+			uint Id = 145,
 		},
 		Named = 
 		{
@@ -5697,9 +5679,9 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [51.3184357, 67.4601974, -7.01740282e-06],
-			Vec3 Scale = [20, 5, 1],
-			Quat Rotation = [0, 0, -0.0879031271, 0.996129036],
+			Vec3 Translation = [51.1079102, 69.1444016, 1],
+			Vec3 Scale = [7, 7, 1],
+			Quat Rotation = [0, 0, 0.313575447, 0.949563324],
 		},
 		Sprite = 
 		{
@@ -5711,7 +5693,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -5731,6 +5713,9 @@ Level =
 			Vec3 Velocity = [0, 0, 0],
 			Vec3 AngularVelocity = [0, 0, 0],
 		},
+		SpaceGate = 
+		{
+		},
 		BoxCollider = 
 		{
 			bool Ghost = false,
@@ -5739,10 +5724,7 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-		SpaceGate = 
-		{
+			Vec3 Size = [1.5, 1.5, 0.5],
 		},
 	},
 },
