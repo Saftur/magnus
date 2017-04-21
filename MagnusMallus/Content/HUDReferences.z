@@ -4,11 +4,13 @@ class HUDReferences : ZilchComponent
     var CurrentPlanet : Cog = null;
     var PlayerPos : Real3 = Real3();
     var HealthBar : Cog = null;
+    var BoostBar : Cog = null;
     var BossHealthBar : Cog = null;
     function Initialize(init : CogInitializer)
     {
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         this.HealthBar = this.Space.FindObjectByName("HealthBar");
+        this.BoostBar = this.Space.FindObjectByName("BoostBar");
         this.BossHealthBar = this.Space.FindObjectByName("BossHealthBar");
     }
 }

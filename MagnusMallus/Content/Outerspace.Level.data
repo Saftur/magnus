@@ -113,6 +113,9 @@ Level =
 		GameStateManager = 
 		{
 		},
+		Music = 
+		{
+		},
 	},
 	Cog = 
 	{
@@ -126,7 +129,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [39.8744011, 89.4477463, 49.9999962],
+			Vec3 Translation = [56.2451515, 2.31608582, 49.9999962],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +141,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 100,
+			float Size = 97.7752686,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +149,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [39.8744011, 89.4477463, -2.83690179e-06],
+			Vec3 LookTarget = [56.2451515, 2.31608582, -2.12130067e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -198,7 +201,7 @@ Level =
 		},
 		SpaceGate = 
 		{
-			int MinionKillsRequiredToOpen = 50,
+			int MinionKillsRequiredToOpen = 55,
 		},
 		Hierarchy = 
 		{
@@ -379,7 +382,7 @@ Level =
 		},
 		SpaceGate = 
 		{
-			int MinionKillsRequiredToOpen = 30,
+			int MinionKillsRequiredToOpen = 25,
 		},
 		Hierarchy = 
 		{
@@ -560,7 +563,7 @@ Level =
 		},
 		SpaceGate = 
 		{
-			int MinionKillsRequiredToOpen = 30,
+			int MinionKillsRequiredToOpen = 25,
 		},
 		Hierarchy = 
 		{
@@ -1253,7 +1256,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [22.7399082, -15.6671257, 0],
+			Vec3 Translation = [20.7301502, -14.0985489, 0],
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -1286,7 +1289,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 200,
-			float Size = 20,
+			float Size = 25,
 		},
 		SoundListener = 
 		{
@@ -9941,7 +9944,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-5.44847488, 26.9263744, -3.81469727e-06],
+			Vec3 Translation = [-9.41630936, 25.0025749, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -9959,7 +9962,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-9.41630936, 25.0025749, -3.81469727e-06],
+			Vec3 Translation = [-9.49745941, 45.6151085, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -9977,7 +9980,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-9.49745941, 45.6151085, -3.81469727e-06],
+			Vec3 Translation = [-5.28915215, 40.5050201, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -9995,7 +9998,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-5.28915215, 40.5050201, -3.81469727e-06],
+			Vec3 Translation = [-5.58974361, 43.9317856, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10013,7 +10016,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-5.58974361, 43.9317856, -3.81469727e-06],
+			Vec3 Translation = [-9.37722206, 42.6692963, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10031,7 +10034,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-9.37722206, 42.6692963, -3.81469727e-06],
+			Vec3 Translation = [-5.52962542, 47.5389099, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10049,7 +10052,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-5.52962542, 47.5389099, -3.81469727e-06],
+			Vec3 Translation = [11.4396744, 22.8114796, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10067,7 +10070,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [11.4396744, 22.8114796, -3.81469727e-06],
+			Vec3 Translation = [15.6479816, 17.7013912, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10085,7 +10088,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.6479816, 17.7013912, -3.81469727e-06],
+			Vec3 Translation = [15.3473911, 21.1281567, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10103,7 +10106,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.3473911, 21.1281567, -3.81469727e-06],
+			Vec3 Translation = [11.5599127, 19.8656654, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10121,7 +10124,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [11.5599127, 19.8656654, -3.81469727e-06],
+			Vec3 Translation = [15.4075089, 24.7352791, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10139,7 +10142,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.4075089, 24.7352791, -3.81469727e-06],
+			Vec3 Translation = [11.7642822, 45.2093468, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10157,7 +10160,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [11.7642822, 45.2093468, -3.81469727e-06],
+			Vec3 Translation = [15.9725895, 40.0992584, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10175,7 +10178,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.9725895, 40.0992584, -3.81469727e-06],
+			Vec3 Translation = [15.671999, 43.5260239, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10193,7 +10196,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.671999, 43.5260239, -3.81469727e-06],
+			Vec3 Translation = [11.8845205, 42.2635345, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10211,7 +10214,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [11.8845205, 42.2635345, -3.81469727e-06],
+			Vec3 Translation = [15.7321167, 47.1331482, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10229,7 +10232,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [15.7321167, 47.1331482, -3.81469727e-06],
+			Vec3 Translation = [36.1909447, 39.6098785, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10247,7 +10250,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [36.1909447, 39.6098785, -3.81469727e-06],
+			Vec3 Translation = [40.3992538, 34.4997902, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10265,7 +10268,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [40.3992538, 34.4997902, -3.81469727e-06],
+			Vec3 Translation = [40.0986595, 37.9265556, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10283,7 +10286,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [40.0986595, 37.9265556, -3.81469727e-06],
+			Vec3 Translation = [36.3111839, 36.6640625, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10301,7 +10304,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [36.3111839, 36.6640625, -3.81469727e-06],
+			Vec3 Translation = [40.1587791, 41.5336761, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
 		},
@@ -10319,24 +10322,6 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [40.1587791, 41.5336761, -3.81469727e-06],
-			Vec3 Scale = [0.150000006, 0.150000006, 1],
-			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 293,
-		},
-		Transform = 
-		{
 			Vec3 Translation = [47.0713882, 55.3878326, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
@@ -10351,7 +10336,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 294,
+			uint Id = 293,
 		},
 		Transform = 
 		{
@@ -10369,7 +10354,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 295,
+			uint Id = 294,
 		},
 		Transform = 
 		{
@@ -10387,7 +10372,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 296,
+			uint Id = 295,
 		},
 		Transform = 
 		{
@@ -10405,7 +10390,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 297,
+			uint Id = 296,
 		},
 		Transform = 
 		{
@@ -10418,12 +10403,19 @@ Level =
 			string Name = "Minion",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "5825639ab909d852:Boss",
 		LinkId = 
 		{
-			uint Id = 298,
+			uint Id = 297,
+		},
+		Named = 
+		{
+			string Name = "Boss",
+		},
+		Archetyped = 
+		{
+			string Name = "5825639ab909d852:Boss",
 		},
 		Transform = 
 		{
@@ -10431,94 +10423,23 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
-		{
-			string Name = "Boss",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "58256077099b083b:BossMinion",
-		LinkId = 
-		{
-			uint Id = 299,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [19.3923645, 98.4931641, -3.81469727e-06],
-			Vec3 Scale = [0.150000006, 0.150000006, 1],
-			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
-		},
-		Named = 
-		{
-			string Name = "BossMinion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "58256077099b083b:BossMinion",
-		LinkId = 
-		{
-			uint Id = 300,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [34.4785309, 98.807457, -3.81469727e-06],
-			Vec3 Scale = [0.150000006, 0.150000006, 1],
-			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
-		},
-		Named = 
-		{
-			string Name = "BossMinion",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 301,
-		},
-		Named = 
-		{
-			string Name = "BossMinion",
-		},
-		Archetyped = 
-		{
-			string Name = "58256077099b083b:BossMinion",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [48.9148178, 99.0102921, -3.81469727e-06],
-			Vec3 Scale = [0.150000006, 0.150000006, 1],
-			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
-		},
 		Sprite = 
 		{
 			bool Visible = true,
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
+			Vec4 Color = [1, 1, 1, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5898079c14b4a322:labia_spaceship",
+			string SpriteSource = "5897f054db4bfc06:dorito_spaceship",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
 			bool AnimationActive = true,
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [3.5, 4, 0.5],
 		},
 		RigidBody = 
 		{
@@ -10532,88 +10453,495 @@ Level =
 			Vec3 Velocity = [0, 0, 0],
 			Vec3 AngularVelocity = [0, 0, 0],
 		},
-		MinionAI_1 = 
+		BossControl = 
 		{
-			CogPath OrbitTargetPath = 
-			{
-				string Path = ":/PlayerShip",
-				bool ErrorOnResolveToNull = false,
-				bool ErrorOnPathCantCompute = false,
-				bool ErrorOnDirectLinkFail = false,
-				bool UpdateCogOnPathChange = true,
-				bool UpdatePathOnCogChange = true,
-				bool UpdateCogOnInitialize = true,
-				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 28,
-				CogPathPreference PathPreference0 = CogRelative,
-				CogPathPreference PathPreference1 = SpaceRelative,
-				CogPathPreference PathPreference2 = Absolute,
-			},
-			CogPath ShootTargetPath = 
-			{
-				string Path = ":/PlayerShip",
-				bool ErrorOnResolveToNull = false,
-				bool ErrorOnPathCantCompute = false,
-				bool ErrorOnDirectLinkFail = false,
-				bool UpdateCogOnPathChange = true,
-				bool UpdatePathOnCogChange = true,
-				bool UpdateCogOnInitialize = true,
-				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 28,
-				CogPathPreference PathPreference0 = CogRelative,
-				CogPathPreference PathPreference1 = SpaceRelative,
-				CogPathPreference PathPreference2 = Absolute,
-			},
-			float OrbitSpeed = 1,
-			float MaxSpeed = 7,
-			float Accel = 7,
-			float DetectDist = 20,
-			float FollowDist = 5,
-			float FollowMargin = 0.100000001,
-			float ShootDist = 7,
-		},
-		IgnoreSpaceEffects = 
-		{
-			bool Drag = false,
-			bool Flow = false,
-			bool Force = false,
-			bool Gravity = true,
-			bool Thrust = false,
-			bool Vortex = false,
-			bool Wind = false,
-			bool Invalid = false,
-			bool Torque = false,
-			bool PointGravity = false,
-			bool PointForce = false,
-			bool Buoyancy = false,
-			bool Custom = false,
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 0, 1],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		Health = 
-		{
-			int MaxHP = 5,
-			bool Respawns = false,
-			string DeathParticle = "582f37283debad28:Explosion",
-		},
-		Shoot = 
-		{
-			string Laser = "58bee0c51f2dde2f:Laser",
-			float SpawnTime = 0.300000012,
+			float LeftPoint = -5,
+			float RightPoint = 5,
 		},
 		DragEffect = 
 		{
 			bool Active = true,
 			bool WakeUpOnChange = true,
-			float Drag = 1,
+			float Drag = 10,
 			float AngularDrag = 0.100000001,
 		},
+		Health = 
+		{
+			int MaxHP = 100,
+			bool Respawns = false,
+			string DeathParticle = "582f37283debad28:Explosion",
+		},
+		MultiConvexMeshCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			string MeshName = "58249972283549a3:BossCollider",
+		},
 		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 298,
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+				Archetyped = 
+				{
+					string Name = "582f65db8f364ed6:Exhuast",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.02291465, 3.38551712, 0],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteParticleSystem = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					SystemChildMode ChildMode = Independent,
+					SystemSpace SystemSpace = WorldSpace,
+					uint DrawOrder = 0,
+					Vec4 Tint = [1, 1, 1, 1],
+					float WarmUpTime = 0,
+					ParticleGeometry GeometryMode = Billboarded,
+					ParticleRenderMode RenderMode = Additive,
+					ParticleSortMode SortMode = Youngest,
+					ParticleAnimation ParticleAnimation = Single,
+					string Texture = "5310e87a46f2ca03:FireParticle03",
+					float VelocityScale = 1,
+					float LengthScale = 1,
+					float MaxParticleSize = 100,
+					Vec3 SystemSize = [1, 1, 1],
+				},
+				SphericalParticleEmitter = 
+				{
+					bool Active = true,
+					uint EmitCount = 0,
+					float EmitRate = 50,
+					float EmitVariance = 0,
+					float Size = 1,
+					float SizeVariance = 0.0500000007,
+					float Lifetime = 0.600000024,
+					float LifetimeVariance = 0.200000003,
+					float Spin = 0,
+					float SpinVariance = 50,
+					bool RandomSpin = true,
+					float Fill = 1,
+					float EmitterVelocityPercent = 0,
+					Vec3 StartVelocity = [0, 10, 0],
+					Vec3 RandomVelocity = [0, 0, 0],
+					Vec3 TangentVelocity = [0, 0, 0],
+					Vec3 EmitterSize = [0, 0, 0],
+					bool FastMovingEmitter = false,
+				},
+				LinearParticleAnimator = 
+				{
+					Vec3 Force = [0, 0, 0],
+					Vec3 RandomForce = [0, 0, 0],
+					float Torque = 0,
+					float Growth = 0,
+					float Dampening = 0,
+					Vec3 Twist = [0, 0, 0],
+				},
+				ParticleColorAnimator = 
+				{
+					Vec4 Color0 = [0.56099987, 0, 0.824999988, 0.5],
+					Vec4 Color1 = [0.284800142, 0, 0.889999986, 1],
+					Vec4 Color2 = [0, 0.202500001, 0.810000002, 1],
+					Vec4 Color3 = [0.204999983, 0.21295017, 1, 1],
+					Vec4 Color4 = [0.129999995, 0.373599976, 1, 0],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 299,
+				},
+				Named = 
+				{
+					string Name = "Exhuast",
+				},
+				Archetyped = 
+				{
+					string Name = "582f65db8f364ed6:Exhuast",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.897865295, 3.43274879, 0],
+					Vec3 Scale = [0.333333343, 0.333333343, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteParticleSystem = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					SystemChildMode ChildMode = Independent,
+					SystemSpace SystemSpace = WorldSpace,
+					uint DrawOrder = 0,
+					Vec4 Tint = [1, 1, 1, 1],
+					float WarmUpTime = 0,
+					ParticleGeometry GeometryMode = Billboarded,
+					ParticleRenderMode RenderMode = Additive,
+					ParticleSortMode SortMode = Youngest,
+					ParticleAnimation ParticleAnimation = Single,
+					string Texture = "5310e87a46f2ca03:FireParticle03",
+					float VelocityScale = 1,
+					float LengthScale = 1,
+					float MaxParticleSize = 100,
+					Vec3 SystemSize = [1, 1, 1],
+				},
+				SphericalParticleEmitter = 
+				{
+					bool Active = true,
+					uint EmitCount = 0,
+					float EmitRate = 50,
+					float EmitVariance = 0,
+					float Size = 1,
+					float SizeVariance = 0.0500000007,
+					float Lifetime = 0.600000024,
+					float LifetimeVariance = 0.200000003,
+					float Spin = 0,
+					float SpinVariance = 50,
+					bool RandomSpin = true,
+					float Fill = 1,
+					float EmitterVelocityPercent = 0,
+					Vec3 StartVelocity = [0, 10, 0],
+					Vec3 RandomVelocity = [0, 0, 0],
+					Vec3 TangentVelocity = [0, 0, 0],
+					Vec3 EmitterSize = [0, 0, 0],
+					bool FastMovingEmitter = false,
+				},
+				LinearParticleAnimator = 
+				{
+					Vec3 Force = [0, 0, 0],
+					Vec3 RandomForce = [0, 0, 0],
+					float Torque = 0,
+					float Growth = 0,
+					float Dampening = 0,
+					Vec3 Twist = [0, 0, 0],
+				},
+				ParticleColorAnimator = 
+				{
+					Vec4 Color0 = [0.56099987, 0, 0.824999988, 0.5],
+					Vec4 Color1 = [0.284800142, 0, 0.889999986, 1],
+					Vec4 Color2 = [0, 0.202500001, 0.810000002, 1],
+					Vec4 Color3 = [0.204999983, 0.21295017, 1, 1],
+					Vec4 Color4 = [0.129999995, 0.373599976, 1, 0],
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "58257d00aee6a6f1:Turret",
+				LinkId = 
+				{
+					uint Id = 300,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0, -3.20000005, 0],
+					Vec3 Scale = [0.150000006, 0.150000006, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Turret",
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 301,
+				},
+				Named = 
+				{
+					string Name = "RightTurret",
+				},
+				Archetyped = 
+				{
+					string Name = "58257d00aee6a6f1:Turret",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [2.4000001, 0, 0],
+					Vec3 Scale = [0.150000006, 0.150000006, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5898079c14b4a322:labia_spaceship",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Orientation = 
+				{
+					Vec3 GlobalUp = [0, 0, 1],
+					Vec3 UpVector = [0, 0, 1],
+					Vec3 ForwardVector = [0, 1, 0],
+					OrientationBases DefaultBases = ForwardYUpZ,
+				},
+				Shoot = 
+				{
+					string Laser = "589005cece89a175:Laser2",
+					float SpawnTime = 1,
+				},
+				BossTurret = 
+				{
+					CogPath ShootTargetPath = 
+					{
+						string Path = ":/PlayerShip",
+						bool ErrorOnResolveToNull = false,
+						bool ErrorOnPathCantCompute = false,
+						bool ErrorOnDirectLinkFail = false,
+						bool UpdateCogOnPathChange = true,
+						bool UpdatePathOnCogChange = true,
+						bool UpdateCogOnInitialize = true,
+						bool ResolvedNullErrorOccurred = false,
+						uint ResolvedCog = 28,
+						CogPathPreference PathPreference0 = CogRelative,
+						CogPathPreference PathPreference1 = SpaceRelative,
+						CogPathPreference PathPreference2 = Absolute,
+					},
+				},
+				Hierarchy = 
+				{
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 302,
+				},
+				Named = 
+				{
+					string Name = "LeftTurret",
+				},
+				Archetyped = 
+				{
+					string Name = "58257d00aee6a6f1:Turret",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-2.4000001, 0, 0],
+					Vec3 Scale = [0.150000006, 0.150000006, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5898079c14b4a322:labia_spaceship",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				Orientation = 
+				{
+					Vec3 GlobalUp = [0, 0, 1],
+					Vec3 UpVector = [0, 0, 1],
+					Vec3 ForwardVector = [0, 1, 0],
+					OrientationBases DefaultBases = ForwardYUpZ,
+				},
+				Shoot = 
+				{
+					string Laser = "589005cece89a175:Laser2",
+					float SpawnTime = 1,
+				},
+				BossTurret = 
+				{
+					CogPath ShootTargetPath = 
+					{
+						string Path = ":/PlayerShip",
+						bool ErrorOnResolveToNull = false,
+						bool ErrorOnPathCantCompute = false,
+						bool ErrorOnDirectLinkFail = false,
+						bool UpdateCogOnPathChange = true,
+						bool UpdatePathOnCogChange = true,
+						bool UpdateCogOnInitialize = true,
+						bool ResolvedNullErrorOccurred = false,
+						uint ResolvedCog = 28,
+						CogPathPreference PathPreference0 = CogRelative,
+						CogPathPreference PathPreference1 = SpaceRelative,
+						CogPathPreference PathPreference2 = Absolute,
+					},
+				},
+				Hierarchy = 
+				{
+				},
+			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 303,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [16.3766212, 95.01577, 1.14440918e-05],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 304,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [31.4627876, 95.3300705, 1.14440918e-05],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 305,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [38.7544594, 90.7004318, 1.14440918e-05],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 306,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [23.4766808, 90.468956, 1.14440918e-05],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 307,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [45.8990746, 95.5328903, 1.14440918e-05],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 308,
+		},
+		Named = 
+		{
+			string Name = "Sprite",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [32.7756004, 102.853424, -2.94733991e-06],
+			Vec3 Scale = [65, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = false,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = true,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+		BossFightTrigger = 
 		{
 		},
 	},

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "BoostBar",
+		uint64 ResourceId = 58a63e04f22373ba,
+	},
+},

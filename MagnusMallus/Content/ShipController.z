@@ -7,15 +7,23 @@ class ShipController : ZilchComponent
     var Accel : Real = 20;
     var MaxSpeed : Real = 7;
     var BoostSpeed : Real = 12;
-    var SideThrustSpeed : Real = 0.2;
+    var MaxBoostTime : Real = 2;
+    var BoostTime : Real = 0;
+    var SideThrustSpeed : Real = 1;
     
     var DeathTimer : Real = 1;
     var RespawnPoint : Real3 = Real3(0,0,0);
+    
+    var TwinStickLayout : Boolean = true;
+    var StickDeadzone : Real = 0.05;
+    var TriggerDeadzone : Real = 0.05;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         this.RespawnPoint = this.Owner.Transform.Translation;
+        this.BoostTime = this.MaxBoostTime;
     }
        
     function OnCollisionStarted(event : CollisionEvent)
@@ -36,7 +44,9 @@ class ShipController : ZilchComponent
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var maxspd = this.MaxSpeed;
+        if (Zero.Keyboard.KeyIsPressed(Keys.R)) {
+            this.RespawnPoint = this.Owner.Transform.Translation;
+        }
         
         if(this.Owner.Health.Dead)
         {
@@ -50,95 +60,182 @@ class ShipController : ZilchComponent
             return;
         }
         
-        var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
-        
-        this.Owner.Orientation.LookAtPoint(mousePos);
-       
-        // Have a place to record the total movement we want to make:
+        var maxspd = this.MaxSpeed;
         var movement =  Real3(0,0,0);
-        
-        //breaks
-        if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
-        {
-            //this.Owner.DragEffect.Active = true;
-           
-           var vel = (mousePos - this.Owner.Transform.Translation);
-           var dist = Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
-           //Console.WriteLine(vel);
-           if (dist > 0.2) {
-                movement = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+        var gamepad = Zero.Gamepads.GetGamePad(0);
+        if (gamepad.IsActive) {
+            if (!this.TwinStickLayout) {
+                var pad = Real3(gamepad.LeftStick, 0);
+                var padPos = pad+this.Owner.Transform.Translation;
+                if (Math.Sqrt(pad.X*pad.X+pad.Y*pad.Y) > this.StickDeadzone)
+                    this.Owner.Orientation.LookAtPoint(padPos);
+                var angle = this.Owner.Orientation.AbsoluteAngle;
+                var dir = Real3(-Math.Sin(angle), Math.Cos(angle), 0);
+                //Console.WriteLine("`angle` `dir`");
+                
+                if (gamepad.LeftTrigger > this.TriggerDeadzone) {
+                    movement = dir*gamepad.LeftTrigger;
+                }
+                
+                if (gamepad.IsButtonHeld(Buttons.LeftShoulder)) {
+                    this.Owner.DragEffect.Active = true;
+                } else {
+                    this.Owner.DragEffect.Active = false;
+                }
+                
+                if (this.BoostTime > 0 && gamepad.IsButtonHeld(Buttons.RightShoulder)) {
+                    this.BoostTime -= event.Dt;
+                    maxspd = this.BoostSpeed;
+                } else {
+                    this.BoostTime += event.Dt;
+                    if (this.BoostTime > this.MaxBoostTime)
+                        this.BoostTime = this.MaxBoostTime;
+                }
+                
+                if (gamepad.RightStick.X > this.StickDeadzone || gamepad.RightStick.X < -this.StickDeadzone) {
+                    var thrust = dir;
+                    //thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+                    //newVel += thrust;
+                    thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-gamepad.RightStick.X;
+                    movement += thrust;
+                }
+            } else {
+                movement = Real3(gamepad.LeftStick, 0);
+                var pad = Real3(gamepad.RightStick, 0);
+                var padPos = pad+this.Owner.Transform.Translation;
+                if (Math.Sqrt(pad.X*pad.X+pad.Y*pad.Y) > this.StickDeadzone)
+                    this.Owner.Orientation.LookAtPoint(padPos);
+                
+                if (this.BoostTime > 0 && gamepad.LeftTrigger > this.TriggerDeadzone) {
+                    this.BoostTime -= event.Dt;
+                    maxspd = this.BoostSpeed;
+                } else {
+                    this.BoostTime += event.Dt;
+                    if (this.BoostTime > this.MaxBoostTime)
+                        this.BoostTime = this.MaxBoostTime;
+                }
+                
+                if (gamepad.IsButtonHeld(Buttons.LeftShoulder)) {
+                    this.Owner.DragEffect.Active = true;
+                } else {
+                    this.Owner.DragEffect.Active = false;
+                }
             }
-            if (dist < 1) {
-                movement *= dist*2;
+            
+            if (gamepad.RightTrigger > this.TriggerDeadzone) {
+                this.Owner.Shoot.Shoot(true);
             }
-            //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
-            //Console.WriteLine(this.Owner.Orientation.LocalForward);
-            //Console.WriteLine("Gets here");
-        }
-        if(Zero.Keyboard.KeyIsDown(Keys.F))
-        {
-            Console.WriteLine("brake");
-            this.Owner.DragEffect.Active = true;
-        }
-        else
-        {
-            this.Owner.DragEffect.Active = false;
-        }
-        if(Zero.Keyboard.KeyIsDown(Keys.Space))
-        {
-            maxspd = this.BoostSpeed;
-        }
-        
-        /*if(Zero.Keyboard.KeyIsPressed(Keys.F))
-        {
-            movement = Real3();
-            this.Owner.RigidBody.Velocity = Real3();
-        }*/
-        /*
-        if(Zero.Keyboard.KeyIsPressed(Keys.W))
-        {
-            foreach(var child in this.Owner.Children)
+            
+        } else {
+            var mousePos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(Zero.Mouse.ScreenPosition, 0.0);
+            this.Owner.Orientation.LookAtPoint(mousePos);
+            // Have a place to record the total movement we want to make:
+            
+            //breaks
+            if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
             {
-                child.SpriteParticleSystem.Visible = true;
+                //this.Owner.DragEffect.Active = true;
+                
+                var vel = (mousePos - this.Owner.Transform.Translation);
+                var dist = Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+                //Console.WriteLine(vel);
+                if (dist > 0.2) {
+                    movement = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+                }
+                if (dist < 1) {
+                    movement *= dist*2;
+                }
+                //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
+                //Console.WriteLine(this.Owner.Orientation.LocalForward);
+                //Console.WriteLine("Gets here");
             }
-        }
-        else if(Zero.Keyboard.KeyIsReleased(Keys.W))
-        {
-            foreach(var child in this.Owner.Children)
+            if(Zero.Keyboard.KeyIsDown(Keys.Space))
             {
-                child.SpriteParticleSystem.Visible = false;
+                this.Owner.DragEffect.Active = true;
             }
-        }
-        else if(Zero.Keyboard.KeyIsReleased(Keys.F))
-        {
-            this.Owner.DragEffect.Active = false;
-        }*/
+            else
+            {
+                this.Owner.DragEffect.Active = false;
+            }
+            if(this.BoostTime > 0 && Zero.Keyboard.KeyIsDown(Keys.Shift)) {
+                this.BoostTime -= event.Dt;
+                maxspd = this.BoostSpeed;
+            } else {
+                this.BoostTime += event.Dt;
+                if (this.BoostTime > this.MaxBoostTime)
+                    this.BoostTime = this.MaxBoostTime;
+            }
+            
+            /*if(Zero.Keyboard.KeyIsPressed(Keys.F))
+            {
+                movement = Real3();
+                this.Owner.RigidBody.Velocity = Real3();
+            }*/
+            /*
+            if(Zero.Keyboard.KeyIsPressed(Keys.W))
+            {
+                foreach(var child in this.Owner.Children)
+                {
+                    child.SpriteParticleSystem.Visible = true;
+                }
+            }
+            else if(Zero.Keyboard.KeyIsReleased(Keys.W))
+            {
+                foreach(var child in this.Owner.Children)
+                {
+                    child.SpriteParticleSystem.Visible = false;
+                }
+            }
+            else if(Zero.Keyboard.KeyIsReleased(Keys.F))
+            {
+                this.Owner.DragEffect.Active = false;
+            }*/
+            
+            /*
+            // If I hold down the up arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up))
+            {
+                // Record desired upward motion along the world y-axis:
+                movement +=  Real3(0.0, 1.0, 0.0);
+            }
+            // If I hold down the down arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
+                // Record desired downward motion along the world y-axis:
+                movement +=  Real3(0.0, -1.0, 0.0);
+            
+            // If I hold down the right arrow key,
+            if (Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
+            {
+                // Record desired rightward motion along the world x-axis:
+                movement +=  Real3(1.0, 0.0, 0.0);
+            }
+            // If I hold down the left arrow key,
+            else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
+            {
+                // Record desired leftward motion along the world x-axis:
+                movement +=  Real3(-1.0, 0.0, 0.0);
+            }*/
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.A)) {
+                var thrust = (mousePos - this.Owner.Transform.Translation);
+                thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+                //newVel += thrust;
+                thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed;
+                movement += thrust;
+            }
+            if(Zero.Keyboard.KeyIsDown(Keys.D)) {
+                var thrust = (mousePos - this.Owner.Transform.Translation);
+                thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+                //newVel += thrust;
+                thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-1;
+                movement += thrust;
+            }
         
-        /*
-        // If I hold down the up arrow key,
-        if (Zero.Keyboard.KeyIsDown(Keys.W) || Zero.Keyboard.KeyIsDown(Keys.Up))
-        {
-            // Record desired upward motion along the world y-axis:
-            movement +=  Real3(0.0, 1.0, 0.0);
+            if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
+                this.Owner.Shoot.Shoot(true);
+                
         }
-        // If I hold down the down arrow key,
-        if (Zero.Keyboard.KeyIsDown(Keys.Down)|| Zero.Keyboard.KeyIsDown(Keys.S))
-            // Record desired downward motion along the world y-axis:
-            movement +=  Real3(0.0, -1.0, 0.0);
-        
-        // If I hold down the right arrow key,
-        if (Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
-        {
-            // Record desired rightward motion along the world x-axis:
-            movement +=  Real3(1.0, 0.0, 0.0);
-        }
-        // If I hold down the left arrow key,
-        else if (Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A))
-        {
-            // Record desired leftward motion along the world x-axis:
-            movement +=  Real3(-1.0, 0.0, 0.0);
-        }*/
-        
+            
         this.Owner.RigidBody.Velocity += movement*event.Dt*this.Accel;
         
         
@@ -154,25 +251,8 @@ class ShipController : ZilchComponent
             newVel /= (spd/maxspd);
         }
         
-        if(Zero.Keyboard.KeyIsDown(Keys.A)) {
-            var thrust = (mousePos - this.Owner.Transform.Translation);
-            thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
-            //newVel += thrust;
-            thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed;
-            newVel += thrust;
-        }
-        if(Zero.Keyboard.KeyIsDown(Keys.D)) {
-            var thrust = (mousePos - this.Owner.Transform.Translation);
-            thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
-            //newVel += thrust;
-            thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-1;
-            newVel += thrust;
-        }
-        
         this.Owner.RigidBody.Velocity = newVel; 
         
-        
-        if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
-            this.Owner.Shoot.Shoot(true);
+        this.Space.LevelSettings.HUDCreator.HUDSpace.LevelSettings.HUDReferences.BoostBar.BoostBar.Set(this.BoostTime/this.MaxBoostTime);
    }
 }

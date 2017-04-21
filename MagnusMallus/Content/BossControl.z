@@ -1,5 +1,7 @@
 class BossControl : ZilchComponent
 {
+    var FightStarted : Boolean = false;
+    
     /*Ship moves back and forth slowly in the x this.Direction only, the boss isn't nimble but tanky*/
     [Property]
     var LeftPoint : Real = -5;
@@ -21,13 +23,18 @@ class BossControl : ZilchComponent
     var LaserInterval : Real = 0.2;
     
     /*Attack patterns, difficulty based on health*/
-    var Diffuculty : Integer = 1;
+    var Difficulty : Integer = 1;
     /*Laser that is aimed at the player*/
     
     var Player : Cog = null;
     var Turret : Cog = null;
+    var LeftTurret : Cog = null;
+    var RightTurret : Cog = null;
     
     var BehaviorTimer : Real = 0;
+    var LastLaser : Real = 0;
+    var LastBombs : Real = 0;
+    var LastMinions : Real = 0;
     
     function Initialize(init : CogInitializer)
     {
@@ -36,6 +43,10 @@ class BossControl : ZilchComponent
         
         this.Player = this.Space.FindObjectByName("PlayerShip");
         this.Turret = this.Owner.FindChildByName("Turret");
+        this.LeftTurret = this.Owner.FindChildByName("LeftTurret");
+        this.RightTurret = this.Owner.FindChildByName("RightTurret");
+        
+        this.LastBombs = (this.Difficulty-9)/2;
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -71,6 +82,8 @@ class BossControl : ZilchComponent
             if(this.LaserLength < 0)
             {
                 this.Space.CreateAtPosition(Archetype.Explosion4, this.Owner.Transform.Translation);
+                this.Space.SoundSpace.StopAllSounds();
+                this.Space.SoundSpace.PlayCue(SoundCue.Victory);
                 this.Owner.Destroy();
             }
             else if(this.LaserInterval < 0)
@@ -86,34 +99,70 @@ class BossControl : ZilchComponent
         else
         {
             
-            
-            this.BehaviorTimer += event.Dt;
-            if(this.BehaviorTimer > (9 - this.Diffuculty*2))
+            if (this.FightStarted)
             {
-                this.SuperLaser = true;
-                this.BehaviorTimer = 0;
-            }
-            
-            if(this.SuperLaser)
-            {
-                this.Turret.BossTurret.Active = false;
-                this.ChargeLaser(event.Dt);
-            }
-            else 
-            {
-                if(!this.Turret.BossTurret.Active)
-                    this.Turret.BossTurret.Active = true;
-                /*Patrolling*/
-                //this.Patrol();
+                this.BehaviorTimer += event.Dt;
+                if (this.BehaviorTimer > 4) {
+                    if(!this.SuperLaser && this.BehaviorTimer >= this.LastLaser+(9 - this.Difficulty))
+                    {
+                        this.SuperLaser = true;
+                    }
+                    if(this.BehaviorTimer >= this.LastBombs+(9 - this.Difficulty))
+                    {
+                        this.LaunchBombs(this.Difficulty);
+                        this.LastBombs = this.BehaviorTimer;
+                    }
+                    if(this.BehaviorTimer >= this.LastMinions+(18 - this.Difficulty*2))
+                    {
+                        this.DeployMinions();
+                        this.LastMinions = this.BehaviorTimer;
+                    }
+                }
+                
+                if(this.SuperLaser)
+                {
+                    this.Turret.BossTurret.Active = false;
+                    this.ChargeLaser(event.Dt);
+                }
+                else 
+                {
+                    if(!this.Turret.BossTurret.Active)
+                        this.Turret.BossTurret.Active = true;
+                    /*Patrolling*/
+                    //this.Patrol();
+                }
+                
+                var pXPos = this.Player.Transform.Translation.X;
+                if (pXPos > this.Owner.Transform.Translation.X+2) {
+                    this.RightTurret.BossTurret.Active = true;
+                } else {
+                    this.RightTurret.BossTurret.Active = false;
+                }
+                
+                if (pXPos < this.Owner.Transform.Translation.X-2) {
+                    this.LeftTurret.BossTurret.Active = true;
+                } else {
+                    this.LeftTurret.BossTurret.Active = false;
+                }
             }
             
         }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
-            this.SuperLaser = true;
-            //this.LaunchBombs(this.Diffuculty);
             this.DeployMinions();
+            
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.L))
+        {
+            this.SuperLaser = true;
+            
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.O))
+        {
+            this.LaunchBombs(this.Difficulty);
             
         }
         
@@ -163,8 +212,16 @@ class BossControl : ZilchComponent
         
         var bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
         bomb.RigidBody.Velocity = vel;
+        if (this.Player.Transform.Translation.X > this.Owner.Transform.Translation.X+2) {
+            bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
+            bomb.RigidBody.Velocity = vel*Real3(1.5, 0.5, 0);
+        }
         bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
         bomb.RigidBody.Velocity = vel * Real3(-1,1,1);
+        if (this.Player.Transform.Translation.X < this.Owner.Transform.Translation.X-2) {
+            bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
+            bomb.RigidBody.Velocity = vel * Real3(-1.5,0.5,1);
+        }
         
         if(difficulty > 2)
         {
@@ -220,6 +277,7 @@ class BossControl : ZilchComponent
                 this.SuperLaser = false;
                 this.Charge = true;
                 this.LaserLength = 3;
+                this.LastLaser = this.BehaviorTimer;
             }
             else
             {

@@ -2,8 +2,8 @@ AudioContent =
 {
 	SoundBuilder = 
 	{
-		string Name = "Space_loop",
-		uint64 ResourceId = 58a642292af7bd04,
+		string Name = "Victory",
+		uint64 ResourceId = 58a632b35cb75871,
 		bool Compressed = false,
 		bool Streamed = false,
 		SoundLoadType LoadType = Decompress,

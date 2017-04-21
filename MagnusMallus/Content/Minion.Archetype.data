@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-24.1027756, -8.31078815, 0],
+		Vec3 Translation = [0.242730141, -6.44430065, 0],
 		Vec3 Scale = [0.150000006, 0.150000006, 1],
 		Quat Rotation = [0, 0, -0.707106829, 0.707106829],
 	},
@@ -93,10 +93,10 @@ Cog =
 		float OrbitSpeed = 1,
 		float MaxSpeed = 7,
 		float Accel = 7,
-		float DetectDist = 10,
+		float DetectDist = 15,
 		float FollowDist = 4,
 		float FollowMargin = 0.100000001,
-		float ShootDist = 5,
+		float ShootDist = 10,
 	},
 	IgnoreSpaceEffects = 
 	{

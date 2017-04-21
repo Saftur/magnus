@@ -19,7 +19,7 @@ class BossTurret : ZilchComponent
     {
         if (this.ShootTarget != null && this.Active)
         {
-            this.Owner.Shoot.Shoot(false);
+            this.Owner.Shoot.Shoot(false, this.Owner.Parent.Transform.Translation+this.Owner.Transform.Translation);
             
             this.Orient.LookAtPoint(this.ShootTarget.Transform.Translation);
         }

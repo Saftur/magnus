@@ -14,9 +14,9 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [21.6519299, 94.1224747, -3.81469727e-06],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [0.150000006, 0.150000006, 1],
-		Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		Quat Rotation = [0, 0, 1, -4.37113883e-08],
 	},
 	Sprite = 
 	{
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -70,7 +70,7 @@ Cog =
 			bool UpdatePathOnCogChange = true,
 			bool UpdateCogOnInitialize = true,
 			bool ResolvedNullErrorOccurred = false,
-			uint ResolvedCog = 2,
+			uint ResolvedCog = 4294967293,
 			CogPathPreference PathPreference0 = CogRelative,
 			CogPathPreference PathPreference1 = SpaceRelative,
 			CogPathPreference PathPreference2 = Absolute,
@@ -85,18 +85,18 @@ Cog =
 			bool UpdatePathOnCogChange = true,
 			bool UpdateCogOnInitialize = true,
 			bool ResolvedNullErrorOccurred = false,
-			uint ResolvedCog = 2,
+			uint ResolvedCog = 4294967293,
 			CogPathPreference PathPreference0 = CogRelative,
 			CogPathPreference PathPreference1 = SpaceRelative,
 			CogPathPreference PathPreference2 = Absolute,
 		},
 		float OrbitSpeed = 1,
-		float MaxSpeed = 7,
-		float Accel = 7,
+		float MaxSpeed = 10,
+		float Accel = 10,
 		float DetectDist = 20,
 		float FollowDist = 5,
 		float FollowMargin = 0.100000001,
-		float ShootDist = 7,
+		float ShootDist = 15,
 	},
 	IgnoreSpaceEffects = 
 	{
@@ -130,7 +130,7 @@ Cog =
 	Shoot = 
 	{
 		string Laser = "58bee0c51f2dde2f:Laser",
-		float SpawnTime = 0.300000012,
+		float SpawnTime = 0.200000003,
 	},
 	DragEffect = 
 	{

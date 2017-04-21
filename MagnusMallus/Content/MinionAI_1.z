@@ -155,7 +155,7 @@ class MinionAI_1 : ZilchComponent
     
     function OnCollisionStarted(event : CollisionEvent)
     {
-        Console.WriteLine("hi");
+        //Console.WriteLine("hi");
         var o = event.OtherObject;
         if(o.DealDamage != null && o.DealDamage.Friendly)
         {

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [7.4028964, 9.31792545, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [0.400000006, 0.400000006, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -38,7 +38,7 @@ Cog =
 	},
 	Bomb = 
 	{
-		float TimeTillBoom = 3,
+		float TimeTillBoom = 2,
 		float BlinkTimer = 1,
 	},
 	RigidBody = 
@@ -47,7 +47,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],

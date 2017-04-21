@@ -23,11 +23,13 @@ class Shoot : ZilchComponent
         this.TimeSinceLastSpawn += event.Dt;
     }
     
-    function Shoot(friendly : Boolean)
-    {
+    function Shoot(friendly : Boolean) {
+        this.Shoot(friendly, this.Owner.Transform.Translation);
+    }
+    
+    function Shoot(friendly : Boolean, spawnPosition : Real3) {
         if (this.TimeSinceLastSpawn > this.SpawnTime)
         {
-            var spawnPosition = this.Owner.Transform.Translation;
             var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
             laser.DealDamage.Friendly = friendly;
             //this.Space.CreateAtPosition(laser, spawnPosition);
@@ -37,5 +39,6 @@ class Shoot : ZilchComponent
             // Need to reset the value
             this.TimeSinceLastSpawn = 0.0;
         }
+        
     }
 }
