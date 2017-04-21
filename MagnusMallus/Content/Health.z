@@ -105,6 +105,7 @@ class Health : ZilchComponent
             this.GameSession.GameVars.EnemyKills += 1;
         }
         this.Space.CreateAtPosition(this.DeathParticle, this.Owner.Transform.Translation);
+        this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Explosion2);
         this.Owner.Destroy();
     }
 }

@@ -41,6 +41,8 @@ class BossControl : ZilchComponent
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         
+        //this.GameSession.CreateNamedSpace("BigLaserSoundSpace", Archetype.Space);
+        
         this.Player = this.Space.FindObjectByName("PlayerShip");
         this.Turret = this.Owner.FindChildByName("Turret");
         this.LeftTurret = this.Owner.FindChildByName("LeftTurret");
@@ -93,6 +95,7 @@ class BossControl : ZilchComponent
                 this.Owner.Transform.Translation += Real3(Real(this.Dir)/2,0,0);
                 this.Dir *= -1;
                 boom.SphericalParticleEmitter.Size = size;
+                this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Explosion2);
             }
             return;
         }
@@ -212,15 +215,19 @@ class BossControl : ZilchComponent
         
         var bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
         bomb.RigidBody.Velocity = vel;
+        this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         if (this.Player.Transform.Translation.X > this.Owner.Transform.Translation.X+2) {
             bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
             bomb.RigidBody.Velocity = vel*Real3(1.5, 0.5, 0);
+            this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         }
         bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
         bomb.RigidBody.Velocity = vel * Real3(-1,1,1);
+        this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         if (this.Player.Transform.Translation.X < this.Owner.Transform.Translation.X-2) {
             bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
             bomb.RigidBody.Velocity = vel * Real3(-1.5,0.5,1);
+            this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         }
         
         if(difficulty > 2)
@@ -231,8 +238,10 @@ class BossControl : ZilchComponent
             
             bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(x,y,-1));
             bomb.RigidBody.Velocity = vel;
+            this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
             bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(-x,y,-1));
             bomb.RigidBody.Velocity = vel * Real3(-1,1,1);
+            this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         }
     }
     function ChargeLaser(time : Real)
@@ -248,6 +257,9 @@ class BossControl : ZilchComponent
                 this.ChargeTimer = 5;
                 this.ChargeClick = 0.5;
                 this.ChargePhase = 0;
+                //this.GameSession.FindSpaceByName("BigLaserSoundSpace").SoundSpace.Volume = 1;
+                //this.GameSession.FindSpaceByName("BigLaserSoundSpace").SoundSpace.PlayCue(SoundCue.BigLaser);
+                this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.BigLaser);
             }
             else
             {
@@ -272,12 +284,16 @@ class BossControl : ZilchComponent
         {
             this.LaserLength -= time;
             this.LaserInterval -= time;
+            
+            //if (this.LaserLength < 0.5)
+                //this.GameSession.FindSpaceByName("BigLaserSoundSpace").SoundSpace.Volume = this.LaserLength*2;
             if(this.LaserLength < 0)
             {
                 this.SuperLaser = false;
                 this.Charge = true;
                 this.LaserLength = 3;
                 this.LastLaser = this.BehaviorTimer;
+                //this.GameSession.FindSpaceByName("BigLaserSoundSpace").SoundSpace.StopAllSounds();
             }
             else
             {

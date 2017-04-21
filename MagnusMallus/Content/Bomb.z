@@ -71,6 +71,7 @@ class Bomb : ZilchComponent
     function GoBoom()
     {
         this.Space.CreateAtPosition(Archetype.Explosion3, this.Owner.Transform.Translation);
+        this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Explosion3);
         this.Owner.Destroy();
     }
     function Fade(amnt : Real)
