@@ -98,6 +98,8 @@ class Health : ZilchComponent
             this.Dead = true;
             this.Owner.BossControl.LaserInterval = 0.1;
             this.Owner.BossControl.LaserLength = 2;
+            var bosshpbar = this.Space.HUDCreator.HUDSpace.LevelSettings.HUDReferences.BossHealthBar;
+            bosshpbar.Sprite.Visible = false;
             return;
         }
         else if(this.Owner.MinionAI_1 != null)

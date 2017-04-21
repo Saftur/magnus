@@ -50,6 +50,7 @@ class ShipController : ZilchComponent
         //Cheat for demo
         if (Zero.Keyboard.KeyIsDown(Keys.Control) && Zero.Keyboard.KeyIsPressed(Keys.G)) {
             this.Owner.BoxCollider.Ghost = !this.Owner.BoxCollider.Ghost;
+            this.Owner.Shoot.Laser = Archetype.Laser5;
             this.GameSession.GameVars.EnemyKills += 75;
         }
         

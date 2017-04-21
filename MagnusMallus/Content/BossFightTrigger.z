@@ -15,6 +15,9 @@ class BossFightTrigger : ZilchComponent
             this.Space.SoundSpace.StopAllSounds();
             this.Space.SoundSpace.PlayCue(SoundCue.BossFight);
             
+            var bosshpbar = this.Space.HUDCreator.HUDSpace.LevelSettings.HUDReferences.BossHealthBar;
+            bosshpbar.Sprite.Visible = true;
+            
             //Closes gates behind player
             foreach(var child in this.NoEscape.Children)
             {
