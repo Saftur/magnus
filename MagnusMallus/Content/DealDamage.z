@@ -22,6 +22,10 @@ class DealDamage : ZilchComponent
             var explew = this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation + Real3(0,0,2));
             this.Owner.Destroy();
         }
+        else if(o.MultiSprite != null)
+        {
+            this.Owner.Destroy();
+        }
     }
 }
 

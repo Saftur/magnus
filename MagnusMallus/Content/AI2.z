@@ -12,6 +12,8 @@ class AI2 : ZilchComponent
     
     var Dis : Real;
     var Vel : Real3;
+    
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -26,11 +28,14 @@ class AI2 : ZilchComponent
         
         this.Dis = (this.Target.Transform.Translation.X - this.Owner.Transform.Translation.X)^2 + (this.Target.Transform.Translation.Y - this.Owner.Transform.Translation.Y)^2;
         
-        if(this.Dis <= this.DetectDis)
+        if(this.Dis <= this.DetectDis && this.Owner.Fissix.Grounded())
         {
             this.Vel =  this.Target.Transform.Translation -this.Owner.Transform.Translation;
             this.Owner.RigidBody.Velocity = this.Vel * this.ChaseSpeed;
+            Console.WriteLine("Gets here");
         }
         
     }
+    
+    
 }

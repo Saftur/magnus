@@ -14,8 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [2.92002821, 3.30796432, 0],
-		Vec3 Translation = [6.89393759, 9.27147388, 0],
+		Vec3 Translation = [-4.57612038, -12.2987385, -3.81469727e-06],
 		Vec3 Scale = [0.100000001, 0.100000001, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -91,7 +90,6 @@ Cog =
 			CogPathPreference PathPreference1 = SpaceRelative,
 			CogPathPreference PathPreference2 = Absolute,
 		},
-		bool FollowPlayer = true,
 		float OrbitSpeed = 1,
 		float MaxSpeed = 7,
 		float Accel = 7,
@@ -133,6 +131,13 @@ Cog =
 	{
 		string Laser = "58bee0c51f2dde2f:Laser",
 		float SpawnTime = 0.300000012,
+	},
+	DragEffect = 
+	{
+		bool Active = false,
+		bool WakeUpOnChange = true,
+		float Drag = 6,
+		float AngularDrag = 0.100000001,
 	},
 	Hierarchy = 
 	{

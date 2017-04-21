@@ -9,7 +9,8 @@ class SpaceGate : ZilchComponent
     {
         if(this.GameSession.GameVars.Planet1Clear == true)
         {
-            this.Owner.Destroy();
+            this.Owner.Sprite.SpriteSource = SpriteSource.SpaceGate_1;
+            this.Owner.BoxCollider.Ghost = true;
         }
     }
 }
