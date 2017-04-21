@@ -3,6 +3,7 @@ class SpaceGate : ZilchComponent
     [Property]
     var MinionKillsRequiredToOpen : Integer = 5;
     var Player : Cog = null;
+    var ForceClose : Boolean = false;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -11,6 +12,13 @@ class SpaceGate : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if (this.ForceClose) {
+            if (this.Owner.Sprite.SpriteSource == SpriteSource.SpaceGate_1) {
+                this.Owner.Sprite.SpriteSource = SpriteSource.SpaceGate;
+                this.Owner.FindChildByName("BoxCollHasNoRotate").BoxCollider.Ghost = false;
+            }
+            return;
+        }
         if(this.Owner.Sprite.SpriteSource == SpriteSource.SpaceGate_1)
             return;
         

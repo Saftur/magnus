@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [22.7399082, -15.6671257, 0],
+		Vec3 Translation = [21.1841908, -14.4258423, 0],
 		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -90,7 +90,7 @@ Cog =
 	{
 		ArchetypeInstance = 
 		{
-			string Name = "582f65db8f364ed6:Exhuast",
+			string Name = "582f65db8f364ed6:Exhaust",
 			LinkId = 
 			{
 				uint Id = 2,
@@ -103,12 +103,12 @@ Cog =
 			},
 			Named = 
 			{
-				string Name = "Exhuast",
+				string Name = "Exhaust",
 			},
 		},
 		ArchetypeInstance = 
 		{
-			string Name = "582f65db8f364ed6:Exhuast",
+			string Name = "582f65db8f364ed6:Exhaust",
 			LinkId = 
 			{
 				uint Id = 3,
@@ -121,7 +121,7 @@ Cog =
 			},
 			Named = 
 			{
-				string Name = "Exhuast",
+				string Name = "Exhaust",
 			},
 		},
 	},

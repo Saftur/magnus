@@ -18,13 +18,15 @@ class BossFightTrigger : ZilchComponent
             //Closes gates behind player
             foreach(var child in this.NoEscape.Children)
             {
-                child.Sprite.SpriteSource = SpriteSource.SpaceGate;
+                /*child.Sprite.SpriteSource = SpriteSource.SpaceGate;
                 foreach(var c in child.Children)
                 {
                     c.BoxCollider.Ghost = false;
-                }
+                }*/
+                child.SpaceGate.ForceClose = true;
             }
             
+            this.Space.FindObjectByName("PlayerShip").ShipController.RespawnPoint = this.NoEscape.Transform.Translation;
             this.Owner.Destroy();
         }
     }

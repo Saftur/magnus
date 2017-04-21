@@ -18,6 +18,7 @@ class ShipController : ZilchComponent
     var StickDeadzone : Real = 0.05;
     var TriggerDeadzone : Real = 0.05;
     
+    var WASDAllDirections : Boolean = true;
     var OldMousePos : Real3 = Real3();
     
     function Initialize(init : CogInitializer)
@@ -47,7 +48,7 @@ class ShipController : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         //Cheat for demo
-        if (Zero.Keyboard.KeyIsDown(Keys.Control) && Zero.Keyboard.KeyIsDown(Keys.G)) {
+        if (Zero.Keyboard.KeyIsDown(Keys.Control) && Zero.Keyboard.KeyIsPressed(Keys.G)) {
             this.Owner.BoxCollider.Ghost = !this.Owner.BoxCollider.Ghost;
             this.GameSession.GameVars.EnemyKills += 75;
         }
@@ -139,24 +140,54 @@ class ShipController : ZilchComponent
             }
             this.OldMousePos = mousePos;
             
-            //breaks
-            if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
-            {
-                //this.Owner.DragEffect.Active = true;
+            if (this.WASDAllDirections) {
+                if (Zero.Keyboard.KeyIsDown(Keys.W)) {
+                    movement += Real3(0, 1, 0);
+                }
+                if (Zero.Keyboard.KeyIsDown(Keys.S)) {
+                    movement += Real3(0, -1, 0);
+                }
+                if (Zero.Keyboard.KeyIsDown(Keys.A)) {
+                    movement += Real3(-1, 0, 0);
+                }
+                if (Zero.Keyboard.KeyIsDown(Keys.D)) {
+                    movement += Real3(1, 0, 0);
+                }
+            } else {
+                if(Zero.Keyboard.KeyIsDown(Keys.W)) //W to move
+                {
+                    //this.Owner.DragEffect.Active = true;
+                    
+                    var vel = (mousePos - this.Owner.Transform.Translation);
+                    var dist = Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+                    //Console.WriteLine(vel);
+                    if (dist > 0.2) {
+                        movement = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+                    }
+                    if (dist < 1) {
+                        movement *= dist*2;
+                    }
+                    //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
+                    //Console.WriteLine(this.Owner.Orientation.LocalForward);
+                    //Console.WriteLine("Gets here");
+                }
                 
-                var vel = (mousePos - this.Owner.Transform.Translation);
-                var dist = Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
-                //Console.WriteLine(vel);
-                if (dist > 0.2) {
-                    movement = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y);
+                if(Zero.Keyboard.KeyIsDown(Keys.A)) {
+                    var thrust = (mousePos - this.Owner.Transform.Translation);
+                    thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+                    //newVel += thrust;
+                    thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed;
+                    movement += thrust;
                 }
-                if (dist < 1) {
-                    movement *= dist*2;
+                if(Zero.Keyboard.KeyIsDown(Keys.D)) {
+                    var thrust = (mousePos - this.Owner.Transform.Translation);
+                    thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
+                    //newVel += thrust;
+                    thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-1;
+                    movement += thrust;
                 }
-                //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
-                //Console.WriteLine(this.Owner.Orientation.LocalForward);
-                //Console.WriteLine("Gets here");
             }
+            
             if(Zero.Keyboard.KeyIsDown(Keys.Space))
             {
                 this.Owner.DragEffect.Active = true;
@@ -223,21 +254,6 @@ class ShipController : ZilchComponent
                 // Record desired leftward motion along the world x-axis:
                 movement +=  Real3(-1.0, 0.0, 0.0);
             }*/
-            
-            if(Zero.Keyboard.KeyIsDown(Keys.A)) {
-                var thrust = (mousePos - this.Owner.Transform.Translation);
-                thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
-                //newVel += thrust;
-                thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed;
-                movement += thrust;
-            }
-            if(Zero.Keyboard.KeyIsDown(Keys.D)) {
-                var thrust = (mousePos - this.Owner.Transform.Translation);
-                thrust /= Math.Sqrt(thrust.X*thrust.X+thrust.Y*thrust.Y);
-                //newVel += thrust;
-                thrust = Real3(-thrust.Y, thrust.X, 0)*this.SideThrustSpeed*-1;
-                movement += thrust;
-            }
         
             if (Zero.Mouse.IsButtonDown(MouseButtons.Left))
                 this.Owner.Shoot.Shoot(true);

@@ -62,7 +62,7 @@ Cog =
 	},
 	Health = 
 	{
-		int MaxHP = 100,
+		int MaxHP = 150,
 		bool Respawns = false,
 		string DeathParticle = "582f37283debad28:Explosion",
 	},
@@ -90,7 +90,7 @@ Cog =
 			},
 			Archetyped = 
 			{
-				string Name = "582f65db8f364ed6:Exhuast",
+				string Name = "582f65db8f364ed6:Exhaust",
 			},
 			Transform = 
 			{
@@ -170,7 +170,7 @@ Cog =
 			},
 			Archetyped = 
 			{
-				string Name = "582f65db8f364ed6:Exhuast",
+				string Name = "582f65db8f364ed6:Exhaust",
 			},
 			Transform = 
 			{

@@ -135,6 +135,8 @@ class BossControl : ZilchComponent
                     if(!this.SuperLaser && this.BehaviorTimer >= this.LastLaser+(9 - this.Difficulty))
                     {
                         this.SuperLaser = true;
+                        //this.DeployMinions();
+                        //this.DeployMinions(Real3(0, -1, 0));
                     }
                     if(this.BehaviorTimer >= this.LastBombs+(9 - this.Difficulty))
                     {
@@ -159,7 +161,7 @@ class BossControl : ZilchComponent
                     }
                     this.ChargeLaser(event.Dt);
                 }
-                else 
+                if (this.Difficulty > 2 || !this.SuperLaser)
                 {
                     if(!this.Turret.BossTurret.Active)
                         this.Turret.BossTurret.Active = true;
@@ -324,18 +326,22 @@ class BossControl : ZilchComponent
             }
         }
     }
-    function DeployMinions()
+    function DeployMinions(offset : Real3)
     {
-        var minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(2.5, 0, 0));
-        minion.BoxCollider.Ghost = true;
+        var minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(2.5, 0, 0)+offset);
+        minion.BoxCollider.Ghost = false;
         minion.RigidBody.Velocity = Real3((this.Owner.Transform.Scale.X*0.25) * 50, (-this.Owner.Transform.Scale.Y)*50, 0);
         minion.DragEffect.Drag = 1;
         minion.DragEffect.Active = true;
         
-        minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(-2.5, 0, 0));
-        minion.BoxCollider.Ghost = true;
+        minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(-2.5, 0, 0)+offset);
+        minion.BoxCollider.Ghost = false;
         minion.RigidBody.Velocity = Real3((-this.Owner.Transform.Scale.X*0.25) * 50, (-this.Owner.Transform.Scale.Y)*50, 0);
         minion.DragEffect.Drag = 1;
         minion.DragEffect.Active = true;
+    }
+    function DeployMinions()
+    {
+        this.DeployMinions(Real3());
     }
 }
