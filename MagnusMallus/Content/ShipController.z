@@ -277,6 +277,7 @@ class ShipController : ZilchComponent
         
         this.Owner.RigidBody.Velocity = newVel; 
         
-        this.Space.LevelSettings.HUDCreator.HUDSpace.LevelSettings.HUDReferences.BoostBar.BoostBar.Set(this.BoostTime/this.MaxBoostTime);
+        if(this.Space.LevelSettings.HUDCreator != null)
+            this.Space.LevelSettings.HUDCreator.HUDSpace.LevelSettings.HUDReferences.BoostBar.BoostBar.Set(this.BoostTime/this.MaxBoostTime);
    }
 }

@@ -30,7 +30,8 @@ class Shoot : ZilchComponent
     function Shoot(friendly : Boolean, spawnPosition : Real3) {
         if (this.TimeSinceLastSpawn > this.SpawnTime)
         {
-            this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
+            if(this.Space.LevelSettings.HUDCreator != null)
+                this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
             var laser = this.Space.CreateAtPosition(this.Laser, spawnPosition);
             laser.DealDamage.Friendly = friendly;
             //this.Space.CreateAtPosition(laser, spawnPosition);

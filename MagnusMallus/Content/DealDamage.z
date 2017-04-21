@@ -4,6 +4,8 @@ class DealDamage : ZilchComponent
     var Damage : Integer = 1;
     [Property]
     var DiesOnContact : Boolean = true;
+    [Property]
+    var PlanetLaser : Boolean = false;
     
     var Friendly : Boolean = false;
     
@@ -17,7 +19,14 @@ class DealDamage : ZilchComponent
         if(!this.DiesOnContact)
             return;
         var o = event.OtherObject;
-        if(o.Health != null && ((o.ShipController == null && this.Friendly) || (o.ShipController != null && !this.Friendly)))
+        if(this.PlanetLaser)
+        {
+            if(o.PlayerController == null && this.Friendly)
+            {
+                this.Owner.Destroy();
+            }
+        }
+        else if(o.Health != null && ((o.ShipController == null && this.Friendly) || (o.ShipController != null && !this.Friendly)))
         {
             var explew = this.Space.CreateAtPosition(Archetype.Explosion2, this.Owner.Transform.Translation + Real3(0,0,2));
             this.Owner.Destroy();

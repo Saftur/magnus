@@ -13,13 +13,28 @@ class PlayerController : ZilchComponent
         if(Zero.Keyboard.KeyIsDown(Keys.A))
         {
             dir = -1;
+        }
+        else if(Zero.Keyboard.KeyIsDown(Keys.D))
+        {    
+           dir = 1;
+        }
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.A))
+        {
             this.Owner.Sprite.SpriteSource = SpriteSource.MM_Running_Base_Final;
             this.Owner.Sprite.FlipX = true;
+            this.Owner.Transform.Scale = Real3(1,1,1);
         }
-       else if(Zero.Keyboard.KeyIsDown(Keys.D))
-       {
-           dir = 1;
-           this.Owner.Sprite.SpriteSource = SpriteSource.MM_Running_Base_Final;
+        else if(Zero.Keyboard.KeyIsPressed(Keys.D))
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.MM_Running_Base_Final;
+            this.Owner.Sprite.FlipX = false;
+            this.Owner.Transform.Scale = Real3(1,1,1);
+        }
+        else if(dir == 0)
+        {
+            this.Owner.Sprite.SpriteSource = SpriteSource.MM_Base_Character_1;
+            this.Owner.Transform.Scale = Real3(0.8,1,1);
         }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.W) && this.Fissix.Grounded())
