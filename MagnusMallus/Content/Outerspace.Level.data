@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [16.2396698, -21.2781029, 49.9999962],
+			Vec3 Translation = [9.63055325, -9.11155605, 49.9999962],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 49.6585922,
+			float Size = 40.6570053,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [16.2396698, -21.2781029, -2.54019392e-06],
+			Vec3 LookTarget = [9.63055325, -9.11155605, -2.83690179e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -6204,7 +6204,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.34209633, -19.1693134, -3.81469727e-06],
+			Vec3 Translation = [3.95973969, -16.6630554, -3.81469727e-06],
 			Vec3 Scale = [0.100000001, 0.100000001, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -6222,7 +6222,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.43050385, -25.8358097, -3.81469727e-06],
+			Vec3 Translation = [-0.77429533, -18.2781963, -3.81469727e-06],
 			Vec3 Scale = [0.100000001, 0.100000001, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -6237,6 +6237,60 @@ Level =
 		LinkId = 
 		{
 			uint Id = 163,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [9.1950264, -14.2124977, -3.81469727e-06],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 164,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [6.02043772, -10.2024918, -3.81469727e-06],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 165,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.43050385, -25.8358097, -3.81469727e-06],
+			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 166,
 		},
 		Transform = 
 		{
