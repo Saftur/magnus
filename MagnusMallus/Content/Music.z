@@ -2,12 +2,6 @@ class Music : ZilchComponent
 {
     [Property]
     var BGM : SoundCue = null;
-    [Property]
-    var BGMStart : SoundCue = null;
-    [Property]
-    var BGMLoop : SoundCue = null;
-    
-    var Time : Real = 0;
     
     function Initialize(init : CogInitializer)
     {
@@ -17,12 +11,6 @@ class Music : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if (this.Time >= 0)
-            this.Time += event.Dt;
-        //Console.WriteLine("`this.Time`");
-        if (this.Time >= 12.3) {
-            this.Time = -1;
-            this.Space.SoundSpace.PlayCue(this.BGMLoop);
-        }
+        
     }
 }

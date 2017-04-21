@@ -18,12 +18,12 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "58a648179ec28e43:Space",
-			string GeneratedSoundName = "",
+			string SoundName = "58a648baa6f4a9a3:Space",
+			string GeneratedSoundName = "55017c595ef88bf0:DefaultGeneratedSound",
 			WhichSoundType WhichToUse = FromFile,
 			float Weight = 1,
-			float LoopEndTime = 0,
-			float LoopStartTime = 0,
+			float LoopEndTime = 51.2000008,
+			float LoopStartTime = 12.8000002,
 		},
 	],
 	Array SoundTags = 
@@ -34,5 +34,5 @@ SoundCue =
 	],
 	string RolloffCurveName = "",
 	int Version = 1,
-	RolloffCurveType RolloffCurveType = Error,
+	RolloffCurveType RolloffCurveType = Linear,
 },
