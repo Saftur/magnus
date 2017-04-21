@@ -113,12 +113,6 @@ Level =
 		GameStateManager = 
 		{
 		},
-		Music = 
-		{
-			string BGM = "58a6484b85230861:BGM",
-			string BGMStart = "58a6451058f6b068:BGMStart",
-			string BGMLoop = "58a6451b583cdd97:BGMLoop",
-		},
 	},
 	Cog = 
 	{
@@ -132,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [39.8744011, 98.1768951, 49.9999962],
+			Vec3 Translation = [39.8744011, 89.4477463, 49.9999962],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -152,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0, 1.30145979, 0],
+			Vec3 LookTarget = [39.8744011, 89.4477463, -2.83690179e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -6501,7 +6495,6 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 165,
 		},
 		Named = 
@@ -6620,9 +6613,6 @@ Level =
 		LinkId = 
 		{
 			uint Id = 168,
-=======
-			uint Id = 146,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -6661,11 +6651,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 169,
-=======
-			uint Id = 147,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -6704,11 +6690,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 170,
-=======
-			uint Id = 148,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -6747,11 +6729,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 171,
-=======
-			uint Id = 149,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -6790,11 +6768,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 172,
-=======
-			uint Id = 150,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -6833,11 +6807,7 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 173,
-=======
-			uint Id = 151,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -10255,7 +10225,6 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 287,
 		},
 		Transform = 
@@ -10263,9 +10232,6 @@ Level =
 			Vec3 Translation = [15.7321167, 47.1331482, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
-=======
-			uint Id = 152,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -10295,7 +10261,6 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 289,
 		},
 		Transform = 
@@ -10303,9 +10268,6 @@ Level =
 			Vec3 Translation = [40.3992538, 34.4997902, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
-=======
-			uint Id = 153,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -10335,7 +10297,6 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 291,
 		},
 		Transform = 
@@ -10343,9 +10304,6 @@ Level =
 			Vec3 Translation = [36.3111839, 36.6640625, -3.81469727e-06],
 			Vec3 Scale = [0.150000006, 0.150000006, 1],
 			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
-=======
-			uint Id = 154,
->>>>>>> origin/master
 		},
 		Named = 
 		{
@@ -10375,11 +10333,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 293,
-=======
-			uint Id = 155,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10397,11 +10351,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 294,
-=======
-			uint Id = 156,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10419,11 +10369,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 295,
-=======
-			uint Id = 157,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10441,11 +10387,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 296,
-=======
-			uint Id = 158,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10463,11 +10405,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 297,
-=======
-			uint Id = 159,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10485,11 +10423,7 @@ Level =
 		string Name = "5825639ab909d852:Boss",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 298,
-=======
-			uint Id = 160,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10507,11 +10441,7 @@ Level =
 		string Name = "58256077099b083b:BossMinion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 299,
-=======
-			uint Id = 161,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10529,11 +10459,7 @@ Level =
 		string Name = "58256077099b083b:BossMinion",
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 300,
-=======
-			uint Id = 162,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10550,7 +10476,6 @@ Level =
 	{
 		LinkId = 
 		{
-<<<<<<< HEAD
 			uint Id = 301,
 		},
 		Named = 
@@ -10560,9 +10485,6 @@ Level =
 		Archetyped = 
 		{
 			string Name = "58256077099b083b:BossMinion",
-=======
-			uint Id = 163,
->>>>>>> origin/master
 		},
 		Transform = 
 		{
@@ -10588,9 +10510,8 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
-		Named = 
+		BoxCollider = 
 		{
-<<<<<<< HEAD
 			bool Ghost = false,
 			bool SendsMessages = true,
 			bool Seamless = true,
@@ -10694,9 +10615,6 @@ Level =
 		},
 		Hierarchy = 
 		{
-=======
-			string Name = "Minion",
->>>>>>> origin/master
 		},
 	},
 },
