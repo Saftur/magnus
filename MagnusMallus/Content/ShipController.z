@@ -68,8 +68,8 @@ class ShipController : ZilchComponent
                 movement *= dist*2;
             }
             //this.Owner.RigidBody.Velocity = vel/Math.Sqrt(vel.X*vel.X+vel.Y*vel.Y)*10;
-            Console.WriteLine(this.Owner.Orientation.LocalForward);
-            Console.WriteLine("Gets here");
+            //Console.WriteLine(this.Owner.Orientation.LocalForward);
+            //Console.WriteLine("Gets here");
         }
         if(Zero.Keyboard.KeyIsDown(Keys.F))
         {

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-11.5, -1, 0],
+		Vec3 Translation = [-5.27521133, 9.84258938, 0],
 		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -58,9 +58,11 @@ Cog =
 		Vec3 Offset = [0, 0, 0],
 		Vec3 Size = [0.25, 0.25, 0.5],
 	},
-	ShipStatus = 
+	Health = 
 	{
-		float StartingHealth = 15,
+		int MaxHP = 5,
+		bool Respawns = true,
+		string DeathParticle = "582f37283debad28:Explosion",
 	},
 	ShipController = 
 	{
@@ -70,25 +72,19 @@ Cog =
 		Vec3 GlobalUp = [0, 0, 1],
 		Vec3 UpVector = [0, 0, 1],
 		Vec3 ForwardVector = [0, 1, 0],
-		OrientationBases DefaultBases = Custom,
+		OrientationBases DefaultBases = ForwardYUpZ,
 	},
 	Shoot = 
 	{
 		string Laser = "58bee0c51f2dde2f:Laser",
-		float SpawnTime = 0.699999988,
+		float SpawnTime = 0.300000012,
 	},
 	DragEffect = 
 	{
-		bool Active = false,
+		bool Active = true,
 		bool WakeUpOnChange = true,
 		float Drag = 4,
 		float AngularDrag = 0.100000001,
-	},
-	Health = 
-	{
-		int MaxHP = 5,
-		bool Respawns = false,
-		string DeathParticle = "582f37283debad28:Explosion",
 	},
 	Hierarchy = 
 	{

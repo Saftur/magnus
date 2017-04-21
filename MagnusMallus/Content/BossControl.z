@@ -24,10 +24,14 @@ class BossControl : ZilchComponent
     var Diffuculty : Integer = 1;
     /*Laser that is aimed at the player*/
     
+    var Player : Cog = null;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        
+        this.Player = this.Space.FindObjectByName("PlayerShip");
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -36,6 +40,7 @@ class BossControl : ZilchComponent
         {
             this.Owner.Health.Dead = true;
             this.Owner.BossControl.LaserLength = 2;
+            this.Owner.BossControl.LaserInterval = 0.1;
         }
         if(this.Owner.Health.Dead)
         {
@@ -74,6 +79,39 @@ class BossControl : ZilchComponent
             }
             return;
         }
+        else
+        {
+            if(this.Diffuculty == 1)
+            {
+                this.LaserInterval = 3.5 - this.Diffuculty*0.5;
+                this.Diffuculty += 1;
+            }
+                
+            //Console.WriteLine("`this.LaserInterval`");
+            this.LaserInterval -= event.Dt;
+            if(this.LaserInterval < 0)
+            {
+                if(this.Diffuculty == 2)
+                {
+                    this.LaserInterval = 3.5 - this.Diffuculty*0.5;
+                    this.Diffuculty -= 1;
+                }
+                
+                var playerPos = this.Player.Transform.Translation;
+                var dir = (  playerPos.XY - this.Owner.Transform.Translation.XY + Real2(0,-4));
+                dir = Math.Normalize(dir);
+                //var y = this.Owner.Transform.Translation.Y - playerPos.Y;
+                //var rotation = Math.ATan(x/y);
+                //Console.WriteLine("`x` `y`");
+                var vel = 20;
+               // y /= x; //slope
+               // x /= Math.Abs(x);
+                //Console.WriteLine("`x` `y` `rotation`");
+                
+                var laser2 = this.Space.CreateAtPosition(Archetype.Laser2, this.Owner.Transform.Translation + Real3(0,-4,0));
+                laser2.RigidBody.Velocity = Real3(dir * vel, 0);
+            }
+        }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
@@ -90,7 +128,7 @@ class BossControl : ZilchComponent
         else
         {
             /*Patrolling*/
-            this.Patrol();
+            //this.Patrol();
         }
     }
     function OnCollisionStarted(event : CollisionEvent)
