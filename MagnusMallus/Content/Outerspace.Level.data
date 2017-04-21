@@ -113,6 +113,12 @@ Level =
 		GameStateManager = 
 		{
 		},
+		Music = 
+		{
+			string BGM = "58a6484b85230861:BGM",
+			string BGMStart = "58a6451058f6b068:BGMStart",
+			string BGMLoop = "58a6451b583cdd97:BGMLoop",
+		},
 	},
 	Cog = 
 	{
@@ -126,7 +132,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [9.63055325, -9.11155605, 49.9999962],
+			Vec3 Translation = [0, 1.30145979, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +144,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 40.6570053,
+			float Size = 100,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +152,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [9.63055325, -9.11155605, -2.83690179e-06],
+			Vec3 LookTarget = [0, 1.30145979, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -5706,7 +5712,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 148,
+			uint Id = 146,
 		},
 		Named = 
 		{
@@ -5745,7 +5751,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 149,
+			uint Id = 147,
 		},
 		Named = 
 		{
@@ -5784,7 +5790,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 150,
+			uint Id = 148,
 		},
 		Named = 
 		{
@@ -5823,7 +5829,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 151,
+			uint Id = 149,
 		},
 		Named = 
 		{
@@ -5862,7 +5868,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 152,
+			uint Id = 150,
 		},
 		Named = 
 		{
@@ -5901,7 +5907,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 153,
+			uint Id = 151,
 		},
 		Named = 
 		{
@@ -5940,7 +5946,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 154,
+			uint Id = 152,
 		},
 		Named = 
 		{
@@ -5979,7 +5985,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 155,
+			uint Id = 153,
 		},
 		Named = 
 		{
@@ -6018,7 +6024,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 156,
+			uint Id = 154,
 		},
 		Named = 
 		{
@@ -6058,7 +6064,7 @@ Level =
 		string Name = "5896b3315aecea99:Invisibru",
 		LinkId = 
 		{
-			uint Id = 157,
+			uint Id = 155,
 		},
 		Transform = 
 		{
@@ -6076,7 +6082,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 158,
+			uint Id = 156,
 		},
 		Transform = 
 		{
@@ -6094,7 +6100,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 159,
+			uint Id = 157,
 		},
 		Transform = 
 		{
@@ -6112,7 +6118,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 160,
+			uint Id = 158,
 		},
 		Transform = 
 		{
@@ -6130,7 +6136,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 161,
+			uint Id = 159,
 		},
 		Transform = 
 		{
@@ -6148,7 +6154,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 162,
+			uint Id = 160,
 		},
 		Transform = 
 		{
@@ -6166,7 +6172,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 164,
+			uint Id = 161,
 		},
 		Transform = 
 		{
@@ -6184,7 +6190,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 165,
+			uint Id = 162,
 		},
 		Transform = 
 		{
@@ -6202,7 +6208,7 @@ Level =
 		string Name = "589006c293b23c17:Minion",
 		LinkId = 
 		{
-			uint Id = 166,
+			uint Id = 163,
 		},
 		Transform = 
 		{
@@ -6210,15 +6216,9 @@ Level =
 			Vec3 Scale = [0.100000001, 0.100000001, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		BoxCollider = 
+		Named = 
 		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [1.5, 1.5, 0.5],
+			string Name = "Minion",
 		},
 	},
 },
