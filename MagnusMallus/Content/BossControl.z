@@ -50,7 +50,33 @@ class BossControl : ZilchComponent
         
         this.LastBombs = (this.Difficulty-9)/2;
     }
-
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(this.Owner.Health.Dead)
+            return;
+            
+        var o = event.OtherObject;
+        if(o.DealDamage != null && o.DealDamage.Friendly)
+        {
+            this.Owner.Health.Decrease(o.DealDamage.Damage);
+            var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
+            hud.LevelSettings.HUDReferences.BossHealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+            
+            //Increase difficulty based on hp
+            if(this.Difficulty == 1 && (this.Owner.Health.CurrHP < (this.Owner.Health.MaxHP*0.75)))
+            {
+                this.Difficulty += 1;
+            }
+            else if(this.Difficulty == 2 && (this.Owner.Health.CurrHP < (this.Owner.Health.MaxHP*0.5)))
+            {
+                this.Difficulty += 1;
+            }
+            else if(this.Difficulty == 3 && (this.Owner.Health.CurrHP < (this.Owner.Health.MaxHP*0.25)))
+            {
+                this.Difficulty += 1;   //MAX DIFF, CURR 4
+            }
+        }
+    }
     function OnLogicUpdate(event : UpdateEvent)
     {
         if(Zero.Keyboard.KeyIsPressed(Keys.B))
@@ -124,7 +150,13 @@ class BossControl : ZilchComponent
                 
                 if(this.SuperLaser)
                 {
-                    this.Turret.BossTurret.Active = false;
+                    //Shut off turrets for giant laser
+                    if(this.Turret.BossTurret.Active)
+                    {
+                        this.Turret.BossTurret.Active = false;
+                        this.RightTurret.BossTurret.Active = false;
+                        this.LeftTurret.BossTurret.Active = false;
+                    }
                     this.ChargeLaser(event.Dt);
                 }
                 else 
@@ -132,21 +164,21 @@ class BossControl : ZilchComponent
                     if(!this.Turret.BossTurret.Active)
                         this.Turret.BossTurret.Active = true;
                     /*Patrolling*/
-                    //this.Patrol();
+                    this.Patrol();
+                    var pXPos = this.Player.Transform.Translation.X;
+                    if (pXPos > this.Owner.Transform.Translation.X+2) {
+                        this.RightTurret.BossTurret.Active = true;
+                    } else {
+                        this.RightTurret.BossTurret.Active = false;
+                    }
+                    
+                    if (pXPos < this.Owner.Transform.Translation.X-2) {
+                        this.LeftTurret.BossTurret.Active = true;
+                    } else {
+                        this.LeftTurret.BossTurret.Active = false;
+                    }
                 }
                 
-                var pXPos = this.Player.Transform.Translation.X;
-                if (pXPos > this.Owner.Transform.Translation.X+2) {
-                    this.RightTurret.BossTurret.Active = true;
-                } else {
-                    this.RightTurret.BossTurret.Active = false;
-                }
-                
-                if (pXPos < this.Owner.Transform.Translation.X-2) {
-                    this.LeftTurret.BossTurret.Active = true;
-                } else {
-                    this.LeftTurret.BossTurret.Active = false;
-                }
             }
             
         }
@@ -170,19 +202,6 @@ class BossControl : ZilchComponent
         }
         
         
-    }
-    function OnCollisionStarted(event : CollisionEvent)
-    {
-        if(this.Owner.Health.Dead)
-            return;
-            
-        var o = event.OtherObject;
-        if(o.DealDamage != null && o.DealDamage.Friendly)
-        {
-            this.Owner.Health.Decrease(o.DealDamage.Damage);
-            var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
-            hud.LevelSettings.HUDReferences.BossHealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
-        }
     }
     function Patrol()
     {

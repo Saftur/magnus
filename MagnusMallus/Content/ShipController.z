@@ -44,8 +44,10 @@ class ShipController : ZilchComponent
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if (Zero.Keyboard.KeyIsPressed(Keys.R)) {
-            this.RespawnPoint = this.Owner.Transform.Translation;
+        //Cheat for demo
+        if (Zero.Keyboard.KeyIsDown(Keys.Control) && Zero.Keyboard.KeyIsDown(Keys.G)) {
+            this.Owner.BoxCollider.Ghost = !this.Owner.BoxCollider.Ghost;
+            this.GameSession.GameVars.EnemyKills += 75;
         }
         
         if(this.Owner.Health.Dead)

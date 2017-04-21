@@ -1,9 +1,11 @@
 class BossFightTrigger : ZilchComponent
 {
+    var NoEscape : Cog = null;
     function Initialize(init : CogInitializer)
     {
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        this.NoEscape = this.Space.FindObjectByName("NoEscape");
     }
 
     function OnCollisionStarted(event : CollisionEvent)
@@ -12,6 +14,17 @@ class BossFightTrigger : ZilchComponent
             this.Space.FindObjectByName("Boss").BossControl.FightStarted = true;
             this.Space.SoundSpace.StopAllSounds();
             this.Space.SoundSpace.PlayCue(SoundCue.BossFight);
+            
+            //Closes gates behind player
+            foreach(var child in this.NoEscape.Children)
+            {
+                child.Sprite.SpriteSource = SpriteSource.SpaceGate;
+                foreach(var c in child.Children)
+                {
+                    c.BoxCollider.Ghost = false;
+                }
+            }
+            
             this.Owner.Destroy();
         }
     }

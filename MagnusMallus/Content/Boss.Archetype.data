@@ -8,9 +8,13 @@ Cog =
 	{
 		string Name = "Boss",
 	},
+	Archetyped = 
+	{
+		string Name = "5825639ab909d852:Boss",
+	},
 	Transform = 
 	{
-		Vec3 Translation = [-3.5, 28, 0],
+		Vec3 Translation = [27.8508015, 121.705803, -3.81469727e-06],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -46,8 +50,8 @@ Cog =
 	},
 	BossControl = 
 	{
-		float LeftPoint = -5,
-		float RightPoint = 5,
+		float LeftPoint = 12,
+		float RightPoint = 45,
 	},
 	DragEffect = 
 	{
@@ -243,13 +247,157 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-0.0028090477, -3.19559479, 0],
+				Vec3 Translation = [0, -3.20000005, 0],
 				Vec3 Scale = [0.150000006, 0.150000006, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 
 			{
 				string Name = "Turret",
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 5,
+			},
+			Named = 
+			{
+				string Name = "RightTurret",
+			},
+			Archetyped = 
+			{
+				string Name = "58257d00aee6a6f1:Turret",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [2.4000001, 0, 0],
+				Vec3 Scale = [0.150000006, 0.150000006, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = false,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5898079c14b4a322:labia_spaceship",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			Orientation = 
+			{
+				Vec3 GlobalUp = [0, 0, 1],
+				Vec3 UpVector = [0, 0, 1],
+				Vec3 ForwardVector = [0, 1, 0],
+				OrientationBases DefaultBases = ForwardYUpZ,
+			},
+			Shoot = 
+			{
+				string Laser = "589005cece89a175:Laser2",
+				float SpawnTime = 1,
+			},
+			BossTurret = 
+			{
+				CogPath ShootTargetPath = 
+				{
+					string Path = ":/PlayerShip",
+					bool ErrorOnResolveToNull = false,
+					bool ErrorOnPathCantCompute = false,
+					bool ErrorOnDirectLinkFail = false,
+					bool UpdateCogOnPathChange = true,
+					bool UpdatePathOnCogChange = true,
+					bool UpdateCogOnInitialize = true,
+					bool ResolvedNullErrorOccurred = false,
+					uint ResolvedCog = 6,
+					CogPathPreference PathPreference0 = CogRelative,
+					CogPathPreference PathPreference1 = SpaceRelative,
+					CogPathPreference PathPreference2 = Absolute,
+				},
+			},
+			Hierarchy = 
+			{
+			},
+		},
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 7,
+			},
+			Named = 
+			{
+				string Name = "LeftTurret",
+			},
+			Archetyped = 
+			{
+				string Name = "58257d00aee6a6f1:Turret",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [-2.4000001, 0, 0],
+				Vec3 Scale = [0.150000006, 0.150000006, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = false,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5898079c14b4a322:labia_spaceship",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+			Orientation = 
+			{
+				Vec3 GlobalUp = [0, 0, 1],
+				Vec3 UpVector = [0, 0, 1],
+				Vec3 ForwardVector = [0, 1, 0],
+				OrientationBases DefaultBases = ForwardYUpZ,
+			},
+			Shoot = 
+			{
+				string Laser = "589005cece89a175:Laser2",
+				float SpawnTime = 1,
+			},
+			BossTurret = 
+			{
+				CogPath ShootTargetPath = 
+				{
+					string Path = ":/PlayerShip",
+					bool ErrorOnResolveToNull = false,
+					bool ErrorOnPathCantCompute = false,
+					bool ErrorOnDirectLinkFail = false,
+					bool UpdateCogOnPathChange = true,
+					bool UpdatePathOnCogChange = true,
+					bool UpdateCogOnInitialize = true,
+					bool ResolvedNullErrorOccurred = false,
+					uint ResolvedCog = 6,
+					CogPathPreference PathPreference0 = CogRelative,
+					CogPathPreference PathPreference1 = SpaceRelative,
+					CogPathPreference PathPreference2 = Absolute,
+				},
+			},
+			Hierarchy = 
+			{
 			},
 		},
 	},
