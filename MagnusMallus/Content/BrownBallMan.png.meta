@@ -2,15 +2,15 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "oceanbackground2",
-		uint64 ResourceId = 58a9c1c4c4c85c20,
+		string Name = "BrownBallMan",
+		uint64 ResourceId = 5898083a069afc92,
 		uint64 AtlasId = 5274cf95e4a661fd,
-		uint FrameSizeX = 400,
-		uint FrameSizeY = 280,
-		uint FrameCount = 1,
+		uint FrameSizeX = 258,
+		uint FrameSizeY = 286,
+		uint FrameCount = 5,
 		float FrameDelay = 0.0833333358,
-		float OriginX = 200,
-		float OriginY = 140,
+		float OriginX = 129,
+		float OriginY = 143,
 		float PixelsPerUnit = 64,
 		bool Smoothing = false,
 		bool Looping = true,

@@ -25,6 +25,9 @@ class BossControl : ZilchComponent
     /*Laser that is aimed at the player*/
     
     var Player : Cog = null;
+    var Turret : Cog = null;
+    
+    var BehaviorTimer : Real = 0;
     
     function Initialize(init : CogInitializer)
     {
@@ -32,6 +35,7 @@ class BossControl : ZilchComponent
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
         
         this.Player = this.Space.FindObjectByName("PlayerShip");
+        this.Turret = this.Owner.FindChildByName("Turret");
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -81,55 +85,39 @@ class BossControl : ZilchComponent
         }
         else
         {
-            if(this.Diffuculty == 1)
+            
+            
+            this.BehaviorTimer += event.Dt;
+            if(this.BehaviorTimer > (9 - this.Diffuculty*2))
             {
-                this.LaserInterval = 3.5 - this.Diffuculty*0.5;
-                this.Diffuculty += 1;
+                this.SuperLaser = true;
+                this.BehaviorTimer = 0;
             }
-                
-            //Console.WriteLine("`this.LaserInterval`");
-            this.LaserInterval -= event.Dt;
-            if(this.LaserInterval < 0)
+            
+            if(this.SuperLaser)
             {
-                if(this.Diffuculty == 2)
-                {
-                    this.LaserInterval = 3.5 - this.Diffuculty*0.5;
-                    this.Diffuculty -= 1;
-                }
-                
-                var playerPos = this.Player.Transform.Translation;
-                var dir = (  playerPos.XY - this.Owner.Transform.Translation.XY + Real2(0,-4));
-                dir = Math.Normalize(dir);
-                //var y = this.Owner.Transform.Translation.Y - playerPos.Y;
-                //var rotation = Math.ATan(x/y);
-                //Console.WriteLine("`x` `y`");
-                var vel = 20;
-               // y /= x; //slope
-               // x /= Math.Abs(x);
-                //Console.WriteLine("`x` `y` `rotation`");
-                
-                var laser2 = this.Space.CreateAtPosition(Archetype.Laser2, this.Owner.Transform.Translation + Real3(0,-4,0));
-                laser2.RigidBody.Velocity = Real3(dir * vel, 0);
+                this.Turret.BossTurret.Active = false;
+                this.ChargeLaser(event.Dt);
             }
+            else 
+            {
+                if(!this.Turret.BossTurret.Active)
+                    this.Turret.BossTurret.Active = true;
+                /*Patrolling*/
+                //this.Patrol();
+            }
+            
         }
         
         if(Zero.Keyboard.KeyIsPressed(Keys.P))
         {
             this.SuperLaser = true;
-            this.LaunchBombs(this.Diffuculty);
-            //this.DeployMinions();
+            //this.LaunchBombs(this.Diffuculty);
+            this.DeployMinions();
             
         }
         
-        if(this.SuperLaser)
-        {
-            this.ChargeLaser(event.Dt);
-        }
-        else
-        {
-            /*Patrolling*/
-            //this.Patrol();
-        }
+        
     }
     function OnCollisionStarted(event : CollisionEvent)
     {
@@ -245,7 +233,16 @@ class BossControl : ZilchComponent
     }
     function DeployMinions()
     {
-        this.Space.CreateAtPosition(Archetype.Minion, this.Owner.Transform.Translation + Real3(2.5, 0, 0));
-        this.Space.CreateAtPosition(Archetype.Minion, this.Owner.Transform.Translation + Real3(-2.5, 0, 0));
+        var minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(2.5, 0, 0));
+        minion.BoxCollider.Ghost = true;
+        minion.RigidBody.Velocity = Real3((this.Owner.Transform.Scale.X*0.25) * 50, (-this.Owner.Transform.Scale.Y)*50, 0);
+        minion.DragEffect.Drag = 1;
+        minion.DragEffect.Active = true;
+        
+        minion = this.Space.CreateAtPosition(Archetype.BossMinion, this.Owner.Transform.Translation + Real3(-2.5, 0, 0));
+        minion.BoxCollider.Ghost = true;
+        minion.RigidBody.Velocity = Real3((-this.Owner.Transform.Scale.X*0.25) * 50, (-this.Owner.Transform.Scale.Y)*50, 0);
+        minion.DragEffect.Drag = 1;
+        minion.DragEffect.Active = true;
     }
 }

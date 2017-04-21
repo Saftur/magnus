@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "MM_Gunner",
+		uint64 ResourceId = 58255b82f7b77720,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 66,
+		uint FrameSizeY = 126,
+		uint FrameCount = 4,
+		float FrameDelay = 0.166666672,
+		float OriginX = 33,
+		float OriginY = 63,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

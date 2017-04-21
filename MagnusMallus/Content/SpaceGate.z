@@ -1,16 +1,24 @@
 class SpaceGate : ZilchComponent
 {
+    [Property]
+    var MinionKillsRequiredToOpen : Integer = 5;
+    var Player : Cog = null;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Player = this.Space.FindObjectByName("PlayerShip");
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(this.GameSession.GameVars.Planet1Clear == true)
+        if(this.Owner.Sprite.SpriteSource == SpriteSource.SpaceGate_1)
+            return;
+        
+        if(this.GameSession.GameVars.EnemyKills >= this.MinionKillsRequiredToOpen)
         {
             this.Owner.Sprite.SpriteSource = SpriteSource.SpaceGate_1;
-            this.Owner.BoxCollider.Ghost = true;
+            this.Owner.FindChildByName("BoxCollHasNoRotate").BoxCollider.Ghost = true;
+            this.Player.ShipController.RespawnPoint = Real3(this.Owner.Transform.Translation.XY, 0);
         }
     }
 }

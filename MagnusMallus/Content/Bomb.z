@@ -38,7 +38,7 @@ class Bomb : ZilchComponent
             this.BlinkTime -= this.BlinkTime/4;
             //Console.WriteLine("`this.BlinkTime`");
             this.Tick -= 1;
-            this.Owner.Sprite.Color -= Real4(0,0.75,0.75,0);
+            this.Owner.Sprite.Color -= Real4(0,0.5,0.5,0);
             
             this.TimeTillBoom = 0;
             if(this.Tick == 0)

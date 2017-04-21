@@ -1,0 +1,27 @@
+class BossTurret : ZilchComponent
+{
+    [Dependency]
+    var Orient : Orientation = null;
+    [Property]
+    var ShootTargetPath : CogPath = null;
+    var ShootTarget : Cog = null;
+    
+    var Active : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        if (this.ShootTargetPath != null)
+            this.ShootTarget = this.ShootTargetPath.Cog;
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if (this.ShootTarget != null && this.Active)
+        {
+            this.Owner.Shoot.Shoot(false);
+            
+            this.Orient.LookAtPoint(this.ShootTarget.Transform.Translation);
+        }
+    }
+}

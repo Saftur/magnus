@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [9.63055325, -9.11155605, 49.9999962],
+			Vec3 Translation = [39.8744011, 98.1768951, 49.9999962],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 40.6570053,
+			float Size = 49.658638,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [9.63055325, -9.11155605, -2.83690179e-06],
+			Vec3 LookTarget = [39.8744011, 98.1768951, -2.83690179e-06],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -158,16 +158,1102 @@ Level =
 			bool Wireframe = false,
 		},
 	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 4,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [50.6390381, 62.0109024, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0.382683456, 0.923879504],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 50,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 5,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 6,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-22.7767982, 27.2584515, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, -0.342020124, 0.939692616],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 30,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 9,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 10,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 11,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 12,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-24.6967316, 44.5027161, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, -0.258819044, 0.965925813],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 30,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 13,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 14,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 15,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-46.9069672, -7.27654934, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, -0.342020124, 0.939692616],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 10,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 17,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 18,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 19,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 20,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-46.9069672, -7.27654934, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, -0.342020124, 0.939692616],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 10,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 21,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 22,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 23,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 24,
+		},
+		Named = 
+		{
+			string Name = "SpaceGate",
+		},
+		Archetyped = 
+		{
+			string Name = "5825489695307b6d:SpaceGate",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-46.9628067, -25.0744228, 1],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, -0.342020124, 0.939692616],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		SpaceGate = 
+		{
+			int MinionKillsRequiredToOpen = 10,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 25,
+				},
+				Named = 
+				{
+					string Name = "BoxCollHasNoRotate",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0776882172, -0.0846176147, -1],
+					Vec3 Scale = [3, 0.74999994, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 26,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-1.2761333, 1.34465766, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 27,
+				},
+				Named = 
+				{
+					string Name = "Pillar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [1.07763243, -1.50519514, -1],
+					Vec3 Scale = [0.75, 0.75, 1],
+					Quat Rotation = [0, 0, -0.4226183, 0.906307757],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				BoxCollider = 
+				{
+					bool Ghost = false,
+					bool SendsMessages = true,
+					bool Seamless = true,
+					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+					string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+					Vec3 Offset = [0, 0, 0],
+					Vec3 Size = [0.5, 0.5, 0.5],
+				},
+			},
+		},
+	},
 	ArchetypeInstance = 
 	{
 		string Name = "58bd8c2a0b339f4a:PlayerShip",
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 28,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [6.13000202, -12.4872646, 0],
+			Vec3 Translation = [22.7399082, -15.6671257, 0],
 			Vec3 Scale = [3, 3, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -220,7 +1306,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4,
+				uint ResolvedCog = 28,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -235,7 +1321,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 29,
 		},
 		Named = 
 		{
@@ -274,7 +1360,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 30,
 		},
 		Named = 
 		{
@@ -314,7 +1400,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 31,
 		},
 		Transform = 
 		{
@@ -332,7 +1418,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 32,
 		},
 		Transform = 
 		{
@@ -350,7 +1436,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 33,
 		},
 		Transform = 
 		{
@@ -368,7 +1454,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 34,
 		},
 		Transform = 
 		{
@@ -386,11 +1472,11 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 35,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.74914551, -51.493988, 0],
+			Vec3 Translation = [2.74914551, -51.493988, 0.200000003],
 			Vec3 Scale = [5, 5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -404,7 +1490,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 36,
 		},
 		Transform = 
 		{
@@ -421,7 +1507,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 37,
 		},
 		Named = 
 		{
@@ -472,7 +1558,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 38,
 		},
 		Named = 
 		{
@@ -523,7 +1609,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 39,
 		},
 		Named = 
 		{
@@ -562,7 +1648,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 40,
 		},
 		Named = 
 		{
@@ -601,7 +1687,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 17,
+			uint Id = 41,
 		},
 		Named = 
 		{
@@ -641,7 +1727,7 @@ Level =
 		string Name = "5896b03ffd135781:AsteroidWall",
 		LinkId = 
 		{
-			uint Id = 18,
+			uint Id = 42,
 		},
 		Transform = 
 		{
@@ -658,7 +1744,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 19,
+			uint Id = 43,
 		},
 		Named = 
 		{
@@ -697,7 +1783,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 20,
+			uint Id = 44,
 		},
 		Named = 
 		{
@@ -736,7 +1822,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 21,
+			uint Id = 45,
 		},
 		Named = 
 		{
@@ -775,7 +1861,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 22,
+			uint Id = 46,
 		},
 		Named = 
 		{
@@ -814,7 +1900,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 23,
+			uint Id = 47,
 		},
 		Named = 
 		{
@@ -853,7 +1939,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 24,
+			uint Id = 48,
 		},
 		Named = 
 		{
@@ -892,7 +1978,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 25,
+			uint Id = 49,
 		},
 		Named = 
 		{
@@ -931,7 +2017,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 26,
+			uint Id = 50,
 		},
 		Named = 
 		{
@@ -970,7 +2056,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 27,
+			uint Id = 51,
 		},
 		Named = 
 		{
@@ -1009,7 +2095,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 28,
+			uint Id = 52,
 		},
 		Named = 
 		{
@@ -1048,7 +2134,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 29,
+			uint Id = 53,
 		},
 		Named = 
 		{
@@ -1087,7 +2173,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 30,
+			uint Id = 54,
 		},
 		Named = 
 		{
@@ -1126,7 +2212,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 31,
+			uint Id = 55,
 		},
 		Named = 
 		{
@@ -1165,7 +2251,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 32,
+			uint Id = 56,
 		},
 		Named = 
 		{
@@ -1204,7 +2290,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 33,
+			uint Id = 57,
 		},
 		Named = 
 		{
@@ -1243,7 +2329,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 34,
+			uint Id = 58,
 		},
 		Named = 
 		{
@@ -1282,7 +2368,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 35,
+			uint Id = 59,
 		},
 		Named = 
 		{
@@ -1321,7 +2407,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 36,
+			uint Id = 60,
 		},
 		Named = 
 		{
@@ -1360,7 +2446,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 37,
+			uint Id = 61,
 		},
 		Named = 
 		{
@@ -1399,7 +2485,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 38,
+			uint Id = 62,
 		},
 		Named = 
 		{
@@ -1438,7 +2524,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 39,
+			uint Id = 63,
 		},
 		Named = 
 		{
@@ -1477,7 +2563,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 40,
+			uint Id = 64,
 		},
 		Named = 
 		{
@@ -1516,7 +2602,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 41,
+			uint Id = 65,
 		},
 		Named = 
 		{
@@ -1555,7 +2641,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 42,
+			uint Id = 66,
 		},
 		Named = 
 		{
@@ -1594,7 +2680,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 43,
+			uint Id = 67,
 		},
 		Named = 
 		{
@@ -1633,7 +2719,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 44,
+			uint Id = 68,
 		},
 		Named = 
 		{
@@ -1672,7 +2758,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 45,
+			uint Id = 69,
 		},
 		Named = 
 		{
@@ -1711,7 +2797,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 46,
+			uint Id = 70,
 		},
 		Named = 
 		{
@@ -1750,7 +2836,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 47,
+			uint Id = 71,
 		},
 		Named = 
 		{
@@ -1789,7 +2875,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 48,
+			uint Id = 72,
 		},
 		Named = 
 		{
@@ -1828,7 +2914,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 49,
+			uint Id = 73,
 		},
 		Named = 
 		{
@@ -1867,11 +2953,11 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 50,
+			uint Id = 74,
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "BroPlanet",
 		},
 		Transform = 
 		{
@@ -1918,15 +3004,15 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 51,
+			uint Id = 75,
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "HomePlanet",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [22.3684235, -37.8421173, 0],
+			Vec3 Translation = [22.3684235, -37.8421173, -0.100000001],
 			Vec3 Scale = [10, 10, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -1964,7 +3050,7 @@ Level =
 		string Name = "58b5a7b8d4cbe6b5:LoadScreen",
 		LinkId = 
 		{
-			uint Id = 52,
+			uint Id = 76,
 		},
 		Transform = 
 		{
@@ -1981,7 +3067,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 53,
+			uint Id = 77,
 		},
 		Named = 
 		{
@@ -2020,11 +3106,11 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 54,
+			uint Id = 78,
 		},
 		Named = 
 		{
-			string Name = "TileMap",
+			string Name = "MAPEDGE",
 		},
 		Transform = 
 		{
@@ -2055,7 +3141,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 55,
+			uint Id = 79,
 		},
 		Named = 
 		{
@@ -2094,7 +3180,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 56,
+			uint Id = 80,
 		},
 		Named = 
 		{
@@ -2133,7 +3219,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 57,
+			uint Id = 81,
 		},
 		Named = 
 		{
@@ -2172,7 +3258,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 58,
+			uint Id = 82,
 		},
 		Named = 
 		{
@@ -2211,7 +3297,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 59,
+			uint Id = 83,
 		},
 		Named = 
 		{
@@ -2250,7 +3336,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 60,
+			uint Id = 84,
 		},
 		Named = 
 		{
@@ -2289,7 +3375,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 61,
+			uint Id = 85,
 		},
 		Named = 
 		{
@@ -2328,7 +3414,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 62,
+			uint Id = 86,
 		},
 		Named = 
 		{
@@ -2367,7 +3453,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 63,
+			uint Id = 87,
 		},
 		Named = 
 		{
@@ -2406,7 +3492,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 64,
+			uint Id = 88,
 		},
 		Named = 
 		{
@@ -2445,7 +3531,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 65,
+			uint Id = 89,
 		},
 		Named = 
 		{
@@ -2484,7 +3570,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 66,
+			uint Id = 90,
 		},
 		Named = 
 		{
@@ -2523,7 +3609,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 67,
+			uint Id = 91,
 		},
 		Named = 
 		{
@@ -2562,7 +3648,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 68,
+			uint Id = 92,
 		},
 		Named = 
 		{
@@ -2601,7 +3687,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 69,
+			uint Id = 93,
 		},
 		Named = 
 		{
@@ -2640,7 +3726,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 70,
+			uint Id = 94,
 		},
 		Named = 
 		{
@@ -2679,7 +3765,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 71,
+			uint Id = 95,
 		},
 		Named = 
 		{
@@ -2718,7 +3804,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 72,
+			uint Id = 96,
 		},
 		Named = 
 		{
@@ -2757,7 +3843,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 73,
+			uint Id = 97,
 		},
 		Named = 
 		{
@@ -2796,7 +3882,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 74,
+			uint Id = 98,
 		},
 		Named = 
 		{
@@ -2835,7 +3921,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 75,
+			uint Id = 99,
 		},
 		Named = 
 		{
@@ -2874,7 +3960,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 76,
+			uint Id = 100,
 		},
 		Named = 
 		{
@@ -2913,7 +3999,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 77,
+			uint Id = 101,
 		},
 		Named = 
 		{
@@ -2952,7 +4038,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 78,
+			uint Id = 102,
 		},
 		Named = 
 		{
@@ -2991,7 +4077,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 79,
+			uint Id = 103,
 		},
 		Named = 
 		{
@@ -3030,7 +4116,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 80,
+			uint Id = 104,
 		},
 		Named = 
 		{
@@ -3069,7 +4155,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 81,
+			uint Id = 105,
 		},
 		Named = 
 		{
@@ -3108,7 +4194,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 82,
+			uint Id = 106,
 		},
 		Named = 
 		{
@@ -3147,7 +4233,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 83,
+			uint Id = 107,
 		},
 		Named = 
 		{
@@ -3186,7 +4272,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 84,
+			uint Id = 108,
 		},
 		Named = 
 		{
@@ -3225,7 +4311,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 85,
+			uint Id = 109,
 		},
 		Named = 
 		{
@@ -3264,7 +4350,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 86,
+			uint Id = 110,
 		},
 		Named = 
 		{
@@ -3303,7 +4389,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 87,
+			uint Id = 111,
 		},
 		Named = 
 		{
@@ -3342,7 +4428,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 88,
+			uint Id = 112,
 		},
 		Named = 
 		{
@@ -3381,7 +4467,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 89,
+			uint Id = 113,
 		},
 		Named = 
 		{
@@ -3420,7 +4506,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 90,
+			uint Id = 114,
 		},
 		Named = 
 		{
@@ -3459,7 +4545,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 91,
+			uint Id = 115,
 		},
 		Named = 
 		{
@@ -3498,942 +4584,6 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 92,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-48.4233475, -33.9989395, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 93,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-50.0833244, -37.8935089, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 94,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-62.469326, -42.8734474, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 95,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [35.1119041, -17.8769073, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 96,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [65.7913818, -40.529377, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 97,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [40.2688866, -14.5009871, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 98,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [33.5332451, -13.8751574, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 99,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [30.9913807, -10.6400576, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 100,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-33.1869278, 1.85404491, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 101,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [35.5806236, -6.79186583, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 102,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [37.9299088, -10.1308012, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 103,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [25.9272747, -9.39217663, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 104,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [25.9888287, -1.69818115, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 105,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [8.44651699, 5.99581432, 0],
-			Vec3 Scale = [1, 1.5, 1],
-			Quat Rotation = [0, 0, -0.188766792, 0.982021928],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 106,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [10.1699724, -3.72939491, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 107,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [2.34704971, 0.624233723, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 108,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-39.3292465, 11.7748156, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 109,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [14.4555788, 5.24996281, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 110,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [3.513484, 5.85819197, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 111,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [8.53347397, 0.406526566, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 112,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-36.2233734, 14.0932684, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 113,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-43.7061729, 9.3995142, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 114,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-92.7588043, 5.50477982, -3.81469727e-06],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 115,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-92.5482788, 34.8732071, -3.81469727e-06],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
 			uint Id = 116,
 		},
 		Named = 
@@ -4446,7 +4596,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-87.7061691, 39.9258423, 3.43322754e-05],
+			Vec3 Translation = [-49.1408386, -35.3442383, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -4485,7 +4635,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-67.3903885, 40.031105, 0],
+			Vec3 Translation = [-50.0833244, -39.5078697, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -4524,7 +4674,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-93.4956436, 29.9258423, -3.81469727e-06],
+			Vec3 Translation = [-62.469326, -42.8734474, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -4563,7 +4713,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-83.9167023, 17.9258289, 0],
+			Vec3 Translation = [35.1119041, -17.8769073, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -4602,6 +4752,942 @@ Level =
 		},
 		Transform = 
 		{
+			Vec3 Translation = [65.7913818, -40.529377, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 121,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [40.2688866, -14.5009871, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 122,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [33.5332451, -13.8751574, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 123,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [30.9913807, -10.6400576, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 124,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-33.1869278, 1.85404491, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 125,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [35.5806236, -6.79186583, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 126,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [37.9299088, -10.1308012, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 127,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [25.9272747, -9.39217663, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 128,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [25.9888287, -1.69818115, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 129,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [8.44651699, 5.99581432, 0],
+			Vec3 Scale = [1, 1.5, 1],
+			Quat Rotation = [0, 0, -0.188766792, 0.982021928],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 130,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [10.1699724, -3.72939491, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 131,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.34704971, 0.624233723, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 132,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-39.3292465, 11.7748156, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 133,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [14.4555788, 5.24996281, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 134,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [3.513484, 5.85819197, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 135,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [8.53347397, 0.406526566, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 136,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-36.2233734, 14.0932684, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 137,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-43.7061729, 9.3995142, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 138,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-92.7588043, 5.50477982, -3.81469727e-06],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 139,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-92.5482788, 34.8732071, -3.81469727e-06],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 140,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-87.7061691, 39.9258423, 3.43322754e-05],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 141,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-67.3903885, 40.031105, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 142,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-93.4956436, 29.9258423, -3.81469727e-06],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 143,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-83.9167023, 17.9258289, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 144,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
 			Vec3 Translation = [-45.1347046, 4.16155624, 0],
 			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
@@ -4629,7 +5715,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 121,
+			uint Id = 145,
 		},
 		Named = 
 		{
@@ -4668,7 +5754,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 122,
+			uint Id = 146,
 		},
 		Named = 
 		{
@@ -4707,7 +5793,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 123,
+			uint Id = 147,
 		},
 		Named = 
 		{
@@ -4746,7 +5832,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 124,
+			uint Id = 148,
 		},
 		Named = 
 		{
@@ -4785,7 +5871,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 125,
+			uint Id = 149,
 		},
 		Named = 
 		{
@@ -4824,7 +5910,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 126,
+			uint Id = 150,
 		},
 		Named = 
 		{
@@ -4863,7 +5949,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 127,
+			uint Id = 151,
 		},
 		Named = 
 		{
@@ -4902,7 +5988,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 128,
+			uint Id = 152,
 		},
 		Named = 
 		{
@@ -4941,7 +6027,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 129,
+			uint Id = 153,
 		},
 		Named = 
 		{
@@ -4980,7 +6066,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 130,
+			uint Id = 154,
 		},
 		Named = 
 		{
@@ -5019,7 +6105,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 131,
+			uint Id = 155,
 		},
 		Named = 
 		{
@@ -5058,7 +6144,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 132,
+			uint Id = 156,
 		},
 		Named = 
 		{
@@ -5097,7 +6183,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 133,
+			uint Id = 157,
 		},
 		Named = 
 		{
@@ -5136,7 +6222,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 134,
+			uint Id = 158,
 		},
 		Named = 
 		{
@@ -5175,7 +6261,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 135,
+			uint Id = 159,
 		},
 		Named = 
 		{
@@ -5214,7 +6300,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 136,
+			uint Id = 160,
 		},
 		Named = 
 		{
@@ -5253,7 +6339,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 137,
+			uint Id = 161,
 		},
 		Named = 
 		{
@@ -5292,7 +6378,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 138,
+			uint Id = 162,
 		},
 		Named = 
 		{
@@ -5331,7 +6417,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 139,
+			uint Id = 163,
 		},
 		Named = 
 		{
@@ -5370,7 +6456,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 140,
+			uint Id = 164,
 		},
 		Named = 
 		{
@@ -5409,7 +6495,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 141,
+			uint Id = 165,
 		},
 		Named = 
 		{
@@ -5448,7 +6534,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 142,
+			uint Id = 166,
 		},
 		Named = 
 		{
@@ -5487,7 +6573,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 143,
+			uint Id = 167,
 		},
 		Named = 
 		{
@@ -5526,20 +6612,20 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 144,
+			uint Id = 168,
 		},
 		Named = 
 		{
-			string Name = "Minion",
+			string Name = "AsteroidWall",
 		},
 		Archetyped = 
 		{
-			string Name = "589006c293b23c17:Minion",
+			string Name = "5896b03ffd135781:AsteroidWall",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.484830856, -21.0725574, 0],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
+			Vec3 Translation = [18.0064716, -39.5783768, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -5548,7 +6634,3871 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 169,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-36.7880478, -45.8797493, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 170,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-44.2621346, -40.0217323, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 171,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-55.4394493, -37.669075, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 172,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-81.7778473, -41.3248787, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 173,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-83.4395752, -19.9716644, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 174,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [46.3595123, -30.531414, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 175,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [45.475174, -19.0351181, 0],
+			Vec3 Scale = [1.5, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 176,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [55.2028122, -28.0825024, 0],
+			Vec3 Scale = [1.5, 2, 1],
+			Quat Rotation = [0, 0, 0.647954643, 0.761679053],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 177,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-2.01437759, 119.420792, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 178,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [73.519989, 88.7826233, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 179,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [72.5825806, 110.383629, 0],
+			Vec3 Scale = [2.5, 2, 1],
+			Quat Rotation = [0, 0, 0.173648179, 0.98480773],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5896b03ffd135781:AsteroidWall",
+		LinkId = 
+		{
+			uint Id = 180,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-2.01910973, 89.4816589, 0],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5896b03ffd135781:AsteroidWall",
+		LinkId = 
+		{
+			uint Id = 181,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-11.0380974, 132.203186, 0],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 182,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [66.7057343, 101.898781, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 183,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-8.70726967, 101.710602, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 184,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [76.4972534, 82.3959961, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 185,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-6.08972359, 121.416878, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 186,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [78.8622437, 98.2337189, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 187,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [73.2687607, 76.2484589, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 188,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-7.99349022, 115.364052, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 189,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [67.0135193, 78.1518402, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 190,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [64.8996887, 91.3796463, 0],
+			Vec3 Scale = [3, 3, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 191,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [70.2403259, 82.904068, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 192,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.215948105, 114.010811, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 193,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [72.6468887, 97.1828308, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 194,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [63.2767563, 108.214119, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 195,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-4.68076134, 106.192764, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 196,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [74.4063034, 103.023529, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 197,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [55.8400421, 145.872345, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 198,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [57.4629745, 129.037872, 0],
+			Vec3 Scale = [3, 3, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 199,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [71.4255295, 135.891937, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 200,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [66.9695892, 140.681763, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 201,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [69.0605392, 120.054222, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 202,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [65.2101746, 134.841064, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 203,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [62.8036118, 120.562294, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 204,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [66.0832748, 126.440849, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 205,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [65.1458664, 148.041855, 0],
+			Vec3 Scale = [2.5, 2, 1],
+			Quat Rotation = [0, 0, 0.173648179, 0.98480773],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 206,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59.2690201, 139.557007, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 207,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [65.8320465, 113.906685, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 208,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [59.5768051, 115.810066, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 209,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [45.1341476, 144.162781, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 210,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [48.8484039, 150.415283, 0],
+			Vec3 Scale = [2.5, 2, 1],
+			Quat Rotation = [0, 0, 0.173648179, 0.98480773],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 211,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [49.5900879, 139.372955, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 212,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [43.374733, 138.322083, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5896b03ffd135781:AsteroidWall",
+		LinkId = 
+		{
+			uint Id = 213,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.77037621, 146.847397, 0],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5896b03ffd135781:AsteroidWall",
+		LinkId = 
+		{
+			uint Id = 214,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [22.9808979, 138.21582, 0],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 215,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.6181164, 132.857086, 3.05175781e-05],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 216,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [27.5269184, 148.862473, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 217,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.9402256, 148.901016, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 218,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [35.5191803, 145.427322, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 219,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [31.5534229, 153.34465, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 220,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [1.93390846, 133.278137, 3.05175781e-05],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 221,
+		},
+		Named = 
+		{
+			string Name = "AsteroidWall",
+		},
+		Archetyped = 
+		{
+			string Name = "5896b03ffd135781:AsteroidWall",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [12.1584949, 138.967743, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5896affb1bb6c180:spacerock1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 222,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75, -75, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 223,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-41, -75, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 224,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [17, -75, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 225,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-99, -75, -2.99999619],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 226,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-40.9999924, -19.7784786, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 227,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-98.9999924, -19.7784786, -2.99999619],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 228,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [17.0000038, -19.7784786, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 229,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75.0000076, -19.7784786, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 230,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [17.7911491, 36.3924103, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 231,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [75.791153, 36.3924103, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 232,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-98.208847, 36.3924103, -2.99999619],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 233,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-40.208847, 36.3924103, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 234,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [18.7405167, 92.2468414, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 235,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [76.7405243, 92.2468414, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 236,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-97.2594757, 92.2468414, -2.99999619],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 237,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-39.2594795, 92.2468414, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 238,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-95.5189743, 150.158234, -2.99999619],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 239,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-37.5189743, 150.158234, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 240,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [78.4810257, 150.158234, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 241,
+		},
+		Named = 
+		{
+			string Name = "SpaceBG",
+		},
+		Archetyped = 
+		{
+			string Name = "582541c39e3558ae:SpaceBG",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [20.48102, 150.158234, -3],
+			Vec3 Scale = [100, 100, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.758799016, 0.681450009, 0.88499999, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5899534009c7a575:space",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 242,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0.242730141, -6.44430065, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 243,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-26.817318, -29.4288006, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 244,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-26.7541313, -25.4146328, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 245,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-29.5764751, -27.0568314, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 246,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-28.809576, -7.25581837, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 247,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-24.1027756, -8.31078815, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 248,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-25.5635071, -4.09090042, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 249,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-7.79128742, -21.0516071, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 250,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-7.33222198, -25.3215637, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 251,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-2.21549511, -12.32792, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 252,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-64.9632263, -28.0090084, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 253,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-66.5807419, -6.9427557, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 254,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-66.8104706, -3.75030518, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 255,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-69.6626892, -6.12713146, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 256,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-67.3129578, -24.924984, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 257,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-71.5204163, 12.886528, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 258,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-35.9381714, 25.2737923, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.866025448, 0.49999997],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 259,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-46.901001, 41.5519333, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.866025448, 0.49999997],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 260,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-44.7084351, 36.4359474, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.866025448, 0.49999997],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 261,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-40.7219505, 33.4460831, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.866025448, 0.49999997],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 262,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-39.0609169, 28.5958614, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.866025448, 0.49999997],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 263,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-50.9952545, 12.5419817, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 264,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-56.5080147, 11.3606758, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 265,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-61.1347885, 13.1818533, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 266,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-66.4506531, 12.2958755, 0],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 267,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.29607105, 22.0567608, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 268,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.50859308, 23.319252, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 269,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.20800161, 19.8924866, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 270,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.44847488, 26.9263744, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 271,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.44847488, 26.9263744, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 272,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.41630936, 25.0025749, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 273,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.49745941, 45.6151085, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 274,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.28915215, 40.5050201, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 275,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.58974361, 43.9317856, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 276,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.37722206, 42.6692963, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 277,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.52962542, 47.5389099, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 278,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.4396744, 22.8114796, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 279,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.6479816, 17.7013912, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 280,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.3473911, 21.1281567, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 281,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.5599127, 19.8656654, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 282,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.4075089, 24.7352791, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 283,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.7642822, 45.2093468, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 284,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.9725895, 40.0992584, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 285,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.671999, 43.5260239, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 286,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [11.8845205, 42.2635345, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 287,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [15.7321167, 47.1331482, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 288,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [36.1909447, 39.6098785, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 289,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [40.3992538, 34.4997902, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 290,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [40.0986595, 37.9265556, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 291,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [36.3111839, 36.6640625, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 292,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [40.1587791, 41.5336761, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, 0, 0.707106829, 0.707106829],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 293,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [47.0713882, 55.3878326, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 294,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [56.4108696, 54.3922348, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, -0, -1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 295,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [53.6117516, 55.1995773, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 296,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [44.5281754, 54.4228439, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [0, -0, -1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "589006c293b23c17:Minion",
+		LinkId = 
+		{
+			uint Id = 297,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [50.3673744, 54.8171234, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "Minion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5825639ab909d852:Boss",
+		LinkId = 
+		{
+			uint Id = 298,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [27.8508015, 121.705803, -3.81469727e-06],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Boss",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 299,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [19.3923645, 98.4931641, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58256077099b083b:BossMinion",
+		LinkId = 
+		{
+			uint Id = 300,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [34.4785309, 98.807457, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 301,
+		},
+		Named = 
+		{
+			string Name = "BossMinion",
+		},
+		Archetyped = 
+		{
+			string Name = "58256077099b083b:BossMinion",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [48.9148178, 99.0102921, -3.81469727e-06],
+			Vec3 Scale = [0.150000006, 0.150000006, 1],
+			Quat Rotation = [-0, 0, 1, -4.37113883e-08],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.170000017, 0.850000024, 0.752857208, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -5594,7 +10544,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4,
+				uint ResolvedCog = 28,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -5609,7 +10559,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4,
+				uint ResolvedCog = 28,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -5617,10 +10567,10 @@ Level =
 			float OrbitSpeed = 1,
 			float MaxSpeed = 7,
 			float Accel = 7,
-			float DetectDist = 10,
-			float FollowDist = 4,
+			float DetectDist = 20,
+			float FollowDist = 5,
 			float FollowMargin = 0.100000001,
-			float ShootDist = 5,
+			float ShootDist = 7,
 		},
 		IgnoreSpaceEffects = 
 		{
@@ -5658,567 +10608,13 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = false,
+			bool Active = true,
 			bool WakeUpOnChange = true,
-			float Drag = 6,
+			float Drag = 1,
 			float AngularDrag = 0.100000001,
 		},
 		Hierarchy = 
 		{
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 145,
-		},
-		Named = 
-		{
-			string Name = "Space Gate",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [51.1079102, 69.1444016, 1],
-			Vec3 Scale = [7, 7, 1],
-			Quat Rotation = [0, 0, 0.313575447, 0.949563324],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58994fdcb4e325b6:SpaceGate",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 148,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [18.0064716, -39.5783768, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 149,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-36.7880478, -45.8797493, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 150,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-44.2621346, -40.0217323, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 151,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-55.4394493, -37.669075, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 152,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-81.7778473, -41.3248787, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 153,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-83.4395752, -19.9716644, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 154,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [46.3595123, -30.531414, 0],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 155,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [45.475174, -19.0351181, 0],
-			Vec3 Scale = [1.5, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 156,
-		},
-		Named = 
-		{
-			string Name = "AsteroidWall",
-		},
-		Archetyped = 
-		{
-			string Name = "5896b03ffd135781:AsteroidWall",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [55.2028122, -28.0825024, 0],
-			Vec3 Scale = [1.5, 2, 1],
-			Quat Rotation = [0, 0, 0.647954643, 0.761679053],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0.454999983, 0.436799973, 0.436799973, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5896affb1bb6c180:spacerock1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "5896b3315aecea99:Invisibru",
-		LinkId = 
-		{
-			uint Id = 157,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [64.4002609, -14.2395344, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Sprite",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 158,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [13.6547041, -19.6454926, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 159,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [21.0694809, -16.5163212, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 160,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-8.45357037, -21.754282, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 161,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [3.95973969, -16.6630554, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 162,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.77429533, -18.2781963, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 164,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [6.02043772, -10.2024918, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 165,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [2.43050385, -25.8358097, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Minion",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "589006c293b23c17:Minion",
-		LinkId = 
-		{
-			uint Id = 166,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-4.57612038, -12.2987385, -3.81469727e-06],
-			Vec3 Scale = [0.100000001, 0.100000001, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [1.5, 1.5, 0.5],
 		},
 	},
 },

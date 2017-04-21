@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [7.4028964, 9.31792545, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Scale = [0.400000006, 0.400000006, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -28,18 +28,18 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5275aa4d802dd6dc:Square",
+		string SpriteSource = "58257ac87c230784:bomb",
 		bool RenderMask = false,
 		bool FlipX = false,
-		bool FlipY = false,
+		bool FlipY = true,
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
 	},
 	Bomb = 
 	{
-		float TimeTillBoom = 2,
-		float BlinkTimer = 0.5,
+		float TimeTillBoom = 3,
+		float BlinkTimer = 1,
 	},
 	RigidBody = 
 	{
@@ -53,6 +53,13 @@ Cog =
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
+	Orientation = 
+	{
+		Vec3 GlobalUp = [0, 1, 0],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
+	},
 	BoxCollider = 
 	{
 		bool Ghost = false,
@@ -61,7 +68,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 		Vec3 Offset = [0, 0, 0],
-		Vec3 Size = [0.5, 0.5, 0.5],
+		Vec3 Size = [0.5, 2, 0.5],
 	},
 	DragEffect = 
 	{

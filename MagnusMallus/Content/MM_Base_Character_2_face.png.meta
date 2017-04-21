@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "MM_Base_Character_2_face",
+		uint64 ResourceId = 58255a4480b02d2e,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 65,
+		uint FrameSizeY = 51,
+		uint FrameCount = 1,
+		float FrameDelay = 0.0833333358,
+		float OriginX = 32.5,
+		float OriginY = 25.5,
+		float PixelsPerUnit = 64,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

@@ -14,6 +14,7 @@ class ShipController : ZilchComponent
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        this.RespawnPoint = this.Owner.Transform.Translation;
     }
        
     function OnCollisionStarted(event : CollisionEvent)

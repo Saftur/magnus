@@ -2,15 +2,15 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "Imported_piskel",
-		uint64 ResourceId = 5898083a069afc92,
+		string Name = "MM_TECHNICIAN_face",
+		uint64 ResourceId = 58255a498ff6294e,
 		uint64 AtlasId = 5274cf95e4a661fd,
-		uint FrameSizeX = 258,
-		uint FrameSizeY = 286,
-		uint FrameCount = 5,
+		uint FrameSizeX = 65,
+		uint FrameSizeY = 51,
+		uint FrameCount = 1,
 		float FrameDelay = 0.0833333358,
-		float OriginX = 129,
-		float OriginY = 143,
+		float OriginX = 32.5,
+		float OriginY = 25.5,
 		float PixelsPerUnit = 64,
 		bool Smoothing = false,
 		bool Looping = true,

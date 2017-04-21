@@ -6,17 +6,17 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Minion",
+		string Name = "BossMinion",
 	},
 	Archetyped = 
 	{
-		string Name = "589006c293b23c17:Minion",
+		string Name = "58256077099b083b:BossMinion",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-24.1027756, -8.31078815, 0],
+		Vec3 Translation = [21.6519299, 94.1224747, -3.81469727e-06],
 		Vec3 Scale = [0.150000006, 0.150000006, 1],
-		Quat Rotation = [0, 0, -0.707106829, 0.707106829],
+		Quat Rotation = [-0, 0, 1, -4.37113883e-08],
 	},
 	Sprite = 
 	{
@@ -93,10 +93,10 @@ Cog =
 		float OrbitSpeed = 1,
 		float MaxSpeed = 7,
 		float Accel = 7,
-		float DetectDist = 10,
-		float FollowDist = 4,
+		float DetectDist = 20,
+		float FollowDist = 5,
 		float FollowMargin = 0.100000001,
-		float ShootDist = 5,
+		float ShootDist = 7,
 	},
 	IgnoreSpaceEffects = 
 	{
@@ -134,9 +134,9 @@ Cog =
 	},
 	DragEffect = 
 	{
-		bool Active = false,
+		bool Active = true,
 		bool WakeUpOnChange = true,
-		float Drag = 6,
+		float Drag = 1,
 		float AngularDrag = 0.100000001,
 	},
 	Hierarchy = 

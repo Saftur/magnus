@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-5.27521133, 9.84258938, 0],
+		Vec3 Translation = [22.7399082, -15.6671257, 0],
 		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -60,7 +60,7 @@ Cog =
 	},
 	Health = 
 	{
-		int MaxHP = 5,
+		int MaxHP = 15,
 		bool Respawns = true,
 		string DeathParticle = "582f37283debad28:Explosion",
 	},
