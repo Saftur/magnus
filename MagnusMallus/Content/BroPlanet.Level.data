@@ -126,7 +126,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [12.6928415, 20.3849983, 50],
+			Vec3 Translation = [-7.84710073, 2.03039861, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -138,7 +138,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 49.6585655,
+			float Size = 5.43656349,
 		},
 		EditorCameraController = 
 		{
@@ -146,7 +146,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [12.6928415, 20.3849983, 9.12830558e-07],
+			Vec3 LookTarget = [-7.84710073, 2.03039861, 1.50011683e-08],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -315,7 +315,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-7.5955925, 2.8622818, 1.61139462e-06],
+			Vec3 Translation = [-7.93949413, 1.64716446, 1.61139462e-06],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -329,7 +329,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "58248dc8fe280d48:minion_spsh",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -362,7 +362,7 @@ Level =
 			bool Static = false,
 			bool Asleep = false,
 			bool Kinematic = false,
-			bool RotationLocked = false,
+			bool RotationLocked = true,
 			bool Mode2D = true,
 			bool AllowSleep = true,
 			bool Inherit2DMode = true,
@@ -377,7 +377,23 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
+			Vec3 Size = [1.25, 0.699999988, 0.5],
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 1, 0],
+			Vec3 ForwardVector = [0, 0, 1],
+			OrientationBases DefaultBases = ForwardZUpY,
+		},
+		Fissix = 
+		{
+			float Acceleration = 4,
+			float Friction = 0,
+			float Drag = 0,
+			float MaxGroundVelocity = 7,
+			float MaxAirVelocity = 7,
+			float JumpStrength = 15,
 		},
 	},
 },
