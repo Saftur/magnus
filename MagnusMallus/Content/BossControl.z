@@ -35,6 +35,7 @@ class BossControl : ZilchComponent
     var LastLaser : Real = 0;
     var LastBombs : Real = 0;
     var LastMinions : Real = 0;
+    var LastBackBomb : Real = 0;
     
     function Initialize(init : CogInitializer)
     {
@@ -181,6 +182,13 @@ class BossControl : ZilchComponent
                     }
                 }
                 
+                var pPos = this.Player.Transform.Translation;
+                var bPos = this.Owner.Transform.Translation;
+                if (this.BehaviorTimer >= this.LastBackBomb+(5-this.Difficulty) && pPos.Y > bPos.Y && pPos.X > bPos.X-4 && pPos.X < bPos.X+4) {
+                    this.LaunchBackBomb();
+                    this.LastBackBomb = this.BehaviorTimer;
+                }
+                
             }
             
         }
@@ -265,6 +273,12 @@ class BossControl : ZilchComponent
             this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
         }
     }
+    function LaunchBackBomb() {
+        var rand : Random = Random();
+        var bomb = this.Space.CreateAtPosition(Archetype.Bomb, this.Owner.Transform.Translation + Real3(0, 3, -1));
+        bomb.RigidBody.Velocity = Real3(0, this.Owner.Transform.Scale.Y*20, 0);
+        this.GameSession.FindSpaceByName("HUDSpace").SoundSpace.PlayCue(SoundCue.Laser);
+    }
     function ChargeLaser(time : Real)
     {
         if(this.Charge)
@@ -295,7 +309,8 @@ class BossControl : ZilchComponent
                 
                 if(this.ChargeClick < this.ChargePhase)
                 {
-                    this.Space.CreateAtPosition(Archetype.LaserCharge, this.Owner.Transform.Translation + Real3(0, -4, 0));
+                    var charge = this.Space.CreateAtPosition(Archetype.LaserCharge, this.Owner.Transform.Translation + Real3(0, -4, 0));
+                    charge.RigidBody.Velocity = this.Owner.RigidBody.Velocity;
                     this.ChargeClick = 0.5;
                 }
             }

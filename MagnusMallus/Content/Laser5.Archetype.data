@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-31.5088158, 5.63241911, 0],
+		Vec3 Translation = [75.5000153, 0, 0],
 		Vec3 Scale = [0.400000006, 0.800000012, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -42,10 +42,10 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
-		Vec3 Velocity = [10, 0, 0],
+		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
 	BoxCollider = 
@@ -78,6 +78,7 @@ Cog =
 	{
 		int Damage = 10,
 		bool DiesOnContact = true,
+		bool PlanetLaser = false,
 	},
 	TimedDeath = 
 	{
