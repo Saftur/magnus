@@ -62,6 +62,9 @@ class BossControl : ZilchComponent
             this.Owner.Health.Decrease(o.DealDamage.Damage);
             var hud = this.Space.LevelSettings.HUDCreator.HUDSpace;
             hud.LevelSettings.HUDReferences.BossHealthBar.Healthbar.Decrease(Real(o.DealDamage.Damage)/this.Owner.Health.MaxHP);
+            this.Turret.BossTurret.Active = false;
+            this.RightTurret.BossTurret.Active = false;
+            this.LeftTurret.BossTurret.Active = false;
             
             //Increase difficulty based on hp
             if(this.Difficulty == 1 && (this.Owner.Health.CurrHP < (this.Owner.Health.MaxHP*0.75)))
@@ -80,6 +83,7 @@ class BossControl : ZilchComponent
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
+        /*
         if(Zero.Keyboard.KeyIsPressed(Keys.B))
         {
             this.Owner.Health.Dead = true;
@@ -103,7 +107,7 @@ class BossControl : ZilchComponent
         {
             this.LaunchBombs(this.Difficulty);
             
-        }
+        }*/
         if(this.Owner.Health.Dead)
         {
             var rand = Random();
@@ -149,12 +153,6 @@ class BossControl : ZilchComponent
             
             if (this.FightStarted)
             {
-                if (this.Player.Health.Dead) {
-                    this.Turret.BossTurret.Active = false;
-                    this.RightTurret.BossTurret.Active = false;
-                    this.LeftTurret.BossTurret.Active = false;
-                    return;
-                }
                 this.BehaviorTimer += event.Dt;
                 if (this.BehaviorTimer > 4) {
                     if(!this.SuperLaser && this.BehaviorTimer >= this.LastLaser+(9 - this.Difficulty))
