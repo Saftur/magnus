@@ -1,3 +1,5 @@
+// Authors: Julian Wong
+// All content © 2017 DigiPen (USA) Corporation, all rights reserved.
 class AsteroidVel : ZilchComponent
 {
     var Variance : Random = Random();

@@ -1,4 +1,4 @@
-// Authors: Charles duMars
+// Authors: Charles duMars, Arthur Bouvier
 // Date: 2/2/17
 // All content © 2017 DigiPen (USA) Corporation, all rights reserved.
 class Fissix : ZilchComponent

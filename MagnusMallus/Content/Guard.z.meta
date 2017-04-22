@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "Guard",
-		uint64 ResourceId = 589150a4032698bf,
-	},
-},
