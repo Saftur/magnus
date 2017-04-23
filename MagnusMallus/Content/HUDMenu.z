@@ -65,6 +65,7 @@ class HUDMenu : ZilchComponent
                         this.ObjectsToMove.Transform.Translation = this.Destination; //snap them to their destination
                     else
                     {
+                        Console.WriteLine("wat");
                         this.FadeObjectsTo(this.FadeTo, this.ObjectsToMove);
                     }
                 }
@@ -102,6 +103,10 @@ class HUDMenu : ZilchComponent
             Console.WriteLine("\nopen: `this.Open` trans: `this.Transitioning` objs: `this.ObjectsToMove`");
             Console.WriteLine("fadeamount: `this.FadeAmount` moving: `this.Moving` mousecontrol: `this.Space.LevelSettings.MouseControl.Active`");
             Console.WriteLine("optionsopen: `this.OptionsOpen`\n");
+            foreach(var child in this.Group1.Children)
+            {
+                Console.WriteLine("`child` `child.Sprite.Color`");
+            }
         }
         
         if(!this.Entering)
@@ -138,6 +143,14 @@ class HUDMenu : ZilchComponent
                     this.FadeAmount = 1;
                     this.FadeTo = 1;
                     this.MoveBool = this.Open;
+                    
+                    foreach(var child in this.Group1.Children)
+                    {
+                        if(child.MouseButtonWithKids != null)
+                        {
+                            child.MouseButtonWithKids.Deactivate(false);
+                        }
+                    }
                 }
                 else if(Zero.Keyboard.KeyIsPressed(this.Button1) && !this.Transitioning)
                 {
@@ -217,34 +230,26 @@ class HUDMenu : ZilchComponent
     }
     function FadeObjectsTo(fade : Real, grp : Cog)
     {
+        Console.WriteLine("`fade`");
         var parent = grp;
         if(parent.Sprite != null)                        //snap them and all of their kids to their final shade
         {
             var c = parent.Sprite.Color;
-            parent.Sprite.Color = Real4(c.X, c.Y, c.Z, fade);
+            parent.Sprite.Color = Real4(c.XYZ, fade);
             foreach(var child in parent.Children)
             {
+                Console.WriteLine("`child.Name`");
                 var cc = Real4(0,0,0,0);
                 if(child.Sprite != null)
                 {
                     cc = child.Sprite.Color;
-                    child.Sprite.Color = Real4(cc.X,cc.Y,cc.Z, fade);
+                    child.Sprite.Color = Real4(cc.XYZ, fade);
+                    Console.WriteLine("`child.Sprite.Color` `fade`");
                 }
                 else if(child.SpriteText != null)
                 {
                     cc = child.SpriteText.Color;
                     child.SpriteText.Color = Real4(cc.X,cc.Y,cc.Z, fade);
-                }
-            }
-            
-            if(!this.Open)
-            {
-                foreach(var child in this.Group1.Children)
-                {
-                    if(child.MouseButtonWithKids != null)
-                    {
-                        child.MouseButtonWithKids.Deactivate(false);
-                    }
                 }
             }
             //*/
