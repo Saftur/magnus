@@ -3,4 +3,18 @@
 class GameVars : ZilchComponent
 {
     var EnemyKills : Integer = 0;
+    var Crew : Array[String] = Array[String](0);
+    var MaxCrewSize : Integer = 6;
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Start Crew
+        this.Crew.Add("Captain");
+        this.Crew.Add("Mechanic");
+        this.Crew.Add("Gunner");
+        this.Crew.Add("");
+        this.Crew.Add("");
+        this.Crew.Add("");
+        //Console.WriteLine("`this.Crew`");
+    }
 }

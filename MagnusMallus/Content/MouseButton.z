@@ -2,59 +2,20 @@
 // All content © 2017 DigiPen (USA) Corporation, all rights reserved.
 class MouseButton : ZilchComponent
 {
-    //Options
-    [Property]
-    var Help : Boolean = false;
-    [Property]
-    var Options : Boolean = false;
-    [Property]
-    var Exit : Boolean = false;
+    [Dependency]
+    var Sprite : Sprite = null;
     
-    //Characters
-    [Property]
-    var Feed : Boolean = false;
-    [Property]
-    var Kick : Boolean = false;
+    var UnclickedColor : Real4 = Real4();
+    var ClickedColor : Real4 = Real4();
     
-    //Planet
-    [Property]
-    var PlanetYes : Boolean = false;
-    [Property]
-    var PlanetNo : Boolean = false;
-    
-    function Activate()
+    function Initialize(init : CogInitializer)
     {
-        if(this.Help)
-        {
-            //help stuff
-        }
-        else if(this.Options)
-        {
-            //options stuff
-        }
-        else if(this.Exit)
-        {
-            this.GameSession.Quit();
-        }
-        
-        if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
-            return;
-        
-        else if(this.Feed)
-        {
-            Console.WriteLine("nom nom");
-        }
-        else if(this.Kick)
-        {
-            this.Owner.Parent.Character.Clear();
-        }
-        else if(this.PlanetYes)
-        {
-            this.Space.LevelSettings.HUDMenu.EnterPlanet();
-        }
-        else if(this.PlanetNo)
-        {
-            this.Space.LevelSettings.HUDMenu.EnteringPlanet(false);
-        }
+        this.UnclickedColor = this.Sprite.Color;
+        this.ClickedColor = this.Sprite.Color - Real4(0.3,0.3,0.3,0);
+    }
+    
+    function PushDown()
+    {
+        this.Sprite.Color = this.ClickedColor;
     }
 }

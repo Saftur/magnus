@@ -10,13 +10,13 @@ class HUDMenu : ZilchComponent
     var Transitioning : Boolean = false;//if in middle of transition don't do anything
     
     var Button1 : Keys = Keys.C; //Button
-    var Group1 : Cog = null; //Objects in the group
+    var MainMenu : Cog = null; //Objects in the group
     var Open : Boolean = false;
     
-    var Group2 : Cog = null;
+    var EnterPlanetButtons : Cog = null;
     var Entering : Boolean = false;
     
-    var Group3 : Cog = null;
+    var LoadingScreen : Cog = null;
     var Enter : Boolean = false;
     
     var Timer : Real = 0;
@@ -24,14 +24,9 @@ class HUDMenu : ZilchComponent
     [Property]
     var TransitionTime : Real = 0.5;
     
-    var Moving : Boolean = true; //Moving rather than fading
     var ObjectsToMove : Cog = null; //Parent of object group to move
-    var FadeAmount : Real = 0; //Amount to fade in
-    var FadeTo : Real = 0;
     var DistToMove : Real3 = Real3(0,0,0); //Distance to move objects
     var Destination : Real3 = Real3(0,0,0); //Where objects need to be, snap them in place at the end
-    var MoveBool : Boolean = false; //Opening or closing
-    
     
     var Name : String = "";
     
@@ -40,9 +35,16 @@ class HUDMenu : ZilchComponent
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         
         this.OptionsObjects = this.Space.FindObjectByName("Help");
-        this.Group1 = this.Space.FindObjectByName("MenuBG");
-        this.Group2 = this.Space.FindObjectByName("EnterPlanet");
-        this.Group3 = this.Space.FindObjectByName("LoadScreen");
+        Console.WriteLine("`this.OptionsObjects.Transform.Translation`");
+        
+        this.MainMenu = this.Space.FindObjectByName("MenuBG");        //If it's going to fade set the fade time to the transition time
+        this.MainMenu.Fade.Time = this.TransitionTime;
+        
+        this.EnterPlanetButtons = this.Space.FindObjectByName("PlanetYes");
+        this.EnterPlanetButtons.Fade.Time = this.TransitionTime;
+        
+        this.LoadingScreen = this.Space.FindObjectByName("LoadScreen");
+        this.LoadingScreen.Fade.Time = this.TransitionTime;
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -61,12 +63,8 @@ class HUDMenu : ZilchComponent
                 
                 if(this.ObjectsToMove != null)
                 {
-                    if(this.Moving)
-                        this.ObjectsToMove.Transform.Translation = this.Destination; //snap them to their destination
-                    else
-                    {
-                        this.FadeObjectsTo(this.FadeTo, this.ObjectsToMove);
-                    }
+                    this.ObjectsToMove.Transform.Translation = this.Destination; //snap them to their destination
+                    this.ObjectsToMove = null;
                 }
                 this.Timer = 0;             //Reset variables for transition
                 this.Transitioning = false;
@@ -74,46 +72,49 @@ class HUDMenu : ZilchComponent
                 /*Second Phases*/
                 if(this.Enter)
                 {
-                    this.Enter = false;
-                    this.Transitioning = true;
-                    
                     this.Space.LevelSettings.HUDReferences.CurrentPlanet.PlanetEnter.EnterPlanet();
-                    
-                    this.FadeAmount = -1;
-                    this.FadeTo = 0;
                 }
             }
-            else
+            else if(this.ObjectsToMove != null)
             {
                 var time = event.Dt/this.TransitionTime;    //so that if transition time is small then transition happens faster
                 
-                if(this.Moving)
-                {
-                    this.MoveObjects(this.DistToMove*Real3(time,time,time), this.ObjectsToMove, this.MoveBool);
-                }
-                else
-                {
-                    this.FadeObjects(this.FadeAmount*time, this.ObjectsToMove);
-                }
+                this.MoveObjects(this.DistToMove*Real3(time,time,time), this.ObjectsToMove);
             }
         }
         if(Zero.Keyboard.KeyIsPressed(Keys.Tab))                  //for debugging, show current variables
         {
             Console.WriteLine("\nopen: `this.Open` trans: `this.Transitioning` objs: `this.ObjectsToMove`");
-            Console.WriteLine("fadeamount: `this.FadeAmount` moving: `this.Moving` mousecontrol: `this.Space.LevelSettings.MouseControl.Active`");
+            Console.WriteLine(" mousecontrol: `this.Space.LevelSettings.MouseControl.Active`");
             Console.WriteLine("optionsopen: `this.OptionsOpen`\n");
+            Console.WriteLine("`this.Space.LevelSettings.MouseControl`");
+            foreach(var child in this.MainMenu.Children)
+            {
+                Console.WriteLine("`child` `child.Sprite.Color`");
+                if(child.Name == "CrewTab")
+                {
+                    foreach(var c in child.Children)
+                    {
+                        foreach(var kid in c.Children)
+                        {
+                            if(kid.Healthbar != null)
+                            {
+                                Console.WriteLine("parent: `kid.Parent` vis: `kid.Sprite.Visible` trans: `kid.Transform.Translation`, color: `kid.Sprite.Color`");
+                            }
+                        }
+                    }
+                }
+            }
         }
         
-        if(!this.Entering)
+        if(!this.Transitioning && !this.Entering)
         {
             if(!this.OptionsOpen)
             {
-                if(Zero.Keyboard.KeyIsPressed(this.OptionsButton) && !this.Transitioning)
+                if(Zero.Keyboard.KeyIsPressed(this.OptionsButton))
                 {
                     this.OptionsOpen = true;
                     this.Transitioning = true;
-                    
-                    this.Moving = true;
                     
                     if(!this.Open)
                     {
@@ -121,40 +122,41 @@ class HUDMenu : ZilchComponent
                     }
                     
                     this.ObjectsToMove = this.OptionsObjects;
-                    this.DistToMove = Real3(0,15,0);
-                    this.Destination = this.OptionsObjects.Transform.Translation - this.DistToMove;
-                    this.MoveBool = this.OptionsOpen;
+                    this.DistToMove = Real3(0,-15,0);
+                    Console.WriteLine("`this.ObjectsToMove.Transform.Translation`");
+                    this.Destination = this.OptionsObjects.Transform.Translation + this.DistToMove;
+                    Console.WriteLine("`this.Destination` `this.DistToMove`");
                 }
-                else if(Zero.Keyboard.KeyIsPressed(this.Button1) && !this.Transitioning && !this.Open)
+                else if(Zero.Keyboard.KeyIsPressed(this.Button1) && !this.Open)
                 {
                     this.Open = true;
                     this.Transitioning = true;
                     
-                    this.Moving = false;
-                    
                     //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
                     
-                    this.ObjectsToMove = this.Group1;
-                    this.FadeAmount = 1;
-                    this.FadeTo = 1;
-                    this.MoveBool = this.Open;
+                    this.MainMenu.Fade.StartFade = true;
                 }
-                else if(Zero.Keyboard.KeyIsPressed(this.Button1) && !this.Transitioning)
+                else if(Zero.Keyboard.KeyIsPressed(this.Button1))
                 {
                     this.Open = false;
                     this.Transitioning = true;
                     
-                    this.Moving = false;
-                    
                     this.Close();
                     
-                    this.ObjectsToMove = this.Group1;
-                    this.FadeAmount = -1;
-                    this.FadeTo = 0;
-                    this.MoveBool = this.Open;
+                    this.MainMenu.Fade.StartFade = true;
+                    
+                    foreach(var child in this.MainMenu.Children)
+                    {
+                        if(child.MouseButtonWithKids != null)
+                        {
+                            child.MouseButtonWithKids.Deactivate(true);
+                        }
+                    }
+                    this.Space.LevelSettings.MouseControl.CurrentTab = null;
+                    this.Space.LevelSettings.MouseControl.CurrButton = null;
                 }
             }
-            else if(Zero.Keyboard.KeyIsPressed(this.OptionsButton) && !this.Transitioning)
+            else if(Zero.Keyboard.KeyIsPressed(this.OptionsButton))
             {
                 this.OptionsOpen = false;
                 this.Transitioning = true;
@@ -164,7 +166,6 @@ class HUDMenu : ZilchComponent
                 this.ObjectsToMove = this.OptionsObjects;
                 this.DistToMove = Real3(0,15,0);
                 this.Destination = this.OptionsObjects.Transform.Translation + this.DistToMove;
-                this.MoveBool = this.OptionsOpen;
             }
         }
     }
@@ -177,98 +178,12 @@ class HUDMenu : ZilchComponent
             this.Space.LevelSettings.MouseControl.Active = false;
         }
     }
-    function MoveObjects(amnt : Real3, grp : Cog, open : Boolean)
+    function MoveObjects(amnt : Real3, grp : Cog)
     {
         if(grp == null)
             return;
-        var parent = grp;
-        if(open)
-                parent.Transform.Translation -= amnt;
-            else
-                parent.Transform.Translation += amnt;
-        
-        //Console.WriteLine("`parent.Transform.Translation`");
-    }
-    function FadeObjects(fade : Real, grp : Cog)
-    {
-        if(grp == null)
-            return;
-        var parent = grp;
-        if(parent.Sprite != null)
-        {
-            parent.Sprite.Color += Real4(0,0,0, fade);
-        }
-        foreach(var child in parent.Children)
-        {
-            if(child.Sprite != null)
-                child.Sprite.Color += Real4(0,0,0, fade);
-            else if(child.SpriteText != null)
-                child.SpriteText.Color += Real4(0,0,0, fade);
-            
-            if(child.MouseButton != null || child.MouseButtonWithKids != null)
-            {
-                child.FindChildByName("SpriteText").SpriteText.Color += Real4(0,0,0, fade);
-            }
-            if(child.MouseButtonWithKids != null)
-            {
-                this.FadeKids(fade, child);
-            }
-        }
-    }
-    function FadeObjectsTo(fade : Real, grp : Cog)
-    {
-        var parent = grp;
-        if(parent.Sprite != null)                        //snap them and all of their kids to their final shade
-        {
-            var c = parent.Sprite.Color;
-            parent.Sprite.Color = Real4(c.X, c.Y, c.Z, fade);
-            foreach(var child in parent.Children)
-            {
-                var cc = Real4(0,0,0,0);
-                if(child.Sprite != null)
-                {
-                    cc = child.Sprite.Color;
-                    child.Sprite.Color = Real4(cc.X,cc.Y,cc.Z, fade);
-                }
-                else if(child.SpriteText != null)
-                {
-                    cc = child.SpriteText.Color;
-                    child.SpriteText.Color = Real4(cc.X,cc.Y,cc.Z, fade);
-                }
-            }
-            
-            if(!this.Open)
-            {
-                foreach(var child in this.Group1.Children)
-                {
-                    if(child.MouseButtonWithKids != null)
-                    {
-                        child.MouseButtonWithKids.Deactivate(false);
-                    }
-                }
-            }
-            //*/
-        }
-        if(parent.SpriteText != null)
-        {
-            var c = parent.SpriteText.Color;
-            parent.SpriteText.Color = Real4(c.X, c.Y, c.Z, this.FadeTo);
-        }
-    }
-    function FadeKids(fade : Real, child : Cog)
-    {
-        foreach(var kid in child.Children)
-        {
-            if(kid.Sprite != null)
-                kid.Sprite.Color += Real4(0,0,0, fade);
-            if(kid.SpriteText != null)
-                kid.SpriteText.Color += Real4(0,0,0, fade);
-                
-            if(kid.MouseButtonWithKids != null)
-            {
-                this.FadeKids(fade, kid);
-            }
-        }
+        grp.Transform.Translation += amnt;
+        //Console.WriteLine("`grp` `grp.Transform.Translation`");
     }
     function EnteringPlanet(enter : Boolean)
     {
@@ -276,40 +191,26 @@ class HUDMenu : ZilchComponent
         {
             this.Entering = true;
             this.Transitioning = true;
-            
-            this.Moving = false;
-            
             //this.Space.LevelSettings.HUDReferences.MainSpaceRef.TimeSpace.TogglePause();
             this.Space.LevelSettings.MouseControl.Active = true;
             
-            this.ObjectsToMove = this.Group2;
-            this.FadeAmount = 1;
-            this.FadeTo = 1;
+            this.EnterPlanetButtons.Fade.StartFade = true;
         }
         else
         {
             this.Entering = false;
             this.Transitioning = true;
             
-            this.Moving = false;
-            
             this.Close();
             
-            this.ObjectsToMove = this.Group2;
-            this.FadeAmount = -1;
-            this.FadeTo = 0;
+            this.EnterPlanetButtons.Fade.StartFade = true;
         }
     }
     function EnterPlanet()
     {
-        this.FadeObjectsTo(0, this.Group2);
         this.Transitioning = true;
         
-        this.Moving = false;
-        
-        this.ObjectsToMove = this.Group3;
-        this.FadeAmount = 1;
-        this.FadeTo = 1;
+        this.LoadingScreen.Fade.StartFade = true;
         this.Enter = true;
     }
     

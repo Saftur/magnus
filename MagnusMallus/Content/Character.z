@@ -2,33 +2,104 @@
 // All content © 2017 DigiPen (USA) Corporation, all rights reserved.
 class Character : ZilchComponent
 {
+    [Property]
+    var CrewNumber : Integer = 0; //For crew string array located in GameVars
+    
+    var LifeBar : Cog = null;
+    var Life : Real = 10;
+    
+    var HungerBar : Cog = null;
+    [Property]
+    var HungerLifespan : Real = 10;
+    var Starving : Boolean = false;
+    
+    var Status : String = "Healthy";
+    var DiseaseStrength : Real = 5; //The lower the number the stronger the disease
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.LifeBar = this.Owner.FindChildByName("LifeBar");
+        this.HungerBar = this.Owner.FindChildByName("HungerBar");
     }
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(Zero.Keyboard.KeyIsPressed(Keys.J))
-            Console.WriteLine("`this.Owner.Sprite.Visible` `this.Owner.Transform.Translation.Z` `this.Owner.Sprite.Color`");
-            
-        if(Zero.Keyboard.KeyIsReleased(Keys.K))
+        if(this.Status == "")
+            return;
+        
+        if(this.HungerBar != null && !this.Starving)
         {
-            this.Owner.Transform.Translation += Real3(0,0,0.1);
+            this.HungerBar.Healthbar.Decrease(event.Dt/this.HungerLifespan);
+            if(this.HungerBar.Transform.Scale.X == 0.0001)              //0.0001 is the "0" for scale
+            {
+                this.Starving = true;
+                this.Status = "Sick";
+                this.DiseaseStrength = 10;          //Power of starvation (bigger number means weaker)
+            }
+        }
+        if(this.Status == "Sick" || this.Starving)
+        {
+            this.LifeBar.Healthbar.Decrease(event.Dt/this.DiseaseStrength);
+            if(this.LifeBar.Transform.Scale.X == 0.0001)
+            {
+                this.Status == "Dead";
+                //Death stuff
+            }
         }
     }
-    function Set(pic : SpriteSource, name : String)
+    function Feed()
     {
+        if(this.Starving)
+            this.Starving = false;
+        this.HungerBar.Healthbar.Increase(0.5);
+    }
+    function Set(pic : SpriteSource, name : String, status : String)
+    {
+        //Set sprite source to given picture
         this.Owner.Sprite.SpriteSource = pic;
-        var n = this.Owner.FindChildByName("Name");
-        n.SpriteText.Text = name;
+        
+        var hungBar = this.Owner.FindChildByName("HungerBar");
+        var lifeBar = this.Owner.FindChildByName("LifeBar");
+        
+        //Reset healthbars to full and make them visible
+        hungBar.Sprite.Visible = true;
+        hungBar.Healthbar.Set(1);
+        lifeBar.Sprite.Visible = true;
+        lifeBar.Healthbar.Set(1);
+        
+        //Assign name
+        this.Owner.FindChildByName("Name").SpriteText.Text = name;
+        
+        //Set crew slot to crew name
+        this.GameSession.GameVars.Crew.Set(this.CrewNumber, name);
+        
+        //Set character status
+        this.Status = status;
+        
+        //Button can be clicked
         this.Owner.MouseButtonWithKids.Active = true;
     }
     function Clear()
     {
+        //Blank out the sprite source
         this.Owner.Sprite.SpriteSource = SpriteSource.Square;
-        var name = this.Owner.FindChildByName("Name");
-        name.SpriteText.Text = "";
-        this.Owner.MouseButtonWithKids.Deactivate(true);
+        
+        var hungBar = this.Owner.FindChildByName("HungerBar");
+        var lifeBar = this.Owner.FindChildByName("LifeBar");
+        
+        //Blank out name and healthbars
+        hungBar.Sprite.Visible = false;
+        lifeBar.Sprite.Visible = false;
+        this.Owner.FindChildByName("Name").SpriteText.Text = "";
+        
+        //Blank status
+        this.Status = "";
+        
+        //Remove slot on crew
+        this.GameSession.GameVars.Crew.Set(this.CrewNumber, "");
+        
+        //Turn off the button and all other buttons
+        this.Owner.MouseButtonWithKids.Deactivate(false);
         this.Owner.MouseButtonWithKids.Active = false;
     }
 }

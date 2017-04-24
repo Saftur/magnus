@@ -41,46 +41,54 @@ class MouseButtonWithKids : ZilchComponent
             }
             if(child.BoxCollider != null)
                 child.BoxCollider.SendsEvents = true;
+            
+            if(this.Tab && child.Character != null && child.Character.Status != "")        //Show healthbars upon opening character tab
+            {
+                foreach(var c in child.Children)
+                {
+                    if(c.Healthbar != null)
+                    {
+                        c.Sprite.Visible = true;
+                    }
+                }
+            }
         }
     }
-    function Deactivate(color : Boolean)
+    function Deactivate(tab : Boolean)
     {
         if(this.Space.LevelSettings.HUDMenu.OptionsOpen)
             return;
         if(!this.Active)
             return;
         
-        
+        Console.WriteLine("`this.Owner.Name` `tab`");
         this.On = false;
-        if(color)
-            this.Owner.Sprite.Color = this.OffColor;
-        else
-        {
-            this.Owner.Sprite.Color = this.OffColor;
-            this.Owner.Sprite.Visible = false;
-        }
+        this.Owner.Sprite.Color = this.OffColor;
         
         foreach(var child in this.Owner.Children)
         {
-            if(child.Sprite != null)
+            if(tab || child.Healthbar == null)             //We want to constantly see the healthbars unless we are switching tabs
             {
-                child.Sprite.Visible = false;
-                foreach(var c in child.Children)
+                if(child.Sprite != null)
                 {
-                    if(c.SpriteText != null)
-                        c.SpriteText.Visible = false;
+                    child.Sprite.Visible = false;
+                    foreach(var c in child.Children)
+                    {
+                        if(c.SpriteText != null)
+                            c.SpriteText.Visible = false;
+                    }
                 }
-            }
-            if(!this.Tab && child.SpriteText != null)
-            {
-                //child.SpriteText.Visible = false;
-            }
-            if(child.BoxCollider != null)
-                child.BoxCollider.SendsEvents = false;
-                
-            if(child.MouseButtonWithKids != null)
-            {
-                child.MouseButtonWithKids.Deactivate(false);
+                if(!tab && child.SpriteText != null)
+                {
+                    //child.SpriteText.Visible = false;
+                }
+                if(child.BoxCollider != null)
+                    child.BoxCollider.SendsEvents = false;
+                    
+                if(child.MouseButtonWithKids != null)
+                {
+                    child.MouseButtonWithKids.Deactivate(tab);
+                }
             }
         }
     }

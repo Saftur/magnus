@@ -49,4 +49,8 @@ class Healthbar : ZilchComponent
             this.Owner.Transform.Translation += Real3((this.MaxSize*percent)/2,0,0);
         }
     }
+    function Set(percent : Real)
+    {
+        this.Owner.Transform.Scale = Real3(percent, this.Owner.Transform.Scale.YZ);
+    }
 }

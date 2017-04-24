@@ -5,6 +5,7 @@ class MouseControl : ZilchComponent
     var Active : Boolean = false;
     var OptionsOpen : Boolean = false;
     var CurrentTab : Cog = null;
+    var CurrButton : Cog = null;
     
     function Initialize(init : CogInitializer)
     {
@@ -19,9 +20,60 @@ class MouseControl : ZilchComponent
         
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         //Zero.Connect(this.Space, Events.MouseMove, this.OnMouseMove);
-        Zero.Connect(this.Space, Events.LeftMouseDown, this.OnMouseClick);
+        Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
+        Zero.Connect(this.Space, Events.LeftMouseUp, this.OnLeftMouseUp);
+        Zero.Connect(this.Space, Events.RightMouseDown, this.OnRightMouseDown);
     }
-    function OnMouseClick(event : ViewportMouseEvent)
+    function OnRightMouseDown(event : ViewportMouseEvent)
+    {
+        if(this.CurrButton == null)
+            return;
+        
+        //Cancel
+        this.CurrButton.Sprite.Color = this.CurrButton.MouseButton.UnclickedColor;
+        this.CurrButton = null;
+    }
+    function OnLeftMouseUp(event : ViewportMouseEvent)
+    {
+        if(this.CurrButton == null)
+            return;
+        
+        //Mouse Button stuff
+        this.CurrButton.Sprite.Color = this.CurrButton.MouseButton.UnclickedColor;
+        
+        if(this.CurrButton.Name == "Help")
+        {
+            //help stuff
+            Console.WriteLine("help");
+        }
+        else if(this.CurrButton.Name == "Options")
+        {
+            //options stuff
+        }
+        else if(this.CurrButton.Name == "Exit")
+        {
+            this.GameSession.Quit();
+        }
+        else if(this.CurrButton.Name == "Feed")
+        {
+            this.CurrButton.Parent.Character.Feed();
+        }
+        else if(this.CurrButton.Name == "Kick")
+        {
+            this.CurrButton.Parent.Character.Clear();
+        }
+        else if(this.CurrButton.Name == "PlanetYes")
+        {
+            this.Space.LevelSettings.HUDMenu.EnterPlanet();
+        }
+        else if(this.CurrButton.Name == "PlanetNo")
+        {
+            this.Space.LevelSettings.HUDMenu.EnteringPlanet(false);
+        }
+        
+        this.CurrButton = null;
+    }
+    function OnLeftMouseDown(event : ViewportMouseEvent)
     {
         if(this.Active)
         {
@@ -33,48 +85,47 @@ class MouseControl : ZilchComponent
             var results = this.Space.PhysicsSpace.CastRayFirst(ray);
             var obj = results.ObjectHit;
             
+            //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
+            //=Console.WriteLine("`obj`");
+            //Console.WriteLin("`this.Space.LevelSettings.HUDMenu.Entering`");
             
-            Console.WriteLine("`obj` `this.Space.LevelSettings.HUDMenu.Entering`");
+            if(obj == null)
+                return;
+            if(obj.BoxCollider != null && !obj.BoxCollider.SendsEvents)
+                return;
+            //Console.WriteLine("`obj.BoxCollider.SendsEvents`");
             
             //Console.WriteLine("`event.HitObject` `event.RayStart` `event.RayDirection`");
-            
-            if(this.Space.LevelSettings.HUDMenu.Entering && obj != null && obj.MouseButton != null && (obj.MouseButton.PlanetNo || obj.MouseButton.PlanetYes))
+            if(obj.MouseButton != null)
             {
-                Console.WriteLine("bloop");
-                obj.MouseButton.Activate();
-            }
-            
-            if(obj != null && obj.BoxCollider != null && obj.BoxCollider.SendsEvents)
-            {
-                if(obj.MouseButton != null)
+                if(this.Space.LevelSettings.HUDMenu.Entering && (obj.Name != "PlanetNo" && obj.Name != "PlanetYes"))
                 {
-                    obj.MouseButton.Activate();
+                    return;
                 }
-                if(obj.MouseButtonWithKids != null)
+                obj.MouseButton.PushDown();
+                this.CurrButton = obj;
+            }
+            else if(obj.MouseButtonWithKids != null)
+            {
+                if(obj.MouseButtonWithKids.Tab)
                 {
-                    if(obj.MouseButtonWithKids.Tab)
+                    if(obj != this.CurrentTab)
                     {
                         obj.MouseButtonWithKids.Activate();
-                        if(this.CurrentTab != null && obj != this.CurrentTab)
-                        {
+                        if(this.CurrentTab != null)
                             this.CurrentTab.MouseButtonWithKids.Deactivate(true);
-                            this.CurrentTab = obj;
-                        }
-                        else
-                        {
-                            this.CurrentTab = obj;
-                        }
+                        this.CurrentTab = obj;
+                    }
+                }
+                else
+                {
+                    if(obj.MouseButtonWithKids.On)
+                    {
+                        obj.MouseButtonWithKids.Deactivate(false);
                     }
                     else
                     {
-                        if(obj.MouseButtonWithKids.On)
-                        {
-                            obj.MouseButtonWithKids.Deactivate(true);
-                        }
-                        else
-                        {
-                            obj.MouseButtonWithKids.Activate();
-                        }
+                        obj.MouseButtonWithKids.Activate();
                     }
                 }
             }
