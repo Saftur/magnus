@@ -114,7 +114,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.528957069, 15.3899927, 50.9995003],
+			Vec3 Translation = [-1.23084307, 1.94927382, 50.9995003],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278471e-08, 0, 1],
 		},
@@ -126,7 +126,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 7.97922945,
+			float Size = 29.2781792,
 		},
 		EditorCameraController = 
 		{
@@ -134,7 +134,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.528957069, 15.3899927, 0.999499977],
+			Vec3 LookTarget = [-1.23084307, 1.94927382, 0.999499977],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -221,7 +221,7 @@ Level =
 			bool Mode2D = true,
 			bool AllowSleep = true,
 			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, -2.19786143, 0],
+			Vec3 Velocity = [0, 0, 0],
 			Vec3 AngularVelocity = [0, 0, 0],
 		},
 		BoxCollider = 
@@ -351,7 +351,7 @@ Level =
 					bool Mode2D = true,
 					bool AllowSleep = true,
 					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, -1.00171554, 0],
+					Vec3 Velocity = [31.2499981, 936.49823, 124.999992],
 					Vec3 AngularVelocity = [0, 0, 0],
 				},
 				BoxCollider = 
@@ -448,7 +448,7 @@ Level =
 					bool Mode2D = true,
 					bool AllowSleep = true,
 					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, -1.00171554, 0],
+					Vec3 Velocity = [31.2499981, 842.74823, 124.999992],
 					Vec3 AngularVelocity = [0, 0, 0],
 				},
 				BoxCollider = 
@@ -3126,6 +3126,44 @@ Level =
 		},
 		Named = 
 		{
+			string Name = "HealthBarFrame",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.16881752, -7.79831219, 0],
+			Vec3 Scale = [8, 8, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582ead45b726eea7:healthbar",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Hierarchy = 
+		{
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 73,
+		},
+		Named = 
+		{
 			string Name = "HealthBar",
 		},
 		Transform = 
@@ -3157,44 +3195,6 @@ Level =
 		},
 		Hierarchy = 
 		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 73,
-				},
-				Named = 
-				{
-					string Name = "HealthBarFrame",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-0.136890054, -0.701704025, 0],
-					Vec3 Scale = [1.3114754, 11.4285717, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "582ead45b726eea7:healthbar",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				Hierarchy = 
-				{
-				},
-			},
 		},
 	},
 	Cog = 

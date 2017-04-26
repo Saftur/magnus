@@ -60,12 +60,21 @@ class HUDMenu : ZilchComponent
                 {
                     this.Space.LevelSettings.MouseControl.Active = true;
                 }
-                
+                if(this.Entering)
+                {
+                    this.EnterPlanetButtons.BoxCollider.SendsEvents = true;
+                    foreach(var child in this.EnterPlanetButtons.Children)
+                    {
+                        if(child.BoxCollider != null)
+                            child.BoxCollider.SendsEvents = true;
+                    }
+                }
                 if(this.ObjectsToMove != null)
                 {
                     this.ObjectsToMove.Transform.Translation = this.Destination; //snap them to their destination
                     this.ObjectsToMove = null;
                 }
+                
                 this.Timer = 0;             //Reset variables for transition
                 this.Transitioning = false;
                 
